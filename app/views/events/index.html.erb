@@ -1,0 +1,60 @@
+<header class="header">
+  <h4>あなたの地域の掲示板</h4>
+  <div class="header-1">
+    <h1><a href="/">Uni＊Chann</a></h1>
+    <%# ユーザーがログイン済みの場合表示条件分岐で表示を変える %>
+    <% if user_signed_in? %>
+      <ul class="login">
+        <li><%= link_to "Uni-Channとは", '#' %></li>
+        <li><%= link_to image_tag(current_user.image, class: "user-img" ), edit_user_registration_path %></li>
+        <%# <li><%= link_to current_user.nickname, edit_user_registration_path, class: "user-nickname" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      </ul>
+      <% else %>
+      <ul class="login">
+        <li><%= link_to "Uni-Channとは", '#' %></li>
+        <li><%= link_to "ログイン", new_user_session_path, class: "login-1"%></li>
+        <li><%= link_to "新規登録", new_user_registration_path, class: "sign-up" %></li>
+        <li><%= link_to "ゲスト", '#' %></li>
+      </ul>
+    <% end %>
+  </div>
+</header>
+
+<body>
+<div class="event-list">
+<% @events.each do |event| %>
+      <li class='list'>
+        <%= link_to event_path(event.id) do %>
+        <div class='item-img-content'>
+          <%= image_tag event.image, class: "item-img"  if event.image.attached?%>
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= event.project %>
+          </h3>
+          <div>
+            <%= event.overview %>
+          </div>
+          <div class='item-price'>
+            <span>開催予定日：<%= event.date %></span>
+          </div>
+        </div>
+        <% end %>
+      </li>
+<% end %>
+</div>
+
+</body>
+
+<div class='event-btn'>
+  <span class='event-btn-text'>イベント投稿</span>
+   <a href="/events/new">
+    <%= image_tag '万年筆の無料アイコン素材.png' , size: '185x50' ,class: "event-btn-icon" %>
+  </a>
+</div>
+<footer>
+  <p>
+        Copyright Uni-chann 2020.
+  </p>
+</footer>
