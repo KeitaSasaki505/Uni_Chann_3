@@ -1,0 +1,101 @@
+<div class="show">
+<h2><%= @event.project %></h2>
+  <ul class="show">
+    <div class="field">
+        <%= image_tag @event.image.variant(resize: '480x320') %>
+      </div>
+
+      <div class="field">
+        <div>カテゴリー</div></td>
+        <div>
+          <%= @event.genre.name %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div>イベント概要</div>
+        <div>
+          <%= @event.overview %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div>主催者</div>
+        <div>
+          <%= @event.user.nickname %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div>開催予定日時</div>
+        <div>
+          <%= @event.date %>
+        </div>
+      </div>
+
+      <div class="field">
+        <div>開催場所</div>
+        <div>
+          <%= @event.address%>
+        </div>
+      </div>
+
+<%# ----------------googlemap API -------------------%>
+<h3>開催場所詳細</h3>
+
+<script type="text/javascript">
+  function initMap() {
+// latitude,longitudeから位置を特定
+    var test ={lat: <%= @event.latitude %>, lng: <%= @event.longitude %> };
+    var map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 15, 
+              center: test
+              });
+    var transitLayer = new google.maps.TransitLayer();
+    transitLayer.setMap(map);
+
+    var contentString = '住所：<%= @event.address %>';
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString
+    });
+
+//  Map上の指定した位置にピンを挿して表示する
+    var marker = new google.maps.Marker({
+                  position:test,
+                  map: map,
+                  title: contentString
+                 });
+
+     marker.addListener('click', function() {
+       infowindow.open(map, marker);
+     });
+  }
+</script>
+
+<script async defer
+              src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
+</script>
+
+<style type="text/css">
+  #map { height: 320px;
+         width: 480px;}
+</style>
+
+<%# #mapの表示 %>
+<div id="map"></div>
+
+
+<%# ----------------googlemap API -------------------%>
+      <div class="field">
+        <% if user_signed_in? && current_user.id == @event.user.id %>
+        <ul class="join-list">
+          <li><%= link_to 'イベントの編集', edit_event_path, method: :get, class: "item-red-btn" %></li>
+          <li><%= link_to 'イベントの参加者一覧', event_joins_path(@event.id), class: "item-red-btn" %></li>
+          <li><%= link_to '削除', event_path(@event.id), method: :delete, class:'item-destroy' %></li>
+        </ul>
+      <% elsif user_signed_in? && ( current_user.id != @event.user_id ) %>
+          <%= link_to '参加登録する', new_event_join_path(@event.id)%>
+      <% end %>
+      </div>
+  </ul>
+</div>
