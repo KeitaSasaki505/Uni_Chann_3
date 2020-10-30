@@ -10,4 +10,4 @@ class Genre < ActiveHash::Base
     { id: 7, name: '観光' },
     { id: 8, name: 'その他' },
   ]
-  end
+end

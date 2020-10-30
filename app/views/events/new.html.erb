@@ -1,36 +1,50 @@
-<h2>イベント参加申込</h2>
+<h2>イベント投稿</h2>
 
 <%# <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-<%= form_with model: @join, url: event_joins_path, class: 'registration-main', local: true do |f| %>
+<%= form_with model: @event, class: 'registration-main', local: true do |f| %>
 
   <h3 class='form-header-text'>
-    参加フォーム入力
+    新しいイベント入力
   </h3>
   <div class="field">
-    <%= f.label :氏名%><br />
-    <%= f.text_field :name_kanji, placeholder:"名前(漢字フルネーム)" %>
+    <%= f.label :イベントイメージ画像 %><br />
+    <%= f.file_field :image %><p>※クリックしてファイルをアップロード</p>
   </div>
 
   <div class="field">
-    <%= f.label :カナ入力%><br />
-    <%= f.text_field :name_kana, placeholder:"フリガナ" %>
+    <%= f.label :イベントの種類 %><br />
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
   </div>
 
   <div class="field">
-    <%= f.label :メールアドレス %><br />
-    <%= f.text_field :email %>
+    <%= f.label :イベント名 %><br />
+    <%= f.text_area :project %>
   </div>
-  
+
+  <div class="field">
+    <%= f.label :イベント概要 %><br />
+    <%= f.text_area :overview %>
+  </div>
+
+  <div class="field">
+    <%= f.label :開催予定日時 %><br />
+    <%= f.date_field :date %>
+  </div>
+
+  <div class="field">
+    <%= f.label :メールアドレス（連絡先） %><br />
+    <%= f.text_area :email, placeholder:"参加者との連絡が可能なアドレス" %>
+  </div>
+
   <div class="field">
     <%= f.label :電話番号 %><br />
-    <%= f.text_field :phone %>
+    <%= f.telephone_field :phone, placeholder:"例）090-1111-1111" %>
   </div>
 
   <div class="field">
-    <%= f.label :コメント %><br />
-    <%= f.text_area :message, rows: 3, placeholder:"(空欄でも可：何か要望がございましたらご記入ください)" %>
+    <%= f.label :開催場所（住所） %><br />
+    <%= f.text_area :address, placeholder:"例)東京都港区六本木1-1-1"%>
   </div>
 
-  <div class="field">
-    <%= f.submit "参加登録する" ,class:"" %>
-  </div>
+  <%= f.submit "イベントを投稿する" ,class:"" %>
+<% end %>

@@ -1,11 +1,12 @@
 <h2>イベント参加申込</h2>
 
 <%# <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-<%= form_with model: @join, url: event_joins_path, class: 'registration-main', local: true do |f| %>
+
 
   <h3 class='form-header-text'>
     参加フォーム入力
   </h3>
+  <%= form_with model: @join, url: event_joins_path, class: 'registration-main', local: true do |f| %>
   <div class="field">
     <%= f.label :氏名%><br />
     <%= f.text_field :name_kanji, placeholder:"名前(漢字フルネーム)" %>
@@ -34,6 +35,4 @@
   <div class="field">
     <%= f.submit "参加登録する" ,class:"" %>
   </div>
-  
-
-<% end %>
+  <% end %>

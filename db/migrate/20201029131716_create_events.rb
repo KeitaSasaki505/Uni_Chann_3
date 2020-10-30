@@ -2,7 +2,7 @@ class CreateEvents < ActiveRecord::Migration[6.0]
   def change
     create_table :events do |t|
       t.integer :genre_id, null: false
-      t.references :user_id
+      t.integer :user_id, foreign_key: true
       t.text :overview, null: false
       t.text :project, null: false
       t.date :date, null: false
