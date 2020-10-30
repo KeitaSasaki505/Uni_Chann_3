@@ -105,3 +105,24 @@ footer p {
   height: 20vh;
   margin: 5vh;
 }
+
+.post {
+  display: flex;
+}
+
+.post-content-img {
+  margin: 10px 5px 5px 10px;
+}
+
+.post-side {
+  margin: 10px 10px 5px 5px;
+}
+
+.message {
+  width: 300px;
+  height: 50px;
+}
+
+.post-date {
+  font-size: 10px;
+}
