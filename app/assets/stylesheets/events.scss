@@ -1,3 +1,107 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.header {
+  width: 100vw;
+  height: 30vh;
+}
+
+.header-1 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login {
+  display:flex;
+  list-style: none;
+}
+
+.login li {
+  padding-right: 30px;
+}
+
+.event-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.field {
+  
+}
+
+.list {
+  list-style: none;
+  margin: 10px;
+}
+
+.item-img-content {
+  position: relative;
+}
+
+.item-img {
+  width: 50vh;
+  height: 33vh;
+}
+
+.user-img {
+  width:60px;
+  height:60px;
+  border-radius: 50%;
+  background-color: rgba(248, 253, 171, 0.973);
+}
+
+.event-btn {
+  width: 120px;
+
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 15px;
+}
+
+.event-btn-text {
+  color: #8292eef8;
+  display: block;
+  font-size: 18px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.event-btn-icon {
+  width: 60%;
+  height: 60%;
+}
+
+
+footer {
+  margin: 30px auto;
+  padding: 10px;
+  color: #D8D8D8;
+}
+
+footer p {
+  text-align: center;
+}
+
+.show {
+  list-style: none;
+}
+
+.show-img {
+  width: 480px;
+  height:320px;
+}
+
+.join-list {
+  list-style: none;
+}
+
+.ranking {
+  width: 80vw;
+  height: 20vh;
+  margin: 5vh;
+}

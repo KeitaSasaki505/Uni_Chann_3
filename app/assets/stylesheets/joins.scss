@@ -1,3 +1,33 @@
 // Place all the styles related to the joins controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.detail-table {
+  border-collapse: collapse;
+  margin-top: 30px;
+}
+
+.detail-item {
+  padding: 5px 10px;
+  background-color: rgb(211, 210, 210);
+}
+
+.detail-value {
+  padding: 5px 10px;
+}
+
+.btn-square {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  background: #668ad8;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #627295;
+  border-radius: 3px;
+}
+.btn-square:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
