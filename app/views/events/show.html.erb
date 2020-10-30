@@ -88,15 +88,40 @@
 <%# ----------------googlemap API -------------------%>
       <div class="field">
         <% if user_signed_in? && current_user.id == @event.user.id %>
-        <ul class="join-list">
-          <li><%= link_to 'イベントの編集', edit_event_path, method: :get, class: "item-red-btn" %></li>
-          <li><%= link_to 'イベントの参加者一覧', event_joins_path(@event.id), class: "item-red-btn" %></li>
-          <li><%= link_to '削除', event_path(@event.id), method: :delete, class:'item-destroy' %></li>
-        </ul>
-      <% elsif user_signed_in? && ( current_user.id != @event.user_id ) %>
-          <%= link_to '参加登録する', new_event_join_path(@event.id)%>
-      <% end %>
+          <ul class="join-list">
+            <li><%= link_to 'イベントの編集', edit_event_path, method: :get, class: "item-red-btn" %></li>
+            <li><%= link_to 'イベントの参加者一覧', event_joins_path(@event.id), class: "item-red-btn" %></li>
+            <li><%= link_to '削除', event_path(@event.id), method: :delete, class:'item-destroy' %></li>
+          </ul>
+        <% elsif user_signed_in? && ( current_user.id != @event.user_id ) %>
+            <%= link_to '参加登録する', new_event_join_path(@event.id)%>
+        <% end %>
       </div>
+
+
+<h3>コメント</h3>
+      <%= form_with(model:[@event, @comment], url: event_comments_path(@event.id), local: true) do |f|%>
+        <div class="contact">
+          <%= f.text_area :text, class: 'message', placeholder: 'イベントへのコメント入力欄' %>
+        </div>
+          <%= f.submit 'コメントする', class: 'comment-btn' %>
+      <% end %>
+
+      <% @comments.each do |comment| %>
+        <div class="post">
+          <div class="post-content-img">
+            <%= link_to image_tag(comment.user.image, class: "user-img" )%>
+          </div>
+          <div class="post-side">
+            <div class="post-content-txt">
+              <%= comment.text %>
+            </div>
+            <div class="post-date">
+              <%= comment.created_at.to_s(:datetime_jp) %>
+            </div>
+          </div>
+        </div>
+      <% end %>
   </ul>
 </div>
 
