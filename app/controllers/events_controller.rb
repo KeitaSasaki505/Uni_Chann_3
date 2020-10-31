@@ -2,6 +2,10 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :destroy, :update]
   before_action :set_event, only: [:edit, :show, :update]
 
+  def about
+    root_path
+  end
+
   def index
     @events = Event.all
   end

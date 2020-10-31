@@ -2,43 +2,33 @@
 <h2><%= @event.project %></h2>
   <ul class="show">
     <div class="field">
-        <%= image_tag @event.image.variant(resize: '480x320') %>
-      </div>
+      <%= image_tag @event.image.variant(resize: '480x320') %>
+    </div>
 
-      <div class="field">
-        <div>カテゴリー</div></td>
-        <div>
-          <%= @event.genre.name %>
-        </div>
-      </div>
-
-      <div class="field">
-        <div>イベント概要</div>
-        <div>
-          <%= @event.overview %>
-        </div>
-      </div>
-
-      <div class="field">
-        <div>主催者</div>
-        <div>
-          <%= @event.user.nickname %>
-        </div>
-      </div>
-
-      <div class="field">
-        <div>開催予定日時</div>
-        <div>
-          <%= @event.date %>
-        </div>
-      </div>
-
-      <div class="field">
-        <div>開催場所</div>
-        <div>
-          <%= @event.address%>
-        </div>
-      </div>
+    <table class="detail-table">
+      <tbody>
+        <tr>
+          <th class="detail-item">カテゴリー</th>
+          <td class="detail-value"><%= @event.genre.name %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">イベント概要</th>
+          <td class="detail-value"><%= @event.overview %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">主催者</th>
+          <td class="detail-value"><%= @event.user.nickname %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">開催予定日時</th>
+          <td class="detail-value"><%= @event.date %></td>
+        </tr>
+        <tr>
+          <th class="detail-item">開催場所</th>
+          <td class="detail-value"><%= @event.address %></td>
+        </tr>
+      </tbody>
+    </table>
 
 <%# ----------------googlemap API -------------------%>
 <h3>開催場所詳細</h3>
@@ -84,35 +74,32 @@
 <%# #mapの表示 %>
 <div id="map"></div>
 
-
 <%# ----------------googlemap API -------------------%>
-      <div class="field">
+
+
+      <div class="join-entry">
         <% if user_signed_in? && current_user.id == @event.user.id %>
           <ul class="join-list">
-            <li><%= link_to 'イベントの編集', edit_event_path, method: :get, class: "item-red-btn" %></li>
-            <li><%= link_to 'イベントの参加者一覧', event_joins_path(@event.id), class: "item-red-btn" %></li>
-            <li><%= link_to '削除', event_path(@event.id), method: :delete, class:'item-destroy' %></li>
+            <li><%= link_to 'イベントの編集', edit_event_path, method: :get, class: "join-btn" %></li>
+            <li><%= link_to 'イベントの参加者一覧', event_joins_path(@event.id), class: "join-btn" %></li>
+            <li><%= link_to '削除', event_path(@event.id), method: :delete, class:'event-destroy-btn' %></li>
           </ul>
         <% elsif user_signed_in? && ( current_user.id != @event.user_id ) %>
-            <%= link_to '参加登録する', new_event_join_path(@event.id)%>
+            <%= link_to '参加登録する', new_event_join_path(@event.id), class:'join-btn'%>
         <% end %>
       </div>
 
 
 <h3>コメント</h3>
-      <%= form_with(model:[@event, @comment], url: event_comments_path(@event.id), local: true) do |f|%>
-        <div class="contact">
-          <%= f.text_area :text, class: 'message', placeholder: 'イベントへのコメント入力欄' %>
-        </div>
-          <%= f.submit 'コメントする', class: 'comment-btn' %>
-      <% end %>
-
       <% @comments.each do |comment| %>
         <div class="post">
           <div class="post-content-img">
-            <%= link_to image_tag(comment.user.image, class: "user-img" )%>
+            <%= image_tag(comment.user.image, class: "user-img" )%>
           </div>
           <div class="post-side">
+            <div class="post-content-username">
+              <%= comment.user.nickname %>
+            </div>
             <div class="post-content-txt">
               <%= comment.text %>
             </div>
@@ -122,6 +109,13 @@
           </div>
         </div>
       <% end %>
+
+    <div class="post-comment-form">
+      <%= form_with(model:[@event, @comment], url: event_comments_path(@event.id), local: true) do |f|%>
+        <%= f.text_area :text, class: 'message', placeholder: 'イベントへのコメント入力欄' %>
+        <%= f.submit 'コメントする', class: 'comment-btn' %>
+      <% end %>
+    </div>
   </ul>
 </div>
 

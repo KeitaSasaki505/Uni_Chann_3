@@ -15,10 +15,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @comment = Comment.find(params[:id])
-    if @comment.destroy
-      redirect_to event_path(@event)
-    end
+    # @comment = Comment.find(params[:id])
+    # if @comment.destroy
+    #   redirect_to event_path(@event)
+    # end
   end
 
   private

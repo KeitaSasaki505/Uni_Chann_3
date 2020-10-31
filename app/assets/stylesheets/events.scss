@@ -27,10 +27,6 @@
   align-items: center;
 }
 
-.field {
-  
-}
-
 .list {
   list-style: none;
   margin: 10px;
@@ -108,21 +104,68 @@ footer p {
 
 .post {
   display: flex;
-}
-
-.post-content-img {
   margin: 10px 5px 5px 10px;
 }
 
-.post-side {
-  margin: 10px 10px 5px 5px;
+.post-content-img {
+  
 }
 
-.message {
-  width: 300px;
-  height: 50px;
+.post-side {
+  margin-left: 10px;
+  
+}
+
+.post-content-username {
+  font-size: 12px;
+}
+
+.post-content-txt {
+  padding-left: 5px;
 }
 
 .post-date {
   font-size: 10px;
+  padding-left: 5px;
+}
+
+.post-comment-form {
+  margin-top: 10px;
+}
+
+.message {
+  width: 480px;
+  height: 50px;
+}
+
+.comment-btn {
+
+}
+
+.join-entry {
+  margin-top: 10px;
+}
+
+.join-edit-btn {
+
+}
+
+.event-destroy-btn {
+
+}
+
+.join-btn {
+
+}
+
+.event-table {
+
+}
+
+.event-item {
+
+}
+
+.event-value {
+
 }
