@@ -2,7 +2,7 @@
 <h2><%= @event.project %></h2>
   <ul class="show">
     <div class="field">
-      <%= image_tag @event.image.variant(resize: '480x320') %>
+      <%= image_tag(@event.image.variant(resize: '480x320'), class: "item-img") %>
     </div>
 
     <table class="detail-table">
@@ -112,8 +112,8 @@
 
     <div class="post-comment-form">
       <%= form_with(model:[@event, @comment], url: event_comments_path(@event.id), local: true) do |f|%>
-        <%= f.text_area :text, class: 'message', placeholder: 'イベントへのコメント入力欄' %>
-        <%= f.submit 'コメントする', class: 'comment-btn' %>
+          <%= f.text_field :text, class: 'message', placeholder: 'イベントへのコメント入力欄' %>
+          <%= f.submit '送信', class: 'comment-btn' %>
       <% end %>
     </div>
   </ul>
