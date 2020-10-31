@@ -36,9 +36,16 @@
   position: relative;
 }
 
+.item-img-index {
+  width: 360px;
+  height: 320px;
+  object-fit: cover;
+}
+
 .item-img {
-  width: 50vh;
-  height: 33vh;
+  width: 480px;
+  height: 320px;
+  object-fit: cover;
 }
 
 .user-img {
@@ -131,15 +138,26 @@ footer p {
 
 .post-comment-form {
   margin-top: 10px;
+  background-color: white;
+  display: flex;
 }
 
 .message {
-  width: 480px;
-  height: 50px;
+  background-color: white;
+  width: 30vw;
+  height: 30px;
+  border: 1;
 }
 
 .comment-btn {
-
+  background-color: #38AEF0;
+  font-size: 16px;
+  color: white;
+  padding: 0 20px;
+  width: 80px;
+  height: 30px;
+  border: 0;
+  margin-left: 10px;
 }
 
 .join-entry {

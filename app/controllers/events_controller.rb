@@ -2,10 +2,6 @@ class EventsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :destroy, :update]
   before_action :set_event, only: [:edit, :show, :update]
 
-  def about
-    root_path
-  end
-
   def index
     @events = Event.all
   end
@@ -53,7 +49,7 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:image, :genre_id, :project, :overview, :date, :email, :phone, :address ).merge(user_id: current_user.id)
+    params.require(:event).permit(:genre_id, :project, :overview, :date, :email, :phone, :address, :image ).merge(user_id: current_user.id)
   end
 
   def set_event

@@ -1,0 +1,63 @@
+.about {
+  color: rgb(75, 72, 72);
+}
+
+.about-in {
+  width: 100vw;
+}
+
+.title-origin {
+  width: 100vw;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('IMG_0919.jpeg');
+  background-repeat:no-repeat;
+  background-position:23% 40%;
+  
+}
+
+.title-ex-box {
+  padding: 30px 50px;
+}
+
+.title-ex {
+  
+  
+}
+
+.title-ex-content {
+  
+
+}
+
+.howto-h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.howto {
+  display: flex;
+  
+}
+
+.howto-post {
+  margin-right: 60px;
+  width: 270px;
+
+}
+
+.howto-title {
+  display: flex;
+  justify-content: center;
+}
+
+.howto-img {
+  display: flex;
+  justify-content: center;
+}
+
+.howto-content {
+  font-size: 15px;
+}
