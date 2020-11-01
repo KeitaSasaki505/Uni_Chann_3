@@ -2,50 +2,42 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.header {
-  width: 100vw;
-  height: 30vh;
-}
-
-.header-1 {
-  display: flex;
-  justify-content: space-between;
-}
-
-.login {
-  display:flex;
-  list-style: none;
-}
-
-.login li {
-  padding-right: 30px;
-}
-
-.event-list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.list {
-  list-style: none;
-  margin: 10px;
-}
-
-.item-img-content {
+body {
+  background-color: lemonchiffon;
   position: relative;
 }
 
-.item-img-index {
-  width: 360px;
-  height: 320px;
-  object-fit: cover;
+
+.header {
+  width: 98vw;
+  height: 90px;
+  text-decoration: none;
+  color: rgb(75, 72, 72);
+  background-color: rgb(248, 181, 80);
+  border-radius: 3%/50%;
+  position: fixed;
+  z-index: 10;
+  
 }
 
-.item-img {
-  width: 480px;
-  height: 320px;
-  object-fit: cover;
+.header-p {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 20px 20px;
+  
+}
+
+.header-2 {
+  padding: 6px;
+}
+
+.header-3 {
+  
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .user-img {
@@ -55,9 +47,86 @@
   background-color: rgba(248, 253, 171, 0.973);
 }
 
+.login {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+.login li {
+  padding-right: 30px;
+}
+
+// イベント一覧表示------------------------
+
+.event-p {
+  margin-top: 60px;
+  top: 100px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+}
+
+.event-list {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  // position: absolute;
+  
+}
+
+.list {
+  color: rgb(75, 72, 72);
+  width: 300px;
+  height: 450px;
+  list-style: none;
+  margin: 10px;
+}
+
+.event-name {
+  font-size: 16px;
+}
+
+.event-img-content {
+  position: relative;
+}
+
+.event-img-index {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10%;
+}
+
+.event-ex {
+  font-size: 15px;
+  margin: 5px 0px;
+}
+
+.event-date {
+  font-size: 12px;
+}
+
+footer {
+  width: 98vw;
+  height: 5vh;
+  margin: 30px auto;
+  padding: 5px;
+  color: #ffffff;
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+}
+
+footer p {
+  text-align: center;
+  font-size: 12px;
+}
+
+// イベント投稿のボタン--------
 .event-btn {
   width: 120px;
-
   text-align: center;
   border-radius: 4%;
   bottom: 32px;
@@ -78,25 +147,31 @@
   width: 60%;
   height: 60%;
 }
+// --------------------------------
 
-
-footer {
-  margin: 30px auto;
-  padding: 10px;
-  color: #D8D8D8;
-}
-
-footer p {
-  text-align: center;
-}
+// showページ------------------------
 
 .show {
   list-style: none;
 }
 
+.show-2 {
+  color: rgb(75, 72, 72);
+  display: flex;
+  justify-content: center;
+}
+
+.show-3 {
+  
+}
+
 .show-img {
-  width: 480px;
-  height:320px;
+  width: 640px;
+  height:480px;
+}
+
+.detail-table {
+  font-size: 15px;
 }
 
 .join-list {
@@ -107,6 +182,12 @@ footer p {
   width: 80vw;
   height: 20vh;
   margin: 5vh;
+}
+
+
+.comment-main {
+  margin-top: 50px;
+  width: 50vw;
 }
 
 .post {
@@ -136,32 +217,40 @@ footer p {
   padding-left: 5px;
 }
 
+// コメントフォーム--------------------------
 .post-comment-form {
   margin-top: 10px;
-  background-color: white;
   display: flex;
 }
 
 .message {
   background-color: white;
-  width: 30vw;
-  height: 30px;
+  width: 40vw;
+  height: 29px;
   border: 1;
+  border-color: rgb(189, 181, 181);
 }
 
 .comment-btn {
-  background-color: #38AEF0;
+  background-color: rgb(248, 181, 80);
   font-size: 16px;
   color: white;
   padding: 0 20px;
   width: 80px;
-  height: 30px;
+  height: 35px;
   border: 0;
-  margin-left: 10px;
+
 }
 
 .join-entry {
   margin-top: 10px;
+}
+
+.join-list {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  
 }
 
 .join-edit-btn {
@@ -173,7 +262,26 @@ footer p {
 }
 
 .join-btn {
+  background-color: rgb(248, 181, 80);
+  font-size: 12px;
+  color: white;
+  padding: 5px 20px;
+  margin: 10px 10px 10px 0px;
+  width: 80px;
+  height: 60px;
+  border: 0;
+  
+}
 
+.event-destroy-btn {
+  background-color: #b34c1c;
+  font-size: 12px;
+  color: white;
+  padding: 5px 20px;
+  margin: 10px 10px 10px 0px;
+  width: 80px;
+  height: 60px;
+  border: 0;
 }
 
 .event-table {
@@ -187,3 +295,11 @@ footer p {
 .event-value {
 
 }
+
+.item-img {
+  width: 480px;
+  height: 320px;
+  object-fit: cover;
+  
+}
+
