@@ -1,54 +1,55 @@
-<h2>新規登録</h2>
+<%= render 'shared/header' %>
 
 <%# <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-    <h3 class='form-header-text'>
-      会員情報入力
-    </h3>
-  <div class="field">
-    <%= f.label :プロフィール画像 %><br />
-    <%= f.file_field :image %><p>※クリックしてファイルをアップロード</p>
-  </div>
+  <div class="form-main">
+    <div class="form-edit">
+      <h3 class='form-header-text'>
+        新規会員情報入力
+      </h3>
+      <div class="form-1">
+        <%= f.label :プロフィール画像, class: 'form-item' %><br />
+        <%= f.file_field :image, class: "form-file-field" %><p>※クリックしてファイルをアップロード</p>
+      </div>
 
-  <div class="field">
-    <%= f.label :ニックネーム %><br />
-    <%= f.text_field :nickname %>
-  </div>
+      <div class="form-1">
+        <%= f.label :ニックネーム, class: 'form-item' %><br />
+        <%= f.text_field :nickname, class: "form-text" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :名前（漢字フルネーム） %><br />
-    <%= f.text_field :name_kanji, placeholder:"例) 種市　太郎" %>
-  </div>
+      <div class="form-1">
+        <%= f.label :名前（漢字フルネーム）, class: 'form-item' %><br />
+        <%= f.text_field :name_kanji, placeholder:"例) 種市　太郎", class: "form-text" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :名前（カナ） %><br />
-    <%= f.text_field :name_kana, placeholder:"例) タネイチ　タロウ" %>
-  </div>
+      <div class="form-1">
+        <%= f.label :名前（カナ）, class: 'form-item' %><br />
+        <%= f.text_field :name_kana, placeholder:"例) タネイチ　タロウ", class: "form-text" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :メールアドレス %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"PC・携帯どちらでも可" %>
-  </div>
+      <div class="form-1">
+        <%= f.label :メールアドレス, class: 'form-item' %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"PC・携帯どちらでも可", class: "form-text" %>
+      </div>
 
-  <div class="field">
-    <%= f.label :パスワード %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password", placeholder:"8文字以上の半角英数字" %>
-    
-  </div>
+      <div class="form-1">
+        <%= f.label :パスワード, class: 'form-item' %><br />
+        <%= f.password_field :password, autocomplete: "new-password", placeholder:"8文字以上の半角英数字", class: "form-text" %>
+        
+      </div>
 
-  <div class="field">
-    <%= f.label :パスワード（確認のためもう一度） %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"同じパスワードを入力" %>
-  </div>
+      <div class="form-1">
+        <%= f.label :パスワード（確認のためもう一度）, class: 'form-item' %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"同じパスワードを入力", class: "form-text" %>
+      </div>
 
-  <div class="actions">
-    <%= f.submit "登録する" %>
+      <div class="form-1">
+        <%= f.submit "登録する" %>
+      </div>
+    </div>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%= render 'shared/footer' %>

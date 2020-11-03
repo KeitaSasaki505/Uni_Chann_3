@@ -10,14 +10,14 @@
         <%# ユーザーがログイン済みの場合表示条件分岐で表示を変える %>
         <% if user_signed_in? %>
           <ul class="login">
-            <li><%= link_to "Uni-Channとは", about_events_path %></li>
+            <li><%= link_to "Uni＊Channとは", about_events_path %></li>
             <li><%= link_to image_tag(current_user.image, class: "user-img" ), edit_user_registration_path %></li>
             <%# <li><%= link_to current_user.nickname, edit_user_registration_path, class: "user-nickname" %></li>
             <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
           </ul>
           <% else %>
           <ul class="login">
-            <li><%= link_to "Uni-Channとは", about_events_path %></li>
+            <li><%= link_to "Uni＊Channとは", about_events_path %></li>
             <li><%= link_to "ログイン", new_user_session_path, class: "login-1"%></li>
             <li><%= link_to "新規登録", new_user_registration_path, class: "sign-up" %></li>
             <li><%= link_to "ゲスト", '#' %></li>

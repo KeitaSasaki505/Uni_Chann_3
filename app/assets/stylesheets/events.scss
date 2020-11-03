@@ -7,8 +7,12 @@ body {
   position: relative;
   height: 100vh;
   color: rgb(75, 72, 72);
-  
+  letter-spacing: 0.1em
+}
 
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 // ヘッダー----------------------------
@@ -37,13 +41,12 @@ body {
 }
 
 .header-3 {
-  
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+
 
 .user-img {
   width:60px;
@@ -238,7 +241,7 @@ footer p {
   background-color: white;
   width: 40vw;
   height: 29px;
-  border: 1;
+  border: solid 1px;
   border-color: rgb(189, 181, 181);
 }
 

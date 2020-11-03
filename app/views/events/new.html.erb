@@ -11,7 +11,7 @@
 
       <div class="form-1">
         <%= f.label :イベントイメージ画像, class: 'form-item' %><br />
-        <%= f.file_field :image %><p>※クリックしてファイルをアップロード</p>
+        <%= f.file_field :image, class:'form-file-field' %><p>※クリックしてファイルをアップロード</p>
       </div>
 
       <div class="form-1">
@@ -31,7 +31,7 @@
 
       <div class="form-1">
         <%= f.label :開催予定日時, class: 'form-item' %><br />
-        <%= f.date_field :date %>
+        <%= f.date_field :date, class: "form-text" %>
       </div>
 
       <div class="form-1">
@@ -41,7 +41,7 @@
 
       <div class="form-1">
         <%= f.label :電話番号, class: 'form-item' %><br />
-        <%= f.telephone_field :phone, placeholder:"例）090-1111-1111" %>
+        <%= f.telephone_field :phone, placeholder:"例）090-1111-1111", class: "form-text"%>
       </div>
 
       <div class="form-1">

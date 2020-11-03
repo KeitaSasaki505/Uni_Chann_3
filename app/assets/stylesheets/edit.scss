@@ -12,22 +12,41 @@
 }
 
 .form-edit {
-  width: 60vw;
+  width: 65vw;
+}
+
+.select-box {
+  margin-top: 7px;
+  margin-left: 10px;
+  border: solid 1px;
+  border-color: rgb(189, 181, 181);
 }
 
 .form-1 {
   margin: 15px;
 }
 
-.form-item {
+.form-1 p {
+  font-size: 12px;
+  margin-left: 10px;
+}
 
+.form-item {
+  
+}
+
+.form-file-field {
+  margin-top: 7px;
+  margin-left: 10px;
 }
 
 .form-text {
   background-color: white;
+  margin-top: 7px;
+  margin-left: 10px;
   width: 50vw;
   height: 29px;
-  border: 1;
+  border: solid 1px;
   border-color: rgb(189, 181, 181);
   
 }
@@ -48,7 +67,7 @@
 .form-edit-text {
   color: #000000;
   display: block;
-  font-size: 25px;
+  font-size: 20px;
   text-decoration: none;
   margin-bottom: 5px;
 }

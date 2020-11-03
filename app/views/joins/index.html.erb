@@ -10,10 +10,7 @@
         イベント参加者一覧
         </h3>
 
-        <div class="joins-csv-btn">
-          <span class="joins-csv-text">Output!</span>
-          <%= link_to image_tag('プリンターの無料アイコン4.png', size: '70x70'), event_joins_path(format: :csv), class: "joins-csv-icon" %>
-        </div>
+        <p>"Output!"ボタンよりCSV形式で参加者一覧をダウンロードできます。</p>
 
         <table class="detail-table" border="1">
           <tr>
@@ -38,6 +35,11 @@
       </div>
     </div>
   <% end %>
+
+  <div class="joins-csv-btn">
+          <span class="joins-csv-text">Output!</span>
+          <%= link_to image_tag('プリンターの無料アイコン4.png', size: '70x70'), event_joins_path(format: :csv), class: "joins-csv-icon" %>
+  </div>
 </div>
 
 <%= render 'shared/footer' %>
