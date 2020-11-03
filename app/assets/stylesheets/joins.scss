@@ -19,20 +19,33 @@
 }
 
 // cdvボタン----------------------------
-.btn-square {
-  display: inline-block;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  background: #668ad8;/*ボタン色*/
-  color: #FFF;
-  border-bottom: solid 4px #627295;
-  border-radius: 3px;
+
+.joins-csv-btn {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  border-radius: 50%;
+  bottom: 320px;
+  opacity: 0.7;
+  right: 40px;
+  position: fixed;
+  padding: 15px;
+  z-index: 30;
+  // background-color: #dd5404;
+  background: linear-gradient(#dd5404, #f19d7763);
 }
-.btn-square:active {
-  /*ボタンを押したとき*/
-  -webkit-transform: translateY(4px);
-  transform: translateY(4px);/*下に動く*/
-  border-bottom: none;/*線を消す*/
+
+.joins-csv-icon {
+  width: 60%;
+  height: 60%;
+}
+
+.joins-csv-text {
+  color: #000000;
+  display: block;
+  font-size: 20px;
+  text-decoration: none;
+  margin-bottom: 5px;
 }
 
 // 一覧表-----------------------------------
