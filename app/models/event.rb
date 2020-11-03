@@ -7,6 +7,7 @@ class Event < ApplicationRecord
   belongs_to :user
   has_many :joins
   has_many :comments
+  
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 

@@ -1,25 +1,43 @@
-<h2>イベント参加者一覧</h2>
+<%= render 'shared/header' %>
 
-<p>※csvファイル出力できます。</p>
-<%= link_to "ファイルに出力する", event_joins_path(format: :csv), class: "btn-square" %>
+<div class="joins-main">
+  <%# <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= form_with model: @event, class: 'registration-main', local: true do |f| %>
+    
+    <div class="form-main">
+      <div class="form-edit">
+        <h3 class='form-header-text'>
+        イベント参加者一覧
+        </h3>
 
-<table class="detail-table" border="1">
-<tr>
-  <th class="detail-item">名前</th>
-  <th class="detail-item">カナ</th>
-  <th class="detail-item">メールアドレス</th>
-  <th class="detail-item">電話番号</th>
-  <th class="detail-item">コメント</th>
-</tr>
-  <% @joins.each do |participants|%>
-    <tbody>
-      <tr>
-        <td class="detail-value"><%= participants.name_kanji %></td>
-        <td class="detail-value"><%= participants.name_kana %></td>
-        <td class="detail-value"><%= participants.email %></td>
-        <td class="detail-value"><%= participants.phone %></td>
-      　<td class="detail-value"><%= participants.message %></td>
-      </tr>
-    </tbody>
+        <div class="joins-csv-btn">
+          <p>※csvファイル出力できます。</p>
+          <%= link_to "ファイルに出力する", event_joins_path(format: :csv), class: "btn-square" %>
+        </div>
+
+        <table class="detail-table" border="1">
+          <tr>
+            <th class="detail-item">名前</th>
+            <th class="detail-item">カナ</th>
+            <th class="detail-item">メールアドレス</th>
+            <th class="detail-item">電話番号</th>
+            <th class="detail-item">コメント</th>
+          </tr>
+          <% @joins.each do |participants|%>
+            <tbody>
+              <tr>
+                <td class="detail-value"><%= participants.name_kanji %></td>
+                <td class="detail-value"><%= participants.name_kana %></td>
+                <td class="detail-value"><%= participants.email %></td>
+                <td class="detail-value"><%= participants.phone %></td>
+              　<td class="detail-value"><%= participants.message %></td>
+              </tr>
+            </tbody>
+          <% end %>
+        </table>
+      </div>
+    </div>
   <% end %>
-</table>
+</div>
+
+<%= render 'shared/footer' %>

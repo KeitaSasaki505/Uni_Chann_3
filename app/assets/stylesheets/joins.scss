@@ -2,20 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.detail-table {
-  border-collapse: collapse;
-  margin-top: 30px;
+.joins-main {
+
 }
 
-.detail-item {
-  padding: 5px 10px;
-  background-color: rgb(211, 210, 210);
+.form-main {
+
 }
 
-.detail-value {
-  padding: 5px 10px;
+.form-edit {
+
 }
 
+.form-header-text {
+
+}
+
+// cdvボタン----------------------------
 .btn-square {
   display: inline-block;
   padding: 0.5em 1em;
@@ -31,3 +34,20 @@
   transform: translateY(4px);/*下に動く*/
   border-bottom: none;/*線を消す*/
 }
+
+// 一覧表-----------------------------------
+.detail-table {
+  border-collapse: collapse;
+  margin-top: 30px;
+  
+}
+
+.detail-item {
+  padding: 5px 10px;
+  background-color: rgb(211, 210, 210);
+}
+
+.detail-value {
+  padding: 5px 10px;
+}
+

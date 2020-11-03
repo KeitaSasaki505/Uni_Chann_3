@@ -3,20 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-  background-color: lemonchiffon;
+  background-color: rgb(255, 255, 255);
   position: relative;
+  height: 100vh;
+  color: rgb(75, 72, 72);
+  	
 }
 
-
+// ヘッダー----------------------------
 .header {
   width: 98vw;
-  height: 90px;
+  height: 87px;
   text-decoration: none;
   color: rgb(75, 72, 72);
   background-color: rgb(248, 181, 80);
   border-radius: 3%/50%;
   position: fixed;
   z-index: 10;
+  opacity: 0.9;
   
 }
 
@@ -61,8 +65,8 @@ a {
 // イベント一覧表示------------------------
 
 .event-p {
-  margin-top: 60px;
-  top: 100px;
+  margin: 60px 0px 30px;
+  top: 300px;
   background-color: rgb(255, 255, 255);
   position: absolute;
 }
@@ -109,14 +113,15 @@ a {
 }
 
 footer {
-  width: 98vw;
+  width: 100vw;
   height: 5vh;
-  margin: 30px auto;
+  opacity: 0.9;
   padding: 5px;
   color: #ffffff;
-  background-color: black;
-  position: absolute;
+  background-color: rgb(17, 1, 37);
+  position: fixed;
   bottom: 0;
+
 }
 
 footer p {
@@ -128,17 +133,21 @@ footer p {
 .event-btn {
   width: 120px;
   text-align: center;
-  border-radius: 4%;
-  bottom: 32px;
-  right: 32px;
+  border-radius: 50%;
+  bottom: 100px;
+  opacity: 0.7;
+  right: 40px;
   position: fixed;
   padding: 15px;
+  z-index: 30;
+  // background-color: rgb(221, 84, 4);
+  background: linear-gradient(#dd5404, #f19d7763);
 }
 
 .event-btn-text {
-  color: #8292eef8;
+  color: #000000;
   display: block;
-  font-size: 18px;
+  font-size: 20px;
   text-decoration: none;
   margin-bottom: 5px;
 }
@@ -147,7 +156,6 @@ footer p {
   width: 60%;
   height: 60%;
 }
-// --------------------------------
 
 // showページ------------------------
 
@@ -162,7 +170,9 @@ footer p {
 }
 
 .show-3 {
-  
+  position: absolute;
+  top: 100px;
+  margin-bottom: 100px;
 }
 
 .show-img {
@@ -261,28 +271,123 @@ footer p {
 
 }
 
+
+// イベント参加ボタン----------------------
 .join-btn {
-  background-color: rgb(248, 181, 80);
-  font-size: 12px;
-  color: white;
-  padding: 5px 20px;
-  margin: 10px 10px 10px 0px;
-  width: 80px;
-  height: 60px;
-  border: 0;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  border-radius: 50%;
+  bottom: 320px;
+  opacity: 0.7;
+  right: 40px;
+  position: fixed;
+  padding: 15px;
+  z-index: 30;
+  // background-color: #dd5404;
+  background: linear-gradient(#dd5404, #f19d7763);
+}
+
+.join-btn-icon {
+  width: 60%;
+  height: 60%;
+}
+
+.join-btn-text {
+  color: #000000;
+  display: block;
+  font-size: 25px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+
+// イベント編集ボタン--------------------------
+.edit-btn {
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  border-radius: 50%;
+  bottom: 480px;
+  opacity: 0.7;
+  right: 40px;
+  position: fixed;
+  padding: 15px;
+  z-index: 30;
+  // background-color: #dd5404;
+  background: linear-gradient(#dd5404, #f19d7763);
+}
+
+.edit-btn-text {
+  color: #000000;
+  display: block;
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.edit-icon {
+  width: 60%;
+  height: 60%;
+}
+
+// 参加者一覧ボタン------------------------
+.join-list-btn {
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  border-radius: 50%;
+  bottom: 370px;
+  opacity: 0.7;
+  right: 40px;
+  position: fixed;
+  padding: 15px;
+  z-index: 30;
+  // background-color: #dd5404;
+  background: linear-gradient(#dd5404, #f19d7763);
+}
+
+.join-list-text {
+  color: #000000;
+  display: block;
+  font-size: 25px;
+  text-decoration: none;
+  margin-bottom: 0px;
+}
+
+.join-list-icon {
+  width: 60%;
+  height: 60%;
+}
+
+// イベント削除ボタン------------------------
+.event-destroy-btn {
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border-radius: 50%;
+  bottom: 290px;
+  opacity: 0.7;
+  right: 55px;
+  position: fixed;
+  padding: 15px;
+  z-index: 30;
+  // background-color: #dd5404;
+  // background: linear-gradient(#4941b9, #9892d363);
+}
+
+.event-destroy-icon {
+  width: 110%;
+  height: 110%;
+}
+
+.event-destroy-text {
   
 }
 
-.event-destroy-btn {
-  background-color: #b34c1c;
-  font-size: 12px;
-  color: white;
-  padding: 5px 20px;
-  margin: 10px 10px 10px 0px;
-  width: 80px;
-  height: 60px;
-  border: 0;
-}
+
+
+
+
 
 .event-table {
 

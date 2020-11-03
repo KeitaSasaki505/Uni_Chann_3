@@ -1,0 +1,59 @@
+.form-header-text {
+  
+}
+
+.form-main {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 100px;
+  margin-bottom: 70px;
+  
+}
+
+.form-edit {
+  width: 60vw;
+}
+
+.form-1 {
+  margin: 15px;
+}
+
+.form-item {
+
+}
+
+.form-text {
+  background-color: white;
+  width: 50vw;
+  height: 29px;
+  border: 1;
+  border-color: rgb(189, 181, 181);
+  
+}
+
+// イベント,編集を投稿するボタン---------------
+.form-edit-btn {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  opacity: 0.7;
+  background-color: linear-gradient(#dd5404, #f19d7763);
+  position: fixed;
+  bottom: 320px;
+  right: 40px;
+  z-index: 30;
+}
+
+.form-edit-text {
+  color: #000000;
+  display: block;
+  font-size: 25px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.form-edit-icon {
+  width: 60%;
+  height: 60%;
+}
