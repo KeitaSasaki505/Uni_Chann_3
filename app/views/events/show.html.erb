@@ -98,7 +98,7 @@
               <li>
                 <div class="event-destroy-btn">
                   <span class="event-destroy-text">delete</span>
-                  <%= link_to image_tag('バックスペースのアイコン素材.png', class: 'event-destroy-icon'), event_path(@event.id), method: :delete %>
+                  <%= link_to image_tag('バックスペースのアイコン素材.png', class: 'event-destroy-icon'), event_path(@event.id), method: :delete, data: { confirm: "このイベントを削除してもよろしいですか?" } %>
                 </div>
               </li>
             </ul>

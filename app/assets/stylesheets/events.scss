@@ -15,6 +15,19 @@ a {
   color: inherit;
 }
 
+.notifications {
+  color: white;
+  text-align: center; 
+
+  .notice {
+    background-color: rgb(121, 200, 226);
+  }
+
+  .error {
+    background-color: rgb(235, 72, 72);
+  }
+}
+
 // ヘッダー----------------------------
 .header {
   width: 98vw;
@@ -412,3 +425,28 @@ footer p {
   
 }
 
+// ユーザー削除-----------------------
+.user-delete {
+  width: 30vw;
+  margin: 30px;
+  padding: 10px 20px 20px;
+  background-color: rgb(247, 230, 186);
+}
+
+.user-delete p {
+  font-size: 12px;
+  margin-left: 10px;
+  border-bottom: solid 2px rgb(250, 96, 25);
+}
+
+.user-delete-btn {
+  font-size: 12px;
+  border: solid 1px;
+  padding: 10px;
+  margin: 0px 0px 30px 10px;
+  
+}
+
+.user-edit-btn {
+  margin-left: 10px;
+}
