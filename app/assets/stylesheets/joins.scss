@@ -2,9 +2,45 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+
+// cdvボタン----------------------------
+
+.joins-csv-btn {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  border-radius: 50%;
+  bottom: 320px;
+  opacity: 0.7;
+  right: 40px;
+  position: fixed;
+  padding: 15px;
+  z-index: 30;
+  // background-color: #dd5404;
+  background: linear-gradient(#dd5404, #f19d7763);
+}
+
+.joins-csv-icon {
+  width: 60%;
+  height: 60%;
+}
+
+.joins-csv-text {
+  color: #000000;
+  display: block;
+  font-size: 20px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+// 一覧表-----------------------------------
 .detail-table {
   border-collapse: collapse;
-  margin-top: 30px;
+  border-color: rgb(75, 72, 72);
+  
+  
+  
 }
 
 .detail-item {
@@ -13,21 +49,6 @@
 }
 
 .detail-value {
-  padding: 5px 10px;
+  padding: 5px 15px;
 }
 
-.btn-square {
-  display: inline-block;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  background: #668ad8;/*ボタン色*/
-  color: #FFF;
-  border-bottom: solid 4px #627295;
-  border-radius: 3px;
-}
-.btn-square:active {
-  /*ボタンを押したとき*/
-  -webkit-transform: translateY(4px);
-  transform: translateY(4px);/*下に動く*/
-  border-bottom: none;/*線を消す*/
-}

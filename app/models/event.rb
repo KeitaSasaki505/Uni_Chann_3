@@ -2,11 +2,12 @@ class Event < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   
-  has_one_attached :image
+  has_many_attached :images
   belongs_to_active_hash :genre
   belongs_to :user
   has_many :joins
   has_many :comments
+
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 

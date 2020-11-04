@@ -56,19 +56,24 @@
         <%= f.submit "編集を保存", class: 'user-edit-btn' %>
       </div>
 
-<%# 退会するとtrueになる---------------------- %>
-    <div class="user-delete">
-      <% if user_signed_in? && @user.id == current_user.id %>
-        <h4>退会希望の方はこちら</h4>
+      <div class="user-delete">
+        <h3>退会希望の方はこちら</h3>
         <p>同じアカウントでログインできなくなりますが退会しますか？</p><br />
-        <%= link_to "はい、退会します", users_withdrawal_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", class: "user-delete-btn" %><br />
-      <% end %>
-    </div>
-<%# --------------------------------------------       %>
+        <%= button_to "はい、退会します", registration_path(resource_name), data: { confirm: "退会してもよろしいですか?" }, method: :delete, class: 'user-delete-btn' %><br />
+        <%= link_to "> Topへ戻る", :back %>
+      </div>
 
+<%# 退会するとtrueになる---------------------- %>
+      <div>
+      <% if user_signed_in? && @user.id == current_user.id %>
+        <%= link_to "退会", users_hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", class: "btn btn-outline-danger" %>
+      <% end %>
+      </div>
+<%# --------------------------------------------       %>
     </div>
   </div>
 <% end %>
+
 <%= render 'shared/footer' %>
 
 

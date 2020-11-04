@@ -1,42 +1,45 @@
-<h2>イベント参加申込</h2>
+<%= render 'shared/header' %>
 
 <%# <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-
-  <h3 class='form-header-text'>
-    参加フォーム入力
-  </h3>
-
-  <%= form_with model: @join, url: event_joins_path, class: 'registration-main', local: true do |f| %>
-
-  <div class="field">
-    <%= f.label :氏名%><br />
-    <%= f.text_field :name_kanji, placeholder:"名前(漢字フルネーム)" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :カナ入力%><br />
-    <%= f.text_field :name_kana, placeholder:"フリガナ" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :メールアドレス %><br />
-    <%= f.text_field :email %>
-  </div>
+<%= form_with model: @join, url: event_joins_path, class: 'registration-main', local: true do |f| %>
   
-  <div class="field">
-    <%= f.label :電話番号 %><br />
-    <%= f.text_field :phone %>
+  <div class="form-main">
+    <div lass="form-edit">
+      <h3 class='form-header-text'>
+        参加フォーム入力
+      </h3>
+
+      <div class="form-1">
+        <%= f.label :氏名, class: 'form-item' %><br />
+        <%= f.text_field :name_kanji, placeholder:"名前(漢字フルネーム)", class: "form-text" %>
+      </div>
+
+      <div class="form-1">
+        <%= f.label :カナ入力, class: 'form-item' %><br />
+        <%= f.text_field :name_kana, placeholder:"フリガナ", class: "form-text" %>
+      </div>
+
+      <div class="form-1">
+        <%= f.label :メールアドレス, class: 'form-item' %><br />
+        <%= f.text_field :email, class: "form-text" %>
+      </div>
+      
+      <div class="form-1">
+        <%= f.label :電話番号, class: 'form-item' %><br />
+        <%= f.text_field :phone, class: "form-text" %>
+      </div>
+
+      <div class="form-1">
+        <%= f.label :コメント, class: 'form-item' %><br />
+        <%= f.text_area :message, rows: 3, placeholder:"(空欄でも可：何か要望がございましたらご記入ください)", class: "form-text" %>
+      </div>
+
+      <div class="form-1">
+        <%= f.submit "参加登録する" ,class:"" %>
+      </div>
+    </div>
   </div>
+<% end %>
 
-  <div class="field">
-    <%= f.label :コメント %><br />
-    <%= f.text_area :message, rows: 3, placeholder:"(空欄でも可：何か要望がございましたらご記入ください)" %>
-  </div>
+<%= render 'shared/footer' %>
 
-  <div class="field">
-    <%= f.submit "参加登録する" ,class:"" %>
-  </div>
-
-  <% end %>
-
-  
