@@ -4,9 +4,19 @@
   <div class="show-2">
     <ul class="show-3">
     <h2><%= @event.project %></h2>
-      <div class="field">
-        <%= image_tag(@event.image.variant(resize: '1280x1000'), class: "item-img") %>
-      </div>
+      <% if @event.images.attached?%>
+        <div class="image-box">
+          <div class="main-image">
+            <%= image_tag(@event.images[0].variant(resize: '640x480'), class: "event-img") %>
+          </div>
+
+            <% @event.images[1..2].each do |image| %>
+              <div class="sub-image">
+                <%= image_tag(image.variant(resize: '320x240'), class: "event-img-sub") %>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
 
       <table class="detail-table">
         <tbody>

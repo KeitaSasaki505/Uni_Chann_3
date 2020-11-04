@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def hide
+  def withdrawal
     @user = User.find(params[:id])
     #is_deletedカラムにフラグを立てる(defaultはfalse)
     @user.update(is_deleted: true)

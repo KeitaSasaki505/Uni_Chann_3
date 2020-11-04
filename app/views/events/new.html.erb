@@ -11,7 +11,7 @@
 
       <div class="form-1">
         <%= f.label :イベントイメージ画像, class: 'form-item' %><br />
-        <%= f.file_field :image, class:'form-file-field' %><p>※クリックしてファイルをアップロード</p>
+        <%= f.file_field :images, direct_upload: true, multiple: true, class:'form-file-field' %><p>※クリックしてファイルをアップロード(3枚まで可)</p>
       </div>
 
       <div class="form-1">
@@ -50,8 +50,8 @@
       </div>
     
       <div class ="form-edit-btn">
-        <span class="form-edit-text">edit!</span>
-        <%= f.submit "edit!", class:"form-edit-icon" %>
+        <span class="form-edit-text"></span>
+        <%= f.submit "イベントを投稿", class:"form-edit-icon" %>
       </div>
     </div>
   </div>

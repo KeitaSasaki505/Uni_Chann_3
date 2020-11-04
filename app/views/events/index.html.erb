@@ -6,7 +6,7 @@
         <li class='list'>
           <%= link_to event_path(event.id) do %>
             <div class='event-img-content'>
-              <%= image_tag(event.image.variant(resize: '300x300'), class: "event-img-index")  if event.image.attached?%>
+              <%= image_tag(event.images[0].variant(resize: '300x300'), class: "event-img-index")  if event.images.attached?%>
             </div>
             <div class='event-info'>
               <h3 class='event-name'>

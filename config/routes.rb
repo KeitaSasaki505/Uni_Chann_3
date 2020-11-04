@@ -15,5 +15,5 @@ Rails.application.routes.draw do
     end
   end
   resources :users
-  put "/users/:id/hide" => "users#hide", as: 'users_hide'
+  put "/users/:id/withdrawal" => "users#withdrawal", as: 'users_withdrawal'
 end
