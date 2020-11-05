@@ -7,17 +7,20 @@
       <% if @event.images.attached?%>
         <div class="image-box">
           <div class="main-image">
-            <%= image_tag(@event.images[0].variant(resize: '640x480'), class: "event-img") %>
+            <%= image_tag(@event.images[0].variant(resize: '600x400'), class: "event-img") %>
           </div>
 
-            <% @event.images[1..2].each do |image| %>
-              <div class="sub-image">
-                <%= image_tag(image.variant(resize: '320x240'), class: "event-img-sub") %>
-              </div>
-            <% end %>
+            <div class="sub-image-box">
+              <% @event.images[1..2].each do |image| %>
+                <div class="sub-image">
+                  <%= image_tag(image.variant(resize: '200x200'), class: "event-img-sub") %>
+                </div>
+              <% end %>
+            </div>
           <% end %>
         </div>
-
+        
+    <div class="event-detail">
       <table class="detail-table">
         <tbody>
           <tr>
@@ -42,6 +45,7 @@
           </tr>
         </tbody>
       </table>
+    </div>
 
   <%# ----------------googlemap API -------------------%>
   <h3>開催場所詳細</h3>

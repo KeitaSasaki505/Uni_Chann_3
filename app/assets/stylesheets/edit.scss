@@ -40,6 +40,21 @@
   margin-left: 10px;
 }
 
+// 画像投稿のプレビュー-----------------
+.pre-images-box {
+  // display: flex;
+}
+.pre-images-view {
+
+}
+
+.img-preview {
+  margin: 10px;
+  width:180px;
+  height:180px;
+  object-fit: cover;
+}
+
 .form-text {
   background-color: white;
   margin-top: 7px;
@@ -71,5 +86,5 @@
 }
 
 .form-submit {
-  
+
 }
