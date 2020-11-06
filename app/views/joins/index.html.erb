@@ -23,11 +23,11 @@
           <% @joins.each do |participants|%>
             <tbody>
               <tr>
-                <td class="detail-value"><%= participants.name_kanji %></td>
-                <td class="detail-value"><%= participants.name_kana %></td>
+                <td width="90", class="detail-value"><%= participants.name_kanji %></td>
+                <td width="140", class="detail-value"><%= participants.name_kana %></td>
                 <td class="detail-value"><%= participants.email %></td>
                 <td class="detail-value"><%= participants.phone %></td>
-              　<td class="detail-value"><%= participants.message %></td>
+              　<td width="200", class="detail-value"><%= participants.message %></td>
               </tr>
             </tbody>
           <% end %>

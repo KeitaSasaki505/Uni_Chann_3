@@ -2,6 +2,7 @@
   color: rgb(75, 72, 72);
   display: flex;
   justify-content: center;
+  margin-bottom: 50px;
 }
 
 .about-in {
@@ -72,4 +73,31 @@
 
 .howto-content {
   font-size: 15px;
+}
+
+.about-to-main-btn {
+  width: 120px;
+  text-align: center;
+  border-radius: 50%;
+  bottom: 100px;
+  opacity: 0.7;
+  right: 40px;
+  position: fixed;
+  padding: 15px;
+  z-index: 30;
+  // background-color: rgb(221, 84, 4);
+  background: linear-gradient(#dd5404, #f19d7763);
+}
+
+.about-to-main-text {
+  color: #000000;
+  display: block;
+  font-size: 20px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.about-to-main-icon {
+  width: 60%;
+  height: 60%;
 }
