@@ -8,7 +8,12 @@ class User < ApplicationRecord
         has_many :events
         has_many :comments
 
-  
+  def self.guest
+    find_or_create_by!(email: 'test@test.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
+    end
+  end
         
   def active_for_authentication?
     super && (self.is_deleted == false)

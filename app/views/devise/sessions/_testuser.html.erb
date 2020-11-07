@@ -1,6 +1,0 @@
-
-    <%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
-      <%= f.hidden_field :email ,value: "test@test.com" %>
-      <%= f.hidden_field :password ,value: "test1234" %>
-      <%= f.submit "ゲストログイン", class: "form-guest" %>
-    <% end %>
