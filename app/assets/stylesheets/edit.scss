@@ -7,7 +7,7 @@
   justify-content: center;
   position: relative;
   top: 100px;
-  margin-bottom: 70px;
+  margin-bottom: 90px;
   
 }
 
@@ -67,11 +67,7 @@
 }
 
 // イベント,編集を投稿するボタン---------------
-.form-edit-btn {
-  width: 100px;
-  height: 100px;
-  margin-left: 25px;
-}
+
 
 .form-edit-text {
   color: #000000;
@@ -82,9 +78,33 @@
 }
 
 .form-edit-icon {
-
+  
 }
 
-.form-submit {
+.form-edit-btn {
+  margin-left: 25px;
+  border-radius: 5%;
+}
 
+
+//編集submitボタン
+.form-submit {
+  color: rgb(75, 72, 72);
+  display: block;
+  width: 50vw;
+  height: 35px;
+  background: linear-gradient(#dd5404, #f19d7763);
+  border: 0;
+  
+}
+
+//新規submitボタン
+.form-new-submit {
+  margin-left: 25px;
+  color: rgb(75, 72, 72);
+  display: block;
+  width: 50vw;
+  height: 35px;
+  background: linear-gradient(#dd5404, #f19d7763);
+  border: 0;
 }
