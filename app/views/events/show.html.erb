@@ -3,149 +3,173 @@
 <div class="show">
   <div class="show-2">
     <ul class="show-3">
-    <h2><%= @event.project %></h2>
+      <div class="show-title">
+        <h2 class="show-title-text">【<%= @event.genre.name %>】<%= @event.project %></h2>
+      </div>
+
       <% if @event.images.attached?%>
+      <div class="image-all">
         <div class="image-box">
           <div class="main-image">
-            <%= image_tag(@event.images[0].variant(resize: '640x480'), class: "event-img") %>
+            <%= image_tag(@event.images[0].variant(resize: '600x400'), class: "event-img") %>
           </div>
 
+          <div class="sub-image-box">
             <% @event.images[1..2].each do |image| %>
               <div class="sub-image">
-                <%= image_tag(image.variant(resize: '320x240'), class: "event-img-sub") %>
+                <%= image_tag(image.variant(resize: '195x195'), class: "event-img-sub") %>
               </div>
             <% end %>
-          <% end %>
-        </div>
-
-      <table class="detail-table">
-        <tbody>
-          <tr>
-            <th class="detail-item">カテゴリー</th>
-            <td class="detail-value"><%= @event.genre.name %></td>
-          </tr>
-          <tr>
-            <th class="detail-item">イベント概要</th>
-            <td class="detail-value"><%= @event.overview %></td>
-          </tr>
-          <tr>
-            <th class="detail-item">主催者</th>
-            <td class="detail-value"><%= @event.user.nickname %></td>
-          </tr>
-          <tr>
-            <th class="detail-item">開催予定日時</th>
-            <td class="detail-value"><%= @event.date %></td>
-          </tr>
-          <tr>
-            <th class="detail-item">開催場所</th>
-            <td class="detail-value"><%= @event.address %></td>
-          </tr>
-        </tbody>
-      </table>
-
-  <%# ----------------googlemap API -------------------%>
-  <h3>開催場所詳細</h3>
-
-  <script type="text/javascript">
-    function initMap() {
-  // latitude,longitudeから位置を特定
-      var test ={lat: <%= @event.latitude %>, lng: <%= @event.longitude %> };
-      var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 15, 
-                center: test
-                });
-      var transitLayer = new google.maps.TransitLayer();
-      transitLayer.setMap(map);
-
-      var contentString = '住所：<%= @event.address %>';
-      var infowindow = new google.maps.InfoWindow({
-        content: contentString
-      });
-
-  //  Map上の指定した位置にピンを挿して表示する
-      var marker = new google.maps.Marker({
-                    position:test,
-                    map: map,
-                    title: contentString
-                  });
-
-      marker.addListener('click', function() {
-        infowindow.open(map, marker);
-      });
-    }
-  </script>
-
-  <script async defer
-                src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
-  </script>
-
-  <style type="text/css">
-    #map { height: 320px;
-          width: 480px;}
-  </style>
-
-  <%# #mapの表示 %>
-  <div id="map"></div>
-
-  <%# ----------------googlemap API -------------------%>
-
-
-        <div class="join-entry">
-          <% if user_signed_in? && current_user.id == @event.user.id %>
-            <ul class="join-list">
-              <li>
-                <div class="edit-btn">
-                  <span class="edit-btn-text">Edit!</span>
-                  <%= link_to image_tag('太いリロードアイコン.png', class: "edit-icon"), edit_event_path, method: :get %>
-                </div>
-              </li>
-              <li>
-                <div class="join-list-btn">
-                  <span class="join-list-text">List!</span>
-                  <%= link_to image_tag('本棚のアイコン 2.png', size: '100x90', class: 'join-list-icon'), event_joins_path(@event.id) %>
-                </div>
-              </li>
-              <li>
-                <div class="event-destroy-btn">
-                  <span class="event-destroy-text">delete</span>
-                  <%= link_to image_tag('バックスペースのアイコン素材.png', class: 'event-destroy-icon'), event_path(@event.id), method: :delete, data: { confirm: "このイベントを削除してもよろしいですか?" } %>
-                </div>
-              </li>
-            </ul>
-          <% elsif user_signed_in? && ( current_user.id != @event.user_id ) %>
-            <div class="join-btn">
-              <span class="join-btn-text">Join!</span>
-              <%= link_to image_tag('グッジョブの手の無料アイコン2.png', size: '70x70', class: 'join-btn-icon'), new_event_join_path(@event.id) %>
-            </div>
-          <% end %>
-        </div>
-
-      <div class="comment-main">
-      <h3>コメント</h3>
-        <% @comments.each do |comment| %>
-          <div class="post">
-            <div class="post-content-img">
-              <%= image_tag(comment.user.image, class: "user-img" )%>
-            </div>
-            <div class="post-side">
-              <div class="post-content-username">
-                <%= comment.user.nickname %>
-              </div>
-              <div class="post-content-txt">
-                <%= comment.text %>
-              </div>
-              <div class="post-date">
-                <%= comment.created_at.to_s(:datetime_jp) %>
-              </div>
-            </div>
           </div>
-        <% end %>
+        </div>
+      </div>
+      <% end %>
 
-      <div class="post-comment-form">
-        <%= form_with(model:[@event, @comment], url: event_comments_path(@event.id), local: true) do |f|%>
-            <%= f.text_field :text, class: 'message', placeholder: 'イベントへのコメント入力欄' %>
-            <%= f.submit '送信', class: 'comment-btn' %>
-        <% end %>
+      <div class="eventer">
+        <h3 class="event-sub-title">イベント主催者</h3>
+        <div class="eventer-field">
+          <div class="event-detail-image">
+            <%= image_tag(@event.user.image.variant(resize: '60x60'), class: "eventer-image") %>
+          </div>
+          <div class="eventer-nickname">
+            <%= @event.user.nickname %>
+          </div>
+        </div>
+      </div>
+
+        <h3 class="event-sub-title">イベント内容</h3>
+        <div class="eventer-field">        
+          <%= @event.overview %>
+        </div>
+
+      <h3 class="event-sub-title">開催予定日時</h3>
+        <div class="eventer-field">
+          <%= @event.date %>
+        </div>
+
+      <h3 class="event-sub-title">開催場所</h3>
+        <div class="eventer-field">
+          <%= @event.address %>
+        </div>
+
+    <%# ----------------googlemap API -------------------%>
+    <h3 class="event-sub-title">開催場所詳細</h3>
+
+      <div class="eventer-field">
+        <script type="text/javascript">
+          function initMap() {
+        // latitude,longitudeから位置を特定
+            var test ={lat: <%= @event.latitude %>, lng: <%= @event.longitude %> };
+            var map = new google.maps.Map(document.getElementById('map'), {
+                      zoom: 15, 
+                      center: test
+                      });
+            var transitLayer = new google.maps.TransitLayer();
+            transitLayer.setMap(map);
+
+            var contentString = '住所：<%= @event.address %>';
+            var infowindow = new google.maps.InfoWindow({
+              content: contentString
+            });
+
+        //  Map上の指定した位置にピンを挿して表示する
+            var marker = new google.maps.Marker({
+                          position:test,
+                          map: map,
+                          title: contentString
+                        });
+
+            marker.addListener('click', function() {
+              infowindow.open(map, marker);
+            });
+          }
+        </script>
+
+        <script async defer
+                      src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=<%= ENV['GOOGLE_MAP_API_KEY'] %>&callback=initMap">
+        </script>
+
+        <style type="text/css">
+          #map { height: 320px;
+                width: 480px;}
+        </style>
+
+        <%# #mapの表示 %>
+        <div id="map"></div>
+      </div>
+
+    <%# ----------------googlemap API -------------------%>
+
+
+          <div class="join-entry">
+            <% if user_signed_in? && current_user.id == @event.user.id %>
+              <ul class="join-list">
+                <li>
+                  <div class="edit-btn">
+                    <span class="edit-btn-text">Edit!</span>
+                    <%= link_to image_tag('太いリロードアイコン.png', class: "edit-icon"), edit_event_path, method: :get %>
+                  </div>
+                </li>
+                <li>
+                  <div class="join-list-btn">
+                    <span class="join-list-text">List!</span>
+                    <%= link_to image_tag('本棚のアイコン 2.png', size: '100x90', class: 'join-list-icon'), event_joins_path(@event.id) %>
+                  </div>
+                </li>
+                <li>
+                  <div class="event-destroy-btn">
+                    <span class="event-destroy-text">delete</span>
+                    <%= link_to image_tag('バックスペースのアイコン素材.png', class: 'event-destroy-icon'), event_path(@event.id), method: :delete, data: { confirm: "このイベントを削除してもよろしいですか?" } %>
+                  </div>
+                </li>
+              </ul>
+            <% elsif user_signed_in? && ( current_user.id != @event.user_id ) %>
+              <div class="join-btn">
+                <span class="join-btn-text">Join!</span>
+                <%= link_to image_tag('グッジョブの手の無料アイコン2.png', size: '70x70', class: 'join-btn-icon'), new_event_join_path(@event.id) %>
+              </div>
+            <% end %>
+          </div>
+
+        <div class="comment-main">
+        <h3 class="event-sub-title">コメント</h3>
+          <% @comments.each do |comment| %>
+            <div class="post-all">
+              <div class="post">
+                <div class="post-content-img">
+                  <% if comment.user_id == @event.user_id %>
+                    <div class="comment-owner">
+                      <div>
+                        <%= image_tag '丸枠の中に王冠を配置したアイコン素材.png', class: "user-owner-img" %>
+                        <%= image_tag(comment.user.image, class: "comment-owner-img" )%>
+                      </div>
+                    </div>
+                  <% else %>
+                    <%= image_tag(comment.user.image, class: "user-img" )%>
+                  <% end %>
+                </div>
+                <div class="post-side">
+                  <div class="post-content-username">
+                    <%= comment.user.nickname %>
+                  </div>
+                  <div class="post-content-txt">
+                    <%= comment.text %>
+                  </div>
+                  <div class="post-date">
+                    <%= comment.created_at.to_s(:datetime_jp) %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+
+      <div class="post-comment-form-main">
+        <div class="post-comment-form">
+          <%= form_with(model:[@event, @comment], url: event_comments_path(@event.id), local: true) do |f|%>
+              <%= f.text_field :text, class: 'message', placeholder: 'イベントへのコメント入力欄' %>
+              <%= f.submit '送信', class: 'comment-btn' %>
+          <% end %>
+        </div>
       </div>
     </ul>
   </div>

@@ -1,14 +1,14 @@
 <%= render 'shared/header' %>
 
-<%# <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
   <div class="form-main">
     <div class="form-edit">
+      <%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
       <h3 class='form-header-text'>
         ユーザーログイン
       </h3>
+
+      <%= render 'devise/sessions/testuser'%>
 
       <div class="form-1">
         <%= f.label :メールアドレス, class: 'form-item' %><br />
