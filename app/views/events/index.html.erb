@@ -5,8 +5,15 @@
       <% @events.each do |event| %>
         <li class='list'>
           <%= link_to event_path(event.id) do %>
-            <div class='event-img-content'>
-              <%= image_tag(event.images[0].variant(resize: '300x300'), class: "event-img-index")  if event.images.attached?%>
+            <div class="event-img-join">
+              <div class='event-img-content'>
+                <%= image_tag(event.images[0].variant(resize: '300x300'), class: "event-img-index")  if event.images.attached?%>
+              </div>
+            <% if user_signed_in? && current_user.id == event.user.id %>
+              <%= image_tag '丸枠の中に王冠を配置したアイコン素材.png', class: "event-owners-mark" %>
+            <% elsif user_signed_in? && current_user.id &&  (event.joins.find_by(user_id: current_user.id)) != nil %>
+              <%= image_tag 'humangray.png', class: "event-join-mark" %>
+            <% end %>
             </div>
             <div class='event-info'>
               <h3 class='event-name'>

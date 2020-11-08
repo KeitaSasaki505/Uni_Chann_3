@@ -7,6 +7,7 @@ class User < ApplicationRecord
         has_one_attached :image
         has_many :events
         has_many :comments
+        has_many :joins
 
   def self.guest
     find_or_create_by!(email: 'test@test.com') do |user|
