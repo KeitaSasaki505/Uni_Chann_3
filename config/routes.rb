@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root to: "events#index"
   resources :events do
     collection do
+      get 'search'
       get 'about'
     end
     resources :comments

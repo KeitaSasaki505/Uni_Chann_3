@@ -1,7 +1,4 @@
 <header class="header">
-    <%# <div class="header-1">
-      <p>あなたの地域の掲示板</p>
-    </div> %>
     <div class="header-p">
       <div class="header-2">
         <h2><a href="/">Uni＊Chann</a></h2>
@@ -23,6 +20,19 @@
             <li><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post %></li>
           </ul>
         <% end %>
+      </div>
+    </div>
+    <div class="search-bar">
+      <div class="search-inbox">
+        <%= form_with(url: search_events_path, local: true, method: :get, class: "search-form") do |form| %>
+          <%= form.text_field :keyword, placeholder: "イベントを検索する", class: "search-input" %>
+          <%= form.submit "検索", class: "search-btn" %>
+        <% end %>
+      </div>
+      <div class ="search-inbox2">
+        <ul class='search-category'>
+          <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
+        </ul>
       </div>
     </div>
   </header>
