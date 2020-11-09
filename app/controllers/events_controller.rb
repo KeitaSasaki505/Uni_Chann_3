@@ -41,6 +41,10 @@ class EventsController < ApplicationController
     end
   end
 
+  def search
+    @events = Event.search(params[:keyword])
+  end
+
   def show
     @comment = Comment.new
     @comments = Comment.where(event_id: @event)

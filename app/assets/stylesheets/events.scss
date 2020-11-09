@@ -46,7 +46,7 @@ a {
 .header-p {
   display: flex;
   justify-content: space-between;
-  margin: 0px 20px 20px;
+  margin: 0px 20px 10px;
   
 }
 
@@ -83,6 +83,44 @@ a {
 
 .form-guest {
   margin: 15px;
+}
+
+.search-bar {
+  height: 60px;
+  display: flex;
+  
+}
+
+.search-inbox {
+
+}
+
+.search-input {
+  width: 100%;
+  margin-right: 10px;
+}
+
+.seatch-btn {
+  width: 10%;
+}
+
+
+.search-inbox2 {
+  
+}
+
+.search-category {
+  display: flex;
+  list-style: none;
+}
+
+.search-form {
+  text-align: center;
+  
+}
+
+.category-list {
+
 }
 
 // イベント一覧表示------------------------
@@ -146,7 +184,7 @@ a {
   width:35px;
   height:35px;
   background-color: rgb(27, 131, 250);
-  border: solid 2px white;
+  border: solid 3px white;
   border-radius: 50%; 
   z-index: 10;
   position: absolute;
