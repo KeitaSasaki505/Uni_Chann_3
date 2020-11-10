@@ -3,6 +3,7 @@
       <div class="header-2">
         <h2><a href="/">Uni＊Chann</a></h2>
       </div>
+      
       <div class="header-3">
         <%# ユーザーがログイン済みの場合表示条件分岐で表示を変える %>
         <% if user_signed_in? %>
@@ -22,17 +23,5 @@
         <% end %>
       </div>
     </div>
-    <div class="search-bar">
-      <div class="search-inbox">
-        <%= form_with(url: search_events_path, local: true, method: :get, class: "search-form") do |form| %>
-          <%= form.text_field :keyword, placeholder: "イベントを検索する", class: "search-input" %>
-          <%= form.submit "検索", class: "search-btn" %>
-        <% end %>
-      </div>
-      <div class ="search-inbox2">
-        <ul class='search-category'>
-          <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
-        </ul>
-      </div>
-    </div>
+    
   </header>

@@ -11,10 +11,8 @@
 
       <div class="form-1">
         <%= f.label :イベントイメージ画像, class: 'form-item' %><br />
-        <%= f.file_field :images, name: 'event[images][]', id: "event-images", direct_upload: true, multiple: true, class:'form-file-field' %>
-        <div id="pre-images"></div>
-        <p>※クリックしてファイルをアップロード(3枚まで可)</p>
-        <p><%= f.check_box :remove_images %>画像を削除する</p>
+        <%= f.file_field :images, name: 'event[images][]', id: "event-image-up", direct_upload: true, multiple: true, class:'form-file-field' %>
+        <div id="pre-images"></div> 
       </div>
 
       <div class="form-1">
@@ -52,9 +50,11 @@
         <%= f.text_area :address, placeholder:"例)東京都港区六本木1-1-1", class: "form-text" %>
       </div>
     
+      <div class="form-edit-btn0">
       <label class ="form-edit-btn">
         <%= f.submit "イベントを投稿", class:"form-new-submit" %>
       </label>
+      </div>
     </div>
   </div>
 <% end %>

@@ -13,8 +13,6 @@
         <%= f.label :イベントイメージ画像, class: 'form-item' %><br />
         <%= f.file_field :images, name: 'event[images][]', id: 'event-images', direct_upload: true, multiple: true, class:'form-file-field' %>
         <div id="pre-images"></div>
-        <p>※クリックしてファイルをアップロード(3枚まで可)</p>
-        <p><%= f.check_box :remove_images %>画像を削除する</p>
       </div>
 
       <div class="form-1">

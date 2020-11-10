@@ -59,21 +59,21 @@
         <script type="text/javascript">
           function initMap() {
         // latitude,longitudeから位置を特定
-            var test ={lat: <%= @event.latitude %>, lng: <%= @event.longitude %> };
-            var map = new google.maps.Map(document.getElementById('map'), {
+            const test ={lat: <%= @event.latitude %>, lng: <%= @event.longitude %> };
+            const map = new google.maps.Map(document.getElementById('map'), {
                       zoom: 15, 
                       center: test
                       });
-            var transitLayer = new google.maps.TransitLayer();
+            const transitLayer = new google.maps.TransitLayer();
             transitLayer.setMap(map);
 
-            var contentString = '住所：<%= @event.address %>';
-            var infowindow = new google.maps.InfoWindow({
+            const contentString = '住所：<%= @event.address %>';
+            const infowindow = new google.maps.InfoWindow({
               content: contentString
             });
 
         //  Map上の指定した位置にピンを挿して表示する
-            var marker = new google.maps.Marker({
+            const marker = new google.maps.Marker({
                           position:test,
                           map: map,
                           title: contentString

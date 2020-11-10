@@ -14,17 +14,21 @@ class Event < ApplicationRecord
   with_options presence: true do
     validates :overview
     validates :project
-    validates :date
     validates :address
     validates :email
     validates :phone
+    validates :images
+  end
+
+  with_options presence: true, format: { with: /\A[0-9]+\z/ } do
+    validates :date
   end
 
   validates :genre_id, numericality: { other_than: 0 }
 
   def self.search(search)
     if search != ""
-      Event.where('project LIKE(?)', "%#{search}%")
+      Event.where('project LIKE(?) or overview LIKE(?)', "%#{search}%", "%#{search}%")
     else
       Event.all
     end

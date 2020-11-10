@@ -4,6 +4,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
 
     // 選択した画像を表示する関数
     const createImageHTML = (blob) => {
+
       // 画像を表示するためのdiv要素を生成
       const imageElement = document.createElement('div')
       imageElement.setAttribute('class', "image-element")

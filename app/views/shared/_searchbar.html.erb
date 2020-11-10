@@ -1,0 +1,10 @@
+<%= form_with(url: search_events_path, local: true, method: :get, class: "search-form") do |f| %>
+  <div class="search-bar">
+    <div>
+      <%= f.text_field :keyword, placeholder: "イベントを検索する", class: "search-input" %>
+    </div>
+    <div>
+      <%= f.submit "検索", class: "search-btn" %>
+    </div>
+  </div>
+<% end %>
