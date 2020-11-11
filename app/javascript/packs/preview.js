@@ -1,6 +1,6 @@
 if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
   document.addEventListener('DOMContentLoaded', function(){
-    const clickUpload = document.getElementById('event-images');
+    const clickUpload = document.getElementById('file-field');
     const imageBoxBig = document.getElementById("pre-images");
 
     const createImageHTML = (blob, index) => {
@@ -9,8 +9,6 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
       const imageDataIndex = document.querySelector(`#pre-images[data-index="${index}"]`);
 
       if (imageDataIndex === null){
-
-      let imageElementNum = document.querySelectorAll('.image-box').length
 
         // 画像を表示するためのdiv要素を生成
         const imageBox = document.createElement('div');

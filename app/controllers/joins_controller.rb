@@ -1,7 +1,7 @@
 class JoinsController < ApplicationController
   require 'csv'
 
-  # before_action :authenticate_user!, only: [:new]
+  before_action :authenticate_user!, only: [:new]
   before_action :set_join, only: [:index, :create, :show]
   
   def index
@@ -19,9 +19,13 @@ class JoinsController < ApplicationController
   end
 
   def create
-    @join = @event.joins.new(join_params)
-    if @join.save
-      redirect_to root_path
+    if current_user.joins == nil
+      @join = @event.joins.new(join_params)
+      if @join.save
+        redirect_to root_path
+      else
+        render :new
+      end
     else
       render :new
     end

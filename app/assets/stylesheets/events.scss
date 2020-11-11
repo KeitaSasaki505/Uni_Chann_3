@@ -43,6 +43,13 @@ a {
   
 }
 
+.unirogo {
+  margin-top: 18px;
+  width: 200px;
+  height: 43px;
+object-fit: contain;
+}
+
 .header-p {
   display: flex;
   justify-content: space-between;
@@ -52,6 +59,10 @@ a {
 
 .header-2 {
   padding: 6px;
+}
+
+.header-2 p {
+  font-family: 'Chalkduster';
 }
 
 .header-3 {
@@ -118,6 +129,17 @@ a {
   background-color: #eca219;
 }
 
+.back-btn {
+  position: fixed;
+  top: 50%;
+  left: 10;
+  width: 3%;
+  height: 5%;
+  z-index: 100;
+  opacity: 0.9;
+  margin: 15px 0px 15px 40px;
+  object-fit: contain;
+}
 
 .search-inbox2 {
   
@@ -508,7 +530,35 @@ footer p {
   height: 100px;
   text-align: center;
   border-radius: 50%;
-  bottom: 320px;
+  bottom: 40%;
+  opacity: 0.7;
+  right: 40px;
+  position: fixed;
+  padding: 15px;
+  z-index: 30;
+  // background-color: #dd5404;
+  background: linear-gradient( #f7f6f860,#685bf8ee);
+}
+
+.join-btn-icon {
+  width: 70%;
+  height: 70%;
+}
+
+.join-btn-text {
+  color: #000000;
+  display: block;
+  font-size: 20px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.join-done-btn {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  border-radius: 50%;
+  bottom: 40%;
   opacity: 0.7;
   right: 40px;
   position: fixed;
@@ -518,17 +568,9 @@ footer p {
   background: linear-gradient(#dd5404, #f19d7763);
 }
 
-.join-btn-icon {
+.join-done-icon {
   width: 60%;
   height: 60%;
-}
-
-.join-btn-text {
-  color: #000000;
-  display: block;
-  font-size: 20px;
-  text-decoration: none;
-  margin-bottom: 5px;
 }
 
 //イベント参加決定ボタン

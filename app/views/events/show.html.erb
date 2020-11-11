@@ -1,5 +1,5 @@
 <%= render 'shared/header' %>
-
+<%= render 'shared/back'%>
 <div class="show">
   <div class="show-2">
     <ul class="show-3">
@@ -123,10 +123,15 @@
                   </div>
                 </li>
               </ul>
-            <% elsif user_signed_in? && ( current_user.id != @event.user_id ) %>
+            <% elsif user_signed_in? && ( current_user.id != @event.user_id ) && (@event.joins.find_by(user_id: current_user.id)) == nil%>
               <div class="join-btn">
                 <span class="join-btn-text">Join!</span>
-                <%= link_to image_tag('グッジョブの手の無料アイコン2.png', size: '70x70', class: 'join-btn-icon'), new_event_join_path(@event.id) %>
+                <%= link_to image_tag('ランニングアイコン2.png', size: '70x70', class: 'join-btn-icon'), new_event_join_path(@event.id) %>
+              </div>
+            <% elsif user_signed_in? && ( current_user.id != @event.user_id ) && (@event.joins.find_by(user_id: current_user.id)) != nil%>
+              <div class="join-done-btn">
+                <span class="join-btn-text">Done!</span>
+                <%= link_to image_tag('グッジョブの手の無料アイコン2.png', size: '70x70', class: 'join-done-icon') %>
               </div>
             <% end %>
           </div>

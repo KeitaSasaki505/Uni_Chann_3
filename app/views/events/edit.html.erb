@@ -1,5 +1,5 @@
 <%= render 'shared/header' %>
-
+<%= render 'shared/back'%>
 <%# <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <%= form_with model: @event, class: 'registration-main', local: true do |f| %>
   
@@ -42,7 +42,7 @@
 
       <div class="form-1">
         <%= f.label :電話番号, class: 'form-item' %><br />
-        <%= f.telephone_field :phone, placeholder:"例）090-1111-1111", class: "form-text" %>
+        <%= f.telephone_field :phone, placeholder:"例）09011111111", class: "form-text" %>
       </div>
 
       <div class="form-1">
