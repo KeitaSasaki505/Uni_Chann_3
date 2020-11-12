@@ -10,8 +10,12 @@
         <% if user_signed_in? %>
           <ul class="login">
             <li><%= link_to "Uni＊Channとは", about_events_path %></li>
-            <li><%= link_to image_tag(current_user.image, class: "user-img" ), edit_user_registration_path %></li>
-            <%# <li><%= link_to current_user.nickname, edit_user_registration_path, class: "user-nickname" %></li>
+              <% if current_user.image.attached? %>
+                <li><%= link_to image_tag(current_user.image, class: "user-img" ), edit_user_registration_path %></li>
+              <% else %>
+                <li><%= image_tag('人物の無料素材.png', class: "user-img" ) %></li>
+              <%# <li><%= link_to current_user.nickname, edit_user_registration_path, class: "user-nickname" %></li>
+              <% end %>
             <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
           </ul>
           <% else %>

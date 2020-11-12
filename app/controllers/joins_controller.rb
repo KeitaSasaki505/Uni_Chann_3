@@ -1,21 +1,29 @@
 class JoinsController < ApplicationController
   require 'csv'
 
-  before_action :authenticate_user!, only: [:new]
-  before_action :set_join, only: [:index, :create, :show]
+  before_action :authenticate_user!, only: [:index, :new, :create]
+  before_action :set_join, only: [:index, :new, :create]
   
   def index
-    @joins = Join.where(event_id: @event)
-    respond_to do |format|
-      format.html
-      format.csv do |csv|
-        send_posts_csv(@joins)
+    if current_user.id == @event.user.id
+      @joins = Join.where(event_id: @event)
+      respond_to do |format|
+        format.html
+        format.csv do |csv|
+          send_posts_csv(@joins)
+        end
       end
+    else
+      redirect_to root_path
     end
   end
 
   def new
-    @join = Join.new
+    if current_user.id == @event.user.id 
+      redirect_to root_path
+    else
+      @join = Join.new
+    end
   end
 
   def create
@@ -29,16 +37,6 @@ class JoinsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
-    
-  end
-
-  def update
-  end
-
-  def destroy
   end
 
   private

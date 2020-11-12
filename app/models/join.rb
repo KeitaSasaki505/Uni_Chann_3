@@ -8,7 +8,7 @@ class Join < ApplicationRecord
     validates :phone
   end
 
-  with_options presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/, message: 'Full-width characters' } do
+  with_options presence: true, format: { with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/, message: 'Full-width characters' } do
     validates :name_kanji
   end
 

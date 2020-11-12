@@ -29,7 +29,11 @@
         <h3 class="event-sub-title">イベント主催者</h3>
         <div class="eventer-field">
           <div class="event-detail-image">
-            <%= image_tag(@event.user.image.variant(resize: '60x60'), class: "eventer-image") %>
+            <% if @event.user.image.attached? %>
+              <%= image_tag(@event.user.image.variant(resize: '60x60'), class: "eventer-image") %>
+            <% else %>
+              <%= image_tag('人物の無料素材.png', class: "eventer-image" ) %>
+            <% end %>
           </div>
           <div class="eventer-nickname">
             <%= @event.user.nickname %>
@@ -130,7 +134,7 @@
               </div>
             <% elsif user_signed_in? && ( current_user.id != @event.user_id ) && (@event.joins.find_by(user_id: current_user.id)) != nil%>
               <div class="join-done-btn">
-                <span class="join-btn-text">Done!</span>
+                <span class="joined-btn-text" >Registered!</span>
                 <%= link_to image_tag('グッジョブの手の無料アイコン2.png', size: '70x70', class: 'join-done-icon') %>
               </div>
             <% end %>
@@ -145,13 +149,28 @@
                 <%# オーナーがコメントした場合はアイコンにマーク %>
                   <% if comment.user_id == @event.user_id %>
                     <div class="comment-owner">
-                      <div>
-                        <%= image_tag '丸枠の中に王冠を配置したアイコン素材.png', class: "user-owner-img" %>
-                        <%= image_tag(comment.user.image, class: "comment-owner-img" )%>
-                      </div>
+                      <% if comment.user.image.attached? %>
+                        <div>
+                          <%= image_tag '丸枠の中に王冠を配置したアイコン素材.png', class: "user-owner-img" %>
+                          <%= image_tag comment.user.image, class: "comment-owner-img" %>
+                        </div>
+                      <% else %>
+                        <div>
+                          <%= image_tag '丸枠の中に王冠を配置したアイコン素材.png', class: "user-owner-img" %>
+                          <%= image_tag '人物の無料素材.png', class: "comment-owner-img" %>
+                        </div>
+                      <% end %>
                     </div>
                   <% else %>
-                    <%= image_tag(comment.user.image, class: "user-img" )%>
+                    <% if comment.user.image.attached? %>
+                      <div>
+                        <%= image_tag comment.user.image, class: "comment-owner-img" %>
+                      </div>
+                    <% else %>
+                      <div>
+                        <%= image_tag '人物の無料素材.png', class: "comment-owner-img" %>
+                      </div>
+                    <% end %>
                   <% end %>
                 </div>
                 <div class="post-side">

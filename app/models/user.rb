@@ -11,20 +11,13 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
+    validates :name_kanji, format: { with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/, message: '全角で入力してください' }
+    validates :name_kana, format: { with: /\A[ァ-ン]+\z/, message: '全角カタカナで入力してください' }
     validates :email, uniqueness: true
     validates :password, length: { minimum: 8 }
     PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-    validates_format_of :password, with: PASSWORD_REGEX, message: 'Include both letters and numbers'
+    validates_format_of :password, with: PASSWORD_REGEX, message: '文字と数字を含めたパスワードにしてください'
   end
-
-  with_options presence: true, format: { with: /\A[ぁ-んァ-ン一-龥]+\z/, message: 'Full-width characters' } do
-    validates :name_kanji
-  end
-
-  with_options presence: true, format: { with: /\A[ァ-ン]+\z/, message: 'Full-width katakana characters' } do
-    validates :name_kana
-  end
-
 
   def self.guest
     find_or_create_by!(email: 'test@test.com') do |user|

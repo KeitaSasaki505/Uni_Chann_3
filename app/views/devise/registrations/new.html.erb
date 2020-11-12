@@ -6,12 +6,11 @@
 
   <div class="form-main">
     <div class="form-edit">
-    <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
-    <%= render "devise/shared/error_messages", resource: resource %>  
+    <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>  
       <h3 class='form-header-text'>
         新規会員情報入力
       </h3>
-
+      <%= render "devise/shared/error_messages", resource: resource %>
       <div class="form-1">
         <%= f.label :プロフィール画像, class: 'form-item' %><br />
         <%= f.file_field :image, class: "form-file-field" %><p>※クリックしてファイルをアップロード</p>

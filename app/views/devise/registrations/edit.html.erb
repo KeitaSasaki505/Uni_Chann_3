@@ -1,13 +1,13 @@
 <%= render 'shared/header' %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
+  
   <div class="form-main">
     <div class="form-edit">
       <h2>
       プロフィールの編集/退会
       </h2>
+      <%= render "devise/shared/error_messages", resource: resource %>
       <div class="form-1">
         <%= f.label :プロフィール画像, class: 'form-item' %><br />
         <%= f.file_field :image, class: "form-file-field" %><p>※クリックしてファイルをアップロード</p>

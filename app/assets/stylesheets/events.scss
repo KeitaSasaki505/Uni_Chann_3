@@ -537,7 +537,7 @@ footer p {
   padding: 15px;
   z-index: 30;
   // background-color: #dd5404;
-  background: linear-gradient( #f7f6f860,#685bf8ee);
+  background: linear-gradient( #dd5404, #f19d7763);
 }
 
 .join-btn-icon {
@@ -549,6 +549,14 @@ footer p {
   color: #000000;
   display: block;
   font-size: 20px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.joined-btn-text {
+  color: #000000;
+  display: block;
+  font-size: 12px;
   text-decoration: none;
   margin-bottom: 5px;
 }

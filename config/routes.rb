@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
+
   root to: "events#index"
   resources :events do
     collection do
@@ -21,7 +22,9 @@ Rails.application.routes.draw do
       end
     end
   end
+
   resources :users
+
   put "/users/:id/withdrawal" => "users#withdrawal", as: 'users_withdrawal'
-  post '/homes/guest_sign_in', to: 'homes#new_guest'
+  
 end

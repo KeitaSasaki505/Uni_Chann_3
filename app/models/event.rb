@@ -18,10 +18,7 @@ class Event < ApplicationRecord
     validates :email
     validates :images
     validates :date
-  end
-
-  with_options presence: true, format: { with: /\A[0-9]+\z/ } do
-    validates :phone
+    validates :phone, format: { with: /\A[0-9]+\z/ }
   end
 
   validates :genre_id, numericality: { other_than: 0 }
