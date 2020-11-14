@@ -5,9 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_one_attached :image
-  has_many :events
+  has_many :events, dependent: :destroy
   has_many :comments
   has_many :joins
+  has_many :likes, dependent: :destroy
+  has_many :liked_events, through: :likes, source: :event
 
   with_options presence: true do
     validates :nickname
@@ -28,5 +30,9 @@ class User < ApplicationRecord
         
   def active_for_authentication?
     super && (self.is_deleted == false)
+  end
+
+  def already_liked?(event)
+    self.likes.exists?(event_id: event.id)
   end
 end

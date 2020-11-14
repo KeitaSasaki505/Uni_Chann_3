@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+  is_impressionable
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   
@@ -7,6 +8,8 @@ class Event < ApplicationRecord
   belongs_to :user
   has_many :joins
   has_many :comments
+  has_many :likes
+  has_many :liked_users, through: :likes, source: :user
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
@@ -30,4 +33,6 @@ class Event < ApplicationRecord
       Event.all
     end
   end
+
+  
 end

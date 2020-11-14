@@ -3,18 +3,19 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     passwords: 'users/passwords'
   }
+  root to: "events#index"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   devise_scope :user do
     post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
 
-  root to: "events#index"
   resources :events do
     collection do
       get 'search'
       get 'about'
     end
     resources :comments
+    resources :likes, only: [:create, :destroy]
     resources :joins do
       collection do
         # デフォルト形式をcsvに設定

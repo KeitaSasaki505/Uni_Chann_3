@@ -1,5 +1,6 @@
 <%= render 'shared/header' %>
 <%= render 'shared/back'%>
+
 <%# <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <%= form_with model: @join, url: event_joins_path, class: 'registration-main', local: true do |f| %>
   
@@ -34,9 +35,9 @@
         <%= f.text_area :message, rows: 3, placeholder:"(空欄でも可：何か要望がございましたらご記入ください)", class: "form-text" %>
       </div>
 
-      <label class="form-1">
-        <%= f.submit "参加する" , class:"submit-btn" %>
-      </label>
+      <div class="form-1">
+        <%= f.submit "参加する", class:"submit-btn" %>
+      </div>
     </div>
   </div>
 <% end %>

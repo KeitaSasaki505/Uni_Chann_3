@@ -1,10 +1,10 @@
 <%= render 'shared/header' %>
 <%= render 'shared/searchbar'%>
-
   <div class="event-p">
     <div class="event-list">
-      <% @events.each do |event| %>
+      <% @results.each do |event| %>
         <li class='list'>
+        <%= event.liked_users.count %>
           <%= link_to event_path(event.id) do %>
             <div class="event-img-join">
               <div class='event-img-content'>
@@ -39,5 +39,3 @@
         <%= image_tag '万年筆の無料アイコン素材.png' , size: '185x50' ,class: "event-btn-icon" %>
       </a>
     </div>
-
-<%= render 'shared/footer' %>

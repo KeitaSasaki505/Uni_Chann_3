@@ -19,7 +19,7 @@ class JoinsController < ApplicationController
   end
 
   def new
-    if current_user.id == @event.user.id 
+    if (current_user.id == @event.user.id) || (@event.joins.find_by(user_id: current_user.id)) != nil
       redirect_to root_path
     else
       @join = Join.new
@@ -27,14 +27,11 @@ class JoinsController < ApplicationController
   end
 
   def create
-    if current_user.joins == nil
-      @join = @event.joins.new(join_params)
-      if @join.save
-        redirect_to root_path
-      else
-        render :new
-      end
+    @join = @event.joins.new(join_params)
+    if @join.save
+      redirect_to root_path, notice: "ご参加頂きありがとうございます！当日は楽しみましょう！"
     else
+      flash[:alert] = "情報が正しく入力されませんでした"
       render :new
     end
   end
