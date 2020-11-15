@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-  is_impressionable
+  is_impressionable counter_cache: true
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   
@@ -26,13 +26,4 @@ class Event < ApplicationRecord
 
   validates :genre_id, numericality: { other_than: 0 }
 
-  def self.search(search)
-    if search != ""
-      Event.where('project LIKE(?) or overview LIKE(?)', "%#{search}%", "%#{search}%")
-    else
-      Event.all
-    end
-  end
-
-  
 end

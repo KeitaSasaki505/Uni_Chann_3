@@ -11,11 +11,13 @@
       </h3>
 
       <div class="form-1">
-        <%= f.label :イベントイメージ画像, class: 'form-item' %><br />
-        <%= f.file_field :images, name: 'event[images][]', id: "event-images", direct_upload: true, multiple: true, class:'form-file-field' %>
+        <label for="event-image" class="form-item", id="file-field">
+        <span>イベントイメージ画像をアップロード</span>
+        <%= f.file_field :images, name: 'event[images][]', id: "event-image", direct_upload: true, multiple: true, data: {index:0}, class:'form-file-field' %>
+        </label>
       </div>
       
-      <div id="pre-images"></div>
+      <div id="pre-images" class="pre-imagesbox"></div>
 
       <div class="form-1">
         <%= f.label :イベントの種類, class: 'form-item' %><br />

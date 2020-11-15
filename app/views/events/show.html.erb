@@ -7,6 +7,7 @@
         <h2 class="show-title-text">【<%= @event.genre.name %>】<%= @event.project %></h2>
       </div>
       
+      
 
       <% if @event.images.attached?%>
       <div class="image-all">
@@ -23,28 +24,31 @@
             <% end %>
           </div>
         </div>
-        <div class="goog-view">
-        <%# ーーーいいね機能ーーーーーーーーーーー %>
-        <div>
-        <h3>いいね件数: <%= @event.likes.count %></h3>
-        <% if current_user.already_liked?(@event) %>
-          <%= button_to 'いいねを取り消す', event_like_path(@event), method: :delete %>
-        <% else %>
-          <%= button_to 'いいね', event_likes_path(@event) %>
-        <% end %>
-        <%# <h2>いいねしたユーザー</h2>
-        <% @event.liked_users.each do |user| %>
-          <%# <li><%= user.email %></li>
-        <%# <% end %> 
-        </div>
-        <%# ーーーいいね機能ーーーーーーーーーーー %>
-        <div>
-        <h3>閲覧数：</h3><%= number_with_delimiter(@page_views) %>
-        </div>
-        </div>
-        
       </div>
       <% end %>
+
+      <div class="event-index-like-box2">
+        <div class="event-index-set">
+          <div class="goodimage-count">
+            <%= image_tag 'ハートのアイコン素材 1.png', class: "event-index-like-image2"%>
+            <%= @event.likes.count %>
+          </div>
+
+          <% if user_signed_in? %>
+            <div class="like-dis">
+              <% if current_user.already_liked?(@event) %>
+                <%= button_to 'Cancel', event_like_path(@event), method: :delete, class: "like-dis-btn"%>
+              <% else %>
+                <%= button_to 'Nice！', event_likes_path(@event), class: "like-dis-btn" %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+        <div class="event-index-set">
+          <%= image_tag '双眼鏡アイコン4.png', class: "event-index-like-image2" %>
+          <%=  @event.impressionist_count %>
+        </div>
+      </div>
 
       <div class="eventer">
         <h3 class="event-sub-title">イベント主催者</h3>

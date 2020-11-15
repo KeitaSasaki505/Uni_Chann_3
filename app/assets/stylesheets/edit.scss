@@ -41,8 +41,8 @@
 }
 
 // 画像投稿のプレビュー-----------------
-.pre-images-box {
-  // display: flex;
+.pre-imagesbox {
+  display: flex;
 }
 .pre-images-view {
 
@@ -53,6 +53,10 @@
   width:180px;
   height:180px;
   object-fit: cover;
+}
+
+.image-element {
+  display: flex;
 }
 
 //プレビューの中の削除編集ボタン

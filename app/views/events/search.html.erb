@@ -1,10 +1,10 @@
 <%= render 'shared/header' %>
 <%= render 'shared/searchbar'%>
+
   <div class="event-p">
     <div class="event-list">
       <% @results.each do |event| %>
         <li class='list'>
-        <%= event.liked_users.count %>
           <%= link_to event_path(event.id) do %>
             <div class="event-img-join">
               <div class='event-img-content'>
@@ -26,6 +26,16 @@
               <div class='event-date'>
                 <span>開催予定日：<%= event.date %></span>
               </div>
+              <div class="event-index-like-box">
+              <div>
+                <%= image_tag 'ハートのアイコン素材 1.png', class: "event-index-like-image" %>
+                <%= event.likes.count%>
+              </div>
+              <div>
+                <%= image_tag '双眼鏡アイコン4.png', class: "event-index-like-image" %>
+                <%= number_with_delimiter(@page_views) %>
+              </div>
+            </div>
             </div>
           <% end %>
         </li>

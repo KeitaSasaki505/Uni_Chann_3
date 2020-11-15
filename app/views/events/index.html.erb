@@ -6,11 +6,10 @@
     <div class="event-list">
       <% @events.each do |event| %>
         <li class='list'>
-        <%= event.liked_users.count %>
           <%= link_to event_path(event.id) do %>
             <div class="event-img-join">
               <div class='event-img-content'>
-                <%= image_tag(event.images[0].variant(resize: '300x300'), class: "event-img-index")  if event.images.attached?%>
+                <%= image_tag(event.images[0].variant(resize: '280x280'), class: "event-img-index")  if event.images.attached?%>
               </div>
               <% if user_signed_in? && current_user.id == event.user.id %>
                 <%= image_tag '丸枠の中に王冠を配置したアイコン素材.png', class: "event-owners-mark" %>
@@ -27,6 +26,16 @@
               </div>
               <div class='event-date'>
                 <span>開催予定日：<%= event.date %></span>
+              </div>
+            </div>
+            <div class="event-index-like-box">
+              <div class="event-index-set">
+                <%= image_tag 'ハートのアイコン素材 1.png', class: "event-index-like-image" %>
+                <%= event.likes.count%>
+              </div>
+              <div class="event-index-set">
+                <%= image_tag '双眼鏡アイコン4.png', class: "event-index-like-image" %>
+                <%=  event.impressionist_count %>
               </div>
             </div>
           <% end %>
