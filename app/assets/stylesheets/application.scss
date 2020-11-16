@@ -19,8 +19,8 @@
   font-size: 13px;
   text-align: center; 
   position: fixed;
-  top: 150px;
-  right:150px;
+  top: 95px;
+  left: 0px;
   width: 100vw;
   z-index: 100;
 
@@ -29,10 +29,25 @@
   }
 
   .alert {
-    background-color: rgb(235, 72, 72);
+    background-color: rgb(235, 31, 31);
+    color: white;
+    font-size: 13px;
+    text-align: center; 
+    position: fixed;
+    top: 95px;
+    left: 0px;
+    width: 100vw;
   }
 
   .error {
-    background-color: rgb(235, 72, 72);
+    background-color: rgb(5, 1, 1);
+    color: white;
+    font-size: 13px;
+    text-align: center; 
+    position: fixed;
+    top: 95px;
+    left: 0px;
+    width: 100vw;
   }
 }
+

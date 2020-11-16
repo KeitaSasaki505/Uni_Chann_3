@@ -1,23 +1,25 @@
 .search-bar {
   position: fixed;
-  top: 120px;
+  top: 100px;
   z-index: 100;
   opacity: 0.9;
   margin: 15px 0px 15px 40px;
-  align-items: center;
   display: flex;
-  justify-content: center;
   
 }
 
 .search-p {
   border: dashed 1px #eca219;
   background-color: #ffffff;
-  border-radius: 5%/10%;
+  border-radius: 2%/10%;
 }
 
 .search-box {
   
+}
+
+.search-box h3 {
+  text-align: center;
 }
 
 .search-box-sub {
@@ -25,15 +27,17 @@
 }
 
 .search-box-1 {
+  display: flex;
   margin: 20px;
 }
 
 .search-text {
+  font-weight: bold;
   font-size: 12px;
 }
 
 .search-box-2 {
-  margin: 20px;
+  margin-left: 20px;
 }
 
 .search-category-field {
@@ -58,7 +62,7 @@
 .search-btn {
   width: 100%;
   height: 36px;
-  font-size: 12px;
+  font-size: 17px;
   font-weight: 700;
   color: #ffffff;
   border: 0;

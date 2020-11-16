@@ -1,6 +1,6 @@
 if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
   document.addEventListener('DOMContentLoaded', function() {
-    const ImageList = document.getElementById('pre-images')
+    const ImageList = document.getElementById('user-image')
 
     // 選択した画像を表示する関数
     const createImageHTML = (blob) => {
@@ -34,7 +34,7 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
       })
     }
 
-    document.getElementById('event-images').addEventListener('change', (e) => {
+    document.getElementById('user-images').addEventListener('change', (e) => {
       let file = e.target.files[0];
       let blob = window.URL.createObjectURL(file);
 

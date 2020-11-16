@@ -23,7 +23,7 @@
 }
 
 .form-1 {
-  margin: 15px;
+  margin: 25px;
 }
 
 .form-1 p {
@@ -31,21 +31,47 @@
   margin-left: 10px;
 }
 
-.form-item {
+
+.form-file-field {
+  display: none;
+}
+
+.user-file-field {
+  display: none;
+}
+
+.user-imageupload {
+  width: 50%;
+  background-color: rgb(247, 177, 48);
+  color: white;
+  border: dashed 2px #fd2c2c;
+  border-radius: 4%/50%;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+
+// 画像投稿のプレビュー-----------------
+.form-2 {
+  display: block;
+  justify-content: center;
+  margin: 30px;
+}
+
+.image-box {
   
 }
 
-.form-file-field {
-  margin-top: 7px;
-  margin-left: 10px;
-}
-
-// 画像投稿のプレビュー-----------------
-.pre-imagesbox {
-  display: flex;
-}
-.pre-images-view {
-
+.form-item {
+  width: 50%;
+  background-color: rgb(247, 177, 48);
+  color: white;
+  border: dashed 2px #fd2c2c;
+  border-radius: 4%/50%;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
 }
 
 .img-preview {
@@ -53,15 +79,31 @@
   width:180px;
   height:180px;
   object-fit: cover;
+  border-radius: 10%;
 }
 
-.image-element {
+.pre-imagesbox {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+//画像アップロードボタン
+.upload-btn {
+  display: none;
+
+}
+
+label {
+  
 }
 
 //プレビューの中の削除編集ボタン
-.change-box {
-
+.change-box-edit-delete {
+  cursor: pointer;
+  
 }
 
 
@@ -92,13 +134,10 @@
 }
 
 .form-edit-btn {
-  margin-left: 25px;
+  margin-left: 33px;
   border-radius: 5%;
 }
 
-.form-edit-btn0 {
-
-}
 
 //編集submitボタン
 .form-submit {

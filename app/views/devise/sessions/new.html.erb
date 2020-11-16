@@ -9,18 +9,18 @@
       </h3>
 
       <div class="form-1">
-        <%= f.label :メールアドレス, class: 'form-item' %><br />
+        <%= f.label :メールアドレス %><br />
         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"PC・携帯どちらでも可", class: "form-text" %>
       </div>
 
       <div class="form-1">
-        <%= f.label :パスワード, class: 'form-item' %><br />
+        <%= f.label :パスワード%><br />
         <%= f.password_field :password, autocomplete: "new-password", placeholder:"8文字以上の半角英数字", class: "form-text" %>
         
       </div>
 
       <div class="form-1">
-        <%= f.label :パスワード（確認のためもう一度）, class: 'form-item' %><br />
+        <%= f.label :パスワード（確認のためもう一度） %><br />
         <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"同じパスワードを入力", class: "form-text" %>
       </div>
 

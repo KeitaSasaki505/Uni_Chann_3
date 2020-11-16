@@ -27,13 +27,13 @@
                 <span>開催予定日：<%= event.date %></span>
               </div>
               <div class="event-index-like-box">
-              <div>
+              <div class="event-index-set">
                 <%= image_tag 'ハートのアイコン素材 1.png', class: "event-index-like-image" %>
                 <%= event.likes.count%>
               </div>
-              <div>
+              <div class="event-index-set">
                 <%= image_tag '双眼鏡アイコン4.png', class: "event-index-like-image" %>
-                <%= number_with_delimiter(@page_views) %>
+                <%=  event.impressionist_count %>
               </div>
             </div>
             </div>
