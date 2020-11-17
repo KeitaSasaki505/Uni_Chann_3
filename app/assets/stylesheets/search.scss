@@ -1,3 +1,9 @@
+
+select {
+  -moz-appearance: menulist;
+  -webkit-appearance: menulist;
+}
+
 .search-bar {
   position: fixed;
   top: 100px;
@@ -18,8 +24,11 @@
   
 }
 
-.search-box h3 {
+.search-box h4 {
   text-align: center;
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .search-box-sub {
@@ -32,6 +41,7 @@
 }
 
 .search-text {
+  margin-right: 5px;
   font-weight: bold;
   font-size: 12px;
 }
@@ -42,6 +52,7 @@
 
 .search-category-field {
   margin-left: 30px;
+  border: solid 1px;
 }
 
 .search-input {

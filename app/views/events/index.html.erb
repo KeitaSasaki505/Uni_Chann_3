@@ -7,42 +7,45 @@
       <% @events.each do |event| %>
         <li class='list'>
           <%= link_to event_path(event.id) do %>
-            <div class="event-img-join">
-              <div class='event-img-content'>
-                <%= image_tag(event.images[0].variant(resize: '280x280'), class: "event-img-index")  if event.images.attached?%>
+            <div class="list-inner">
+              <div class="event-img-join">
+                <div class='event-img-content'>
+                  <%= image_tag(event.images[0].variant(resize: '280x280'), class: "event-img-index")  if event.images.attached?%>
+                </div>
+                <% if user_signed_in? && current_user.id == event.user.id %>
+                  <%= image_tag '丸枠の中に王冠を配置したアイコン素材.png', class: "event-owners-mark" %>
+                <% elsif user_signed_in? && current_user.id &&  (event.joins.find_by(user_id: current_user.id)) != nil %>
+                  <%= image_tag 'humangray.png', class: "event-join-mark" %>
+                <% end %>
               </div>
-              <% if user_signed_in? && current_user.id == event.user.id %>
-                <%= image_tag '丸枠の中に王冠を配置したアイコン素材.png', class: "event-owners-mark" %>
-              <% elsif user_signed_in? && current_user.id &&  (event.joins.find_by(user_id: current_user.id)) != nil %>
-                <%= image_tag 'humangray.png', class: "event-join-mark" %>
-              <% end %>
-            </div>
-            <div class='event-info'>
-              <h3 class='event-name'>
-                <%= event.project %>
-              </h3>
-              <div class="event-ex">
-                <%= event.overview %>
-              </div>
-              <div class='event-date'>
-                <span>開催予定日：<%= event.date %></span>
-              </div>
-            </div>
-            <div class="event-index-like-box">
-              <div class="event-index-set">
-                <%= image_tag 'ハートのアイコン素材 1.png', class: "event-index-like-image" %>
-                <%= event.likes.count%>
-              </div>
-              <div class="event-index-set">
-                <%= image_tag '双眼鏡アイコン4.png', class: "event-index-like-image" %>
-                <%=  event.impressionist_count %>
+              <div class='event-info'>
+                <h3 class='event-name'>
+                  <%= event.project %>
+                </h3>
+                <div class="event-ex">
+                  <%= event.overview %>
+                </div>
+                <div class='event-date'>
+                  <span>開催予定日：<%= event.date %></span>
+                </div>
+              
+                <div class="event-index-like-box">
+                  <div class="event-index-set">
+                    <%= image_tag 'ハートのアイコン素材 1.png', class: "event-index-like-image" %>
+                    <%= event.likes.count%>
+                  </div>
+                  <div class="event-index-set">
+                    <%= image_tag '双眼鏡アイコン4.png', class: "event-index-like-image" %>
+                    <%=  event.impressionist_count %>
+                  </div>
+                </div>
               </div>
             </div>
           <% end %>
         </li>
       <% end %>
     </div>
-    <div class="pagenate">
+    <div class="pagenation">
       <%= paginate @events %>
     </div>
   </div>
