@@ -4,7 +4,7 @@
   <div class="show-2">
     <ul class="show-3">
       <div class="show-title">
-        <h2 class="show-title-text">【<%= @event.genre.name %>】<%= @event.project %></h2>
+        <div class="show-title-text">【<%= @event.genre.name %>】<%= @event.project %></div>
       </div>
       
       <% if @event.images.attached?%>
@@ -27,24 +27,42 @@
 
       <div class="event-index-like-box2">
         <div class="event-index-set">
-          <div class="goodimage-count">
-            <%= image_tag 'ハートのアイコン素材 1.png', class: "event-index-like-image2"%>
-            <%= @event.likes.count %>
+          <div class ="event-like-view-set">
+            <% if user_signed_in? %>
+              <div class="goodimage-count">
+                <% if current_user.already_liked?(@event) %>
+                  <%= link_to image_tag('ハートのアイコン素材 1.png', class: "event-index-like-image3"), event_like_path(@event), method: :delete, title: 'いいね！キャンセル'%>
+                <% else %>
+                  <%= link_to image_tag('ハートのアイコン素材 1.png', class: "event-index-like-image3"), event_likes_path(@event), method: :post, class: "event-index-like-image2", title: 'いいね！を押す' %>
+                <% end %>
+              </div>
+            <% else %>
+              <%= image_tag 'ハートのアイコン素材 1.png', class: "event-index-like-image3", data: { confirm: "ログインするといいね！が押せます" }%>
+            <% end %>
+            
+            <div class="goodimage-count">
+              <%= @event.likes.count %>
+            </div>
           </div>
 
-          <% if user_signed_in? %>
+          <div class="event-index-set">
             <div class="like-dis">
-              <% if current_user.already_liked?(@event) %>
-                <%= button_to 'Cancel', event_like_path(@event), method: :delete, class: "like-dis-btn"%>
-              <% else %>
-                <%= button_to 'Nice！', event_likes_path(@event), class: "like-dis-btn" %>
-              <% end %>
+              <%= image_tag '双眼鏡アイコン4.png', class: "event-index-like-image2", title: "閲覧数" %>
+              <%=  @event.impressionist_count %>
             </div>
-          <% end %>
+          </div>
         </div>
-        <div class="event-index-set">
-          <%= image_tag '双眼鏡アイコン4.png', class: "event-index-like-image2" %>
-          <%=  @event.impressionist_count %>
+
+        <div class="sns-set">
+          <div class="event-index-set">
+            <%= link_to image_tag('twitterのアイコン素材 その2.png', class: "event-index-like-image3"), "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank' %>
+          </div>
+          <div class="event-index-set">
+            <%= link_to image_tag('round-default.png', class: "event-index-like-image3"), "https://social-plugins.line.me/lineit/share?url=#{request.url}", title: 'LINE', target: '_blank' %>
+          </div>
+          <div class="event-index-set">
+            <%= link_to image_tag('FACEBOOK風のアイコン素材.png', class: "event-index-like-image3"), "https://www.facebook.com/sharer/sharer.php?u=#{request.url}", title: 'facebook', target: '_blank' %>
+          </div>
         </div>
       </div>
 
@@ -146,7 +164,7 @@
                 <li>
                   <div class="event-destroy-btn">
                     <span class="event-destroy-text">delete</span>
-                    <%= link_to image_tag('バックスペースのアイコン素材.png', class: 'event-destroy-icon'), event_path(@event.id), method: :delete, data: { confirm: "このイベントを削除してもよろしいですか?" } %>
+                    <%= link_to image_tag('バックスペースのアイコン素材2.png', class: 'event-destroy-icon'), event_path(@event.id), method: :delete, data: { confirm: "このイベントを削除してもよろしいですか?" } %>
                   </div>
                 </li>
               </ul>

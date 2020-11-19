@@ -4,16 +4,17 @@
   
   <div class="form-main">
     <div class="form-edit">
-      <h2>
+      <h3>
       プロフィールの編集/退会
-      </h2>
+      </h3>
       <%= render "devise/shared/error_messages", resource: resource %>
       <div class="form-2">
-        <label class="user-imageupload" >
+        <label class="user-imageupload", id="user_images" >
         <span>プロフィールイメージ画像をアップロード</span>
         <%= f.file_field :image, class: "user-file-field " %>
         </label>
       </div>
+      <div id="user-image", class="user-image"></div>
 
       <div class="form-1">
         <%= f.label :ニックネーム %><br />

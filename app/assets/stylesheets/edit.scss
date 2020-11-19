@@ -7,12 +7,18 @@
   justify-content: center;
   position: relative;
   top: 100px;
-  margin-bottom: 90px;
+  margin: 30px 0px 90px;
+  padding: 10px 0px 80px;
   
 }
 
 .form-edit {
   width: 65vw;
+}
+
+.form-edit h3 {
+  font-size: 25px;
+  font-weight: 700;
 }
 
 .select-box {

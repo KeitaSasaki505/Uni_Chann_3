@@ -39,5 +39,13 @@
 }
 
 .form-2 {
-  margin: 35px;
+  margin: 35px 35px 20px;
+}
+
+.user-image img{
+  padding: 30px;
+  width:180px;
+  height:180px;
+  object-fit: cover;
+  border-radius: 50%;
 }

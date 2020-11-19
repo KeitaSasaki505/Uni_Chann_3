@@ -16,6 +16,11 @@ class LikesController < ApplicationController
 #   end
 # end
 
+  # def create
+  #   @like = current_user.likes.create(event_id: params[:event_id])
+  #   redirect_back(fallback_location: root_path)
+  # end
+
   def create
     @like = current_user.likes.create(event_id: params[:event_id])
     redirect_back(fallback_location: root_path)

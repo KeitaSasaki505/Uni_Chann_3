@@ -33,8 +33,8 @@ $shadowColour: rgba(0, 0, 0, .6);
   }
 
 .joins-csv-btn {
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   text-align: center;
   border-radius: 50%;
   bottom: 320px;
@@ -62,24 +62,44 @@ $shadowColour: rgba(0, 0, 0, .6);
 }
 
 .joins-csv-icon {
-  width: 60%;
-  height: 60%;
+  width: 40%;
+  height: 40%;
 }
 
 .joins-csv-text {
   color: #000000;
   display: block;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: 700;
   text-decoration: none;
   margin-bottom: 5px;
 }
 
 // 一覧表-----------------------------------
+.joins-title {
+  margin: 20px;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.joins-tabel {
+  
+}
+
+.joins-table-s {
+  display: flex;
+  justify-content: center;
+}
+
+.joins-table p {
+  font-size: 16px;
+  text-align: center;
+}
+
 .detail-table {
   border-collapse: collapse;
   border-color: rgb(75, 72, 72);
-  
-
 }
 
 .detail-table td {

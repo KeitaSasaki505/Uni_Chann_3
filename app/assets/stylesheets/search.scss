@@ -6,18 +6,19 @@ select {
 
 .search-bar {
   position: fixed;
-  top: 100px;
+  top: 93px;
   z-index: 100;
   opacity: 0.9;
-  margin: 15px 0px 15px 40px;
+  margin-top: 15px;
   display: flex;
-  
+  justify-content: center;
+  width: 100%;
 }
 
 .search-p {
   border: dashed 1px #eca219;
   background-color: #ffffff;
-  border-radius: 2%/10%;
+  width: 100%;
 }
 
 .search-box {
@@ -37,6 +38,7 @@ select {
 
 .search-box-1 {
   display: flex;
+  justify-content: center;
   margin: 20px;
 }
 
@@ -56,29 +58,31 @@ select {
 }
 
 .search-input {
+  height: 20px;
   border: solid 1px;
   border-color:  rgb(75, 72, 72);
   background-color: white;
   padding: 3px;
   height: 30px;
-  width: 30vw;
+  width: 40vw;
 }
 
 
 .search-box-3 {
-  margin: 20px;
-  text-align: center;
+  
 }
 
 .search-btn {
-  width: 100%;
-  height: 36px;
+  margin-left: 20px;
+  width: 20vw;
+  height: 30px;
+  letter-spacing: 0.2em;
   font-size: 17px;
   font-weight: 700;
   color: #ffffff;
   border: 0;
   border-style: none;
-  border-radius: 3%/50%;
+  border-radius: 4%/50%;
   background-color: #eca219;
 }
 

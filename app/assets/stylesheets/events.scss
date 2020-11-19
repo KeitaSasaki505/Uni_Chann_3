@@ -67,6 +67,7 @@ object-fit: contain;
   justify-content: space-around;
   align-items: center;
   list-style: none;
+  text-decoration: none;
 }
 
 .login li {
@@ -95,7 +96,7 @@ object-fit: contain;
 
 .event-p {
   padding-top: 87px;
-  margin-bottom: 60px;
+  padding-bottom: 60px;
   top: 400px;
   background-color: rgb(255, 255, 255);
   position: absolute;
@@ -142,6 +143,7 @@ $shadowColour: rgba(0, 0, 0, .6);
   height: 450px;
   list-style: none;
   margin: 30px;
+  
 
   display: inline-block;
   transition-duration: $defaultDuration;
@@ -207,8 +209,12 @@ $shadowColour: rgba(0, 0, 0, .6);
 }
 
 .event-ex {
-  font-size: 14px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; 
+  font-size: 12px;
   margin: 10px 0px;
+  overflow: hidden;
 }
 
 .event-date {
@@ -228,7 +234,19 @@ $shadowColour: rgba(0, 0, 0, .6);
 }
 
 .event-index-set {
-  margin-right: 30px;
+  margin-left: 20px;
+  display: flex;
+}
+
+.event-like-view-set {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sns-set {
+  display: flex;
+  margin-left: 100px;
 }
 
 .event-index-like-image {
@@ -243,6 +261,25 @@ $shadowColour: rgba(0, 0, 0, .6);
   margin-right: 5px;
 }
 
+.event-index-like-image3 {
+  width:40px;
+  height:40px;
+  margin-right: 5px;
+  display: inline-block;
+
+  @include hideTapHighlightColor();
+  @include hardwareAccel();
+  @include improveAntiAlias();
+
+  &:hover {
+  animation-name: pulse-grow;
+  animation-duration: $defaultDuration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  }
+}
+
 .event-info {
   padding: 10px;
   border-bottom-right-radius: 7%;
@@ -255,6 +292,7 @@ $shadowColour: rgba(0, 0, 0, .6);
 }
 
 .like-dis-btn {
+  margin-right: 5px;
   font-size: 12px;
   font-weight: 700;
   width:40px;
@@ -324,6 +362,7 @@ footer p {
     color: #000000;
     display: block;
     font-size: 20px;
+    font-weight: 700;
     text-decoration: none;
     margin-bottom: 5px;
 }
@@ -349,11 +388,12 @@ footer p {
   position: absolute;
   width: 60vw;
   top: 100px;
-  margin-bottom: 100px;
+  padding-bottom: 100px;
 }
 
 .show-title {
-
+  font-size: 30px;
+  font-weight: 700;
 }
 
 .show-title-text {
@@ -621,7 +661,8 @@ footer p {
 .join-btn-text {
   color: #000000;
   display: block;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: 700;
   text-decoration: none;
   margin-bottom: 5px;
 }
@@ -629,7 +670,8 @@ footer p {
 .joined-btn-text {
   color: #000000;
   display: block;
-  font-size: 12px;
+  font-size: 10px;
+  font-weight: 700;
   text-decoration: none;
   margin-bottom: 5px;
 }
@@ -692,7 +734,8 @@ footer p {
 .edit-btn-text {
   color: #000000;
   display: block;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: 700;
   text-decoration: none;
 }
 
@@ -734,7 +777,8 @@ footer p {
 .join-list-text {
   color: #000000;
   display: block;
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: 700;
   text-decoration: none;
   margin-bottom: 0px;
 }
@@ -746,33 +790,59 @@ footer p {
 
 // イベント削除ボタン------------------------
 .event-destroy-btn {
-  width: 40px;
-  height: 40px;
-  text-align: center;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  bottom: 290px;
+  bottom: 260px;
   opacity: 0.7;
-  right: 55px;
+  right: 40px;
   position: fixed;
   padding: 15px;
   z-index: 30;
   // background-color: #dd5404;
-  // background: linear-gradient(#4941b9, #9892d363);
+  background: linear-gradient(#1505fab9, #74728363);
+  display: inline-block;
+
+  @include hideTapHighlightColor();
+  @include hardwareAccel();
+  @include improveAntiAlias();
+
+  &:hover {
+  animation-name: pulse-grow;
+  animation-duration: $defaultDuration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.event-destroy-text {
+  font-size: 12px;
+  color: #fcf0f0;
+  display: block;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .event-destroy-icon {
-  width: 110%;
-  height: 110%;
+  margin-left: 5px;
+  width: 60%;
+  height: 60%;  
 }
-
+}
 
 
 // ユーザー削除-----------------------
 .user-delete {
   width: 30vw;
   margin: 30px;
-  padding: 10px 20px 20px;
+  padding: 20px ;
   background-color: rgb(247, 230, 186);
+  border-radius: 5%/8%;
+}
+
+.user-delete h4 {
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .user-delete p {
