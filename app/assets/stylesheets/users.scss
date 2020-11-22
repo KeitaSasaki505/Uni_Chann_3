@@ -12,6 +12,11 @@
   border: 0;
   border-radius: 2%/50%;
   margin-left: 13px;
+  transition: .4s;
+}
+
+.new-user-submit:hover {
+  opacity: 0.7;
 }
 
 .user-edit-btn {
@@ -24,6 +29,11 @@
   border: 0;
   border-radius: 2%/50%;
   margin-left: 13px;
+  transition: .4s;
+}
+
+.user-edit-btn:hover {
+  opacity: 0.7;
 }
 
 .new-session-btn {

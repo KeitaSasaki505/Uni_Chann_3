@@ -7,9 +7,29 @@ a {
   text-decoration: none;
 }
 
+$defaultDuration: .3s;
+$primaryColour: #ececec;
+$secondaryColour: #666;
+$shadowColour: rgba(0, 0, 0, .6);
+
+@mixin hideTapHighlightColor() {
+  //Prevent highlight colour when element is tapped
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  }
+
+@mixin hardwareAccel() {
+  //Improve performance on mobile/tablet devices
+  transform: translateZ(0);
+  }
+  
+  @mixin improveAntiAlias() {
+  //Improve aliasing on mobile/tablet devices
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  }
+
 // ヘッダー----------------------------
 .header {
-  width: 98vw;
+  width: 97vw;
   height: 68px;
   text-decoration: none;
   color: rgb(75, 72, 72);
@@ -50,18 +70,12 @@ object-fit: contain;
   align-items: center;
 }
 
-
-
-.user-img {
-  width:60px;
-  height:60px;
-  object-fit: cover;
-  border-radius: 50%;
-  background-color: rgba(248, 253, 171, 0.973);
-  z-index: 20;
+.login-underbar-cancel {
+  text-decoration: none;
 }
 
-.login {
+
+.nav_menu_ul {
   padding-top: 15px;
   display: flex;
   justify-content: space-around;
@@ -70,8 +84,62 @@ object-fit: contain;
   text-decoration: none;
 }
 
-.login li {
+.nav_menu_li {
   padding-right: 30px;
+}
+
+.nav_menu_ul a {
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.nav_menu_ul a::before,
+.nav_menu_ul a::after {
+  border-bottom: solid 5px rgb(255, 225, 191);
+  bottom: 0;
+  content: "";
+  display: block;
+  position: absolute;
+  transition: all .3s ease;
+  -webkit-transition: all .3s ease;
+  width: 0;
+}
+.nav_menu_ul a::before {
+  left: 50%;
+}
+.nav_menu_ul a::after {
+  right: 50%;
+}
+.nav_menu_ul a:hover::before,
+.nav_menu_ul a:hover::after {
+  width: 50%;
+}
+
+.login-user-image {
+  list-style: none;
+  padding-right: 20px;
+}
+
+.user-img {
+  width:60px;
+  height:60px;
+  object-fit: cover;
+  border-radius: 50%;
+  background-color: rgba(248, 253, 171, 0.973);
+  z-index: 20;
+  display: inline-block;
+
+  @include hideTapHighlightColor();
+  @include hardwareAccel();
+  @include improveAntiAlias();
+
+  &:hover {
+  animation-name: pulse-grow;
+  animation-duration: $defaultDuration;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  }
 }
 
 .form-guest {
@@ -95,9 +163,9 @@ object-fit: contain;
 // イベント一覧表示------------------------
 
 .event-p {
-  padding-top: 87px;
+  padding-top: 40px;
   padding-bottom: 60px;
-  top: 400px;
+  top: 150px;
   background-color: rgb(255, 255, 255);
   position: absolute;
 }
@@ -235,6 +303,7 @@ $shadowColour: rgba(0, 0, 0, .6);
 
 .event-index-set {
   margin-left: 20px;
+  justify-content: center;
   display: flex;
 }
 
@@ -242,6 +311,7 @@ $shadowColour: rgba(0, 0, 0, .6);
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 10px;
 }
 
 .sns-set {
@@ -593,14 +663,24 @@ footer p {
 }
 
 .comment-btn {
-  background-color: rgb(248, 181, 80);
+  background-color: #eca219;
   font-size: 16px;
   color: white;
+  margin-left: 15px;
   padding: 0 20px;
-  width: 80px;
+  width: 100px;
   height: 30px;
   border: 0;
+  border-radius: 13%/50%;
+  transition: .4s;
+}
 
+.comment-btn:hover {
+  background-color: white;
+  border: solid 3px;
+  color:#eca219;
+  border-color:#eca219;
+  
 }
 
 .join-entry {

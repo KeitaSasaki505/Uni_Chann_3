@@ -45,7 +45,7 @@
             </div>
           </div>
 
-          <div class="event-index-set">
+          <div class="event-like-view-set">
             <div class="like-dis">
               <%= image_tag '双眼鏡アイコン4.png', class: "event-index-like-image2", title: "閲覧数" %>
               <%=  @event.impressionist_count %>
@@ -164,7 +164,7 @@
                 <li>
                   <div class="event-destroy-btn">
                     <span class="event-destroy-text">delete</span>
-                    <%= link_to image_tag('バックスペースのアイコン素材2.png', class: 'event-destroy-icon'), event_path(@event.id), method: :delete, data: { confirm: "このイベントを削除してもよろしいですか?" } %>
+                    <%= link_to image_tag('バックスペースのアイコン素材2.png', size: '100x90', class: 'event-destroy-icon'), event_path(@event.id), method: :delete, data: { confirm: "このイベントを削除してもよろしいですか?" } %>
                   </div>
                 </li>
               </ul>

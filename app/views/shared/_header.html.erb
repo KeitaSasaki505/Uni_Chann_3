@@ -2,31 +2,45 @@
     <div class="header-p">
       <div class="header-2">
         <%# <h2><a href="/">Uni＊Chann</a></h2> %>
-        <%= link_to image_tag('unirogo.png', class: "unirogo"), root_path %>
+        <%= link_to image_tag('unirogo.png', class: "unirogo"), root_path, id: "logo" %>
       </div>
-      
       <div class="header-3">
+        <span class="nav_toggle">
+          <i></i>
+          <i></i>
+          <i></i>
+        </span>
+ 
         <%# ユーザーがログイン済みの場合表示条件分岐で表示を変える %>
         <% if user_signed_in? %>
-          <ul class="login">
-            <li><%= link_to "Uni＊Channとは", about_events_path %></li>
-              <% if current_user.image.attached? %>
-                <li><%= link_to image_tag(current_user.image, class: "user-img" ), edit_user_registration_path %></li>
-              <% else %>
-                <li><%= link_to image_tag('人物の無料素材.png', class: "user-img" ), edit_user_registration_path %></li>
-              <%# <li><%= link_to current_user.nickname, edit_user_registration_path, class: "user-nickname" %></li>
-              <% end %>
-            <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <nav class="nav">
+          <ul class="nav_menu_ul">
+            <li class="nav_menu_li"><%= link_to "Uni＊Channとは", about_events_path %></li>
+            <li class="nav_menu_li"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
           </ul>
+        </nav>
+          <div class="login-user-image">
+            <% if current_user.image.attached? %>
+              <div class="login-underbar-cancel">
+              <li class="nav_menu_li"><%= link_to image_tag(current_user.image, class: "user-img" ), edit_user_registration_path %></li>
+              </div>
+            <% else %>
+              <div class="login-underbar-cancel">
+              <li class="nav_menu_li"><%= link_to image_tag('人物の無料素材.png', class: "user-img" ), edit_user_registration_path %></li>
+            <%# <li><%= link_to current_user.nickname, edit_user_registration_path, class: "user-nickname" %></li>
+              </div>
+            <% end %>
+          </div>
           <% else %>
-          <ul class="login">
-            <li><%= link_to "Uni＊Channとは", about_events_path %></li>
-            <li><%= link_to "ログイン", new_user_session_path, class: "login-1"%></li>
-            <li><%= link_to "新規登録", new_user_registration_path, class: "sign-up" %></li>
-            <li><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post %></li>
-          </ul>
+          <nav class="nav">
+            <ul class="nav_menu_ul">
+              <li class="nav_menu_li"><%= link_to "Uni＊Channとは", about_events_path %></li>
+              <li class="nav_menu_li"><%= link_to "ログイン", new_user_session_path, class: "login-1"%></li>
+              <li class="nav_menu_li"><%= link_to "新規登録", new_user_registration_path, class: "sign-up" %></li>
+              <li class="nav_menu_li"><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post %></li>
+            </ul>
+          </nav>
         <% end %>
       </div>
     </div>
-    
-  </header>
+</header>

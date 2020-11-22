@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Uni＊Chann</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" href="reset.css">
-
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <%# <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous"> %>
     
     <link rel = "stylesheet" type = "text / css" href = "#.css" >
    
@@ -18,5 +20,10 @@
     <%= yield %>
     <%= render 'shared/footer' %>
 
+  <script>
+    $('.nav_toggle').on('click', function () {
+    $('.nav_toggle, .nav').toggleClass('show');
+    });
+  </script>
   </body>
 </html>

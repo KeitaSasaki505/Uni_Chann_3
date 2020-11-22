@@ -10,7 +10,8 @@ require("channels")
 require('./images')
 require('./preview')
 require('./flash')
-//　= require jquery
+//= require jquery
+//= require bootstrap
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -19,3 +20,4 @@ require('./flash')
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+111
