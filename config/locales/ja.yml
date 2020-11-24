@@ -10,7 +10,7 @@ ja:
         password: パスワード
       event:
         text: テキスト
-        genre: カテゴリ
+        genre_id: カテゴリ
         overview: イベント概要
         project: イベント名
         address: 住所
@@ -23,5 +23,6 @@ ja:
       join:
         email: メールアドレス
         phone: 電話番号
-        name-kanji: 氏名（全角）
-        name-kana: 氏名（カナ）
+        name_kanji: 氏名（全角）
+        name_kana: 氏名（カナ）
+        message: コメント

@@ -159,10 +159,100 @@ $shadowColour: rgba(0, 0, 0, .6);
   object-fit: contain;
 }
 
+//howto(index内)
+
+.title-ex-box-index  {
+  width: 90vw;
+  margin: 30px 0px 70px;
+  padding: 30px 0px;
+  display: block;
+  justify-content: center;
+  // background-color: #faeec8;
+  border-radius: 1%/5%;
+}
+
+.title-ex-box-index  h3 {
+  display: inline-block;
+  border-bottom: solid 5px rgb(248, 181, 80);
+}
+
+.title-ex-index  {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.title-ex-index  h3 {
+  font-size: 30px;
+  font-weight: 700;
+  padding: 0px 0px 5px;
+}
+
+.howto-index  {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.howto-post-index  {
+  width: 370px;
+  height: 370px;
+  margin-right: 30px;
+  background-color: #fdfdfd;
+  border-radius: 50%;
+  border: dashed 2px #ff9100;
+}
+
+.howto-title-index  {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.howto-title-index h4 {
+  font-weight: 700;
+}
+
+.howto-img-index  {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.howto-content-index  {
+  font-size: 15px;
+  line-height: 2em;
+}
+
+.event-owners-mark-mini {
+  width:35px;
+  height:35px;
+  background-color: white;
+  border: solid 3px white;
+  border-radius: 50%; 
+}
+
+.event-join-mark-mini {
+  width:35px;
+  height:35px;
+  background-color: rgb(27, 131, 250);
+  border: solid 3px white;
+  border-radius: 50%; 
+}
+
+.event-index-like-image3-mini {
+  width:25px;
+  height:25px;
+}
+
+p {
+  vertical-align: middle;
+}
+
 
 // イベント一覧表示------------------------
 
 .event-p {
+  width: 100vw;
   padding-top: 40px;
   padding-bottom: 60px;
   top: 150px;
@@ -203,7 +293,6 @@ $shadowColour: rgba(0, 0, 0, .6);
   //Improve aliasing on mobile/tablet devices
     box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   }
-
 
 .list {
   color: rgb(75, 72, 72);

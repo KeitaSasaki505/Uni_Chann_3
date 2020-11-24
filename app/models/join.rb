@@ -4,10 +4,13 @@ class Join < ApplicationRecord
 
 
   with_options presence: true do
-    validates :email
+    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    validates :email, {format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }}
     validates :phone, format: { with: /\A[0-9]+\z/ }
-    validates :name_kanji, format: { with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/, message: 'Full-width characters' }
-    validates :name_kana, format: { with: /\A[ァ-ン]+\z/, message: 'Full-width katakana characters' }
+    validates :name_kanji, format: { with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/, message: 'は全角で入力してください' }
+    validates :name_kana, format: { with: /\A[ァ-ン]+\z/, message: 'は全角カナで入力してください' }
   end
+
+  validates :message, length: { maximum: 400, message: 'は400文字以内です' }
 
 end

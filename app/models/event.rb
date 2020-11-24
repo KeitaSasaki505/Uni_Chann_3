@@ -15,15 +15,16 @@ class Event < ApplicationRecord
   after_validation :geocode, if: :address_changed?
 
   with_options presence: true do
-    validates :overview
-    validates :project
+    validates :overview, length: { maximum: 400, message: '400文字以内です' }
+    validates :project, length: { maximum: 50, message: 'は50文字以内です' }
     validates :address
-    validates :email
+    VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    validates :email, {uniqueness: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }}
     validates :images
     validates :date
     validates :phone, format: { with: /\A[0-9]+\z/ }
   end
 
-  validates :genre_id, numericality: { other_than: 0 }
+  validates :genre_id, numericality: { other_than: 0, message: 'が選択されていません' }
 
 end

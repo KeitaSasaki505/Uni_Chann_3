@@ -2,7 +2,13 @@
 <%= render 'shared/searchbar'%>
 <%= render 'layouts/flash' %>
 
+
+
   <div class="event-p">
+  <div class="howto-index">
+  <%= render 'shared/howto' %>
+  
+  </div>
     <div class="event-list">
       <% @events.each do |event| %>
         <li class='list'>

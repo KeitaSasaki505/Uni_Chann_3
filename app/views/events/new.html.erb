@@ -28,12 +28,12 @@
 
       <div class="form-1">
         <%= f.label :イベント名%><br />
-        <%= f.text_area :project, class: "form-text" %>
+        <%= f.text_area :project, placeholder: "50文字以内", class: "form-text" %>
       </div>
 
       <div class="form-1">
         <%= f.label :イベント概要%><br />
-        <%= f.text_area :overview, class: "form-text" %>
+        <%= f.text_area :overview, placeholder: "400文字以内", class: "form-text" %>
       </div>
 
       <div class="form-1">
@@ -43,7 +43,7 @@
 
       <div class="form-1">
         <%= f.label :メールアドレス（連絡先） %><br />
-        <%= f.text_area :email, placeholder:"参加者との連絡が可能なアドレス", class: "form-text" %>
+        <%= f.text_area :email, placeholder:"例）abcde@sample.com", class: "form-text" %>
       </div>
 
       <div class="form-1">

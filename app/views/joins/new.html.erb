@@ -9,7 +9,7 @@
       <h3>
         参加フォーム入力
       </h3>
-
+      <%= render 'shared/error_messages', model: f.object %>
       <div class="form-1">
         <%= f.label :氏名 %><br />
         <%= f.text_field :name_kanji, placeholder:"名前(漢字フルネーム)", class: "form-text" %>
@@ -17,7 +17,7 @@
 
       <div class="form-1">
         <%= f.label :カナ入力 %><br />
-        <%= f.text_field :name_kana, placeholder:"フリガナ", class: "form-text" %>
+        <%= f.text_field :name_kana, placeholder:"名前(フリガナ)", class: "form-text" %>
       </div>
 
       <div class="form-1">
@@ -27,12 +27,12 @@
       
       <div class="form-1">
         <%= f.label :電話番号 %><br />
-        <%= f.text_field :phone, class: "form-text" %>
+        <%= f.text_field :phone, placeholder: "例）09011111111", class: "form-text" %>
       </div>
 
       <div class="form-1">
         <%= f.label :コメント %><br />
-        <%= f.text_area :message, rows: 3, placeholder:"(ご意見、ご要望)", class: "form-text" %>
+        <%= f.text_area :message, rows: 3, placeholder:"(ご意見、ご要望：400文字以内)", class: "form-text" %>
       </div>
 
       <div class="form-edit-btn">
