@@ -1,10 +1,10 @@
-if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
+if (document.URL.match( /new/ ) || document.URL.match( /edit/ ) || document.URL.match( /sign_up/ )) {
   document.addEventListener('DOMContentLoaded', function(){
     const ImageList = document.getElementById('user-image');
 
     document.getElementById('user_images').addEventListener('change', function(e){
       // 画像が表示されている場合のみ、すでに存在している画像を削除する
-      const imageContent = document.querySelector('img');
+      const imageContent = document.getElementById('user-create-image');
       if (imageContent){
         imageContent.remove();
       }
@@ -13,9 +13,10 @@ if (document.URL.match( /new/ ) || document.URL.match( /edit/ )) {
 
       // 画像を表示するためのdiv要素を生成
       const imageElement = document.createElement('div');
+      imageElement.setAttribute('id', 'user-create-image')
 
       // 表示する画像を生成
-      const blobImage = document.createElement('img');
+      const blobImage = document.createElement('img');     
       blobImage.setAttribute('src', blob);
 
       // 生成したHTMLの要素をブラウザに表示させる

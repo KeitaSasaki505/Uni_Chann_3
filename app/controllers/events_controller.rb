@@ -5,7 +5,7 @@ class EventsController < ApplicationController
   before_action :search_event, only: [:index, :search]
 
   def index
-    @events = Event.all.page(params[:page]).per(12).order('updated_at DESC')
+    @events = Event.all.page(params[:page]).per(15).order('updated_at DESC')
     set_event_column 
   end
 

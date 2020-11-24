@@ -2,7 +2,7 @@
     <div class="header-p">
       <div class="header-2">
         <%# <h2><a href="/">Uni＊Chann</a></h2> %>
-        <%= link_to image_tag('unirogo.png', class: "unirogo"), root_path, id: "logo" %>
+        <%= link_to image_tag('unirogo.png', class: "unirogo"), root_path%>
       </div>
       <div class="header-3">
         <span class="nav_toggle">
@@ -16,7 +16,7 @@
         <nav class="nav">
           <ul class="nav_menu_ul">
             <li class="nav_menu_li"><%= link_to "Uni＊Channとは", about_events_path %></li>
-            <li class="nav_menu_li"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+            <li class="nav_menu_li"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
           </ul>
         </nav>
           <div class="login-user-image">

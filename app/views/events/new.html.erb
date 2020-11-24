@@ -9,7 +9,9 @@
       <h3 class='form-header-text'>
       新しいイベントを投稿する
       </h3>
-
+      
+      <%= render 'shared/error_messages', model: f.object %>
+      
       <div class="form-2">
         <label for="event-image" class="form-item" id="file-field">
         <span>イベントイメージ画像をアップロード(3枚まで)</span>

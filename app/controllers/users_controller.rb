@@ -6,11 +6,15 @@ class UsersController < ApplicationController
 
   def withdrawal
     @user = User.find(params[:id])
-    #is_deletedカラムにフラグを立てる(defaultはfalse)
-    @user.update(is_deleted: true)
-    reset_session
-    flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
-    redirect_to root_path
+    if current_user.email == 'test@test.com'
+      redirect_to root_path, alert: "ゲストユーザーは退会できません。"
+    else
+      #is_deletedカラムにフラグを立てる(defaultはfalse)
+      @user.update(is_deleted: true)
+      reset_session
+      flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
+      redirect_to root_path
+    end
   end
 
 end

@@ -1,0 +1,27 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        image: プロフィール画像
+        nickname: ニックネーム
+        name_kanji: 氏名（全角）
+        name_kana: 氏名（カナ）
+        email: メールアドレス
+        password: パスワード
+      event:
+        text: テキスト
+        genre: カテゴリ
+        overview: イベント概要
+        project: イベント名
+        address: 住所
+        email: メールアドレス
+        images: イベントイメージ
+        date: 開催予定日
+        phone: 電話番号
+      comment:
+        text: コメント
+      join:
+        email: メールアドレス
+        phone: 電話番号
+        name-kanji: 氏名（全角）
+        name-kana: 氏名（カナ）

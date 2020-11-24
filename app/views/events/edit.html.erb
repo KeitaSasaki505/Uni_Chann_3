@@ -2,13 +2,13 @@
 <%= render 'shared/back'%>
 <%# <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <%= form_with model: @event, class: 'registration-main', local: true do |f| %>
-  
   <div class="form-main">
     <div class="form-edit">
-      <h3 class='form-header-text'>
+      <h3>
       イベントを編集する
       </h3>
-
+      
+      <%= render 'shared/error_messages', model: f.object %>
       <div class="form-2">
         <label for="event-image" class="form-item", id="file-field">
         <span>イベントイメージ画像をアップロード(3枚まで)</span>
@@ -56,6 +56,7 @@
       <div class ="form-edit-btn">
         <%= f.submit "イベントを更新", class:"form-submit" %>
       </div>
+      
     </div>
   </div>
 <% end %>

@@ -9,7 +9,6 @@ require("@rails/activestorage").start()
 require("channels")
 require('./images')
 require('./preview')
-require('./flash')
 //= require jquery
 //= require bootstrap
 
@@ -20,4 +19,3 @@ require('./flash')
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
-111

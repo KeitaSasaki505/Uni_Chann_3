@@ -1,19 +1,16 @@
-.form-header-text {
-  
-}
+
 
 .form-main {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
-  position: relative;
-  top: 100px;
-  margin: 30px 0px 90px;
-  padding: 10px 0px 80px;
-  
+  margin-top: 120px;
+  margin-bottom: 250px;
 }
 
 .form-edit {
-  width: 65vw;
+  padding-bottom: 50px;
 }
 
 .form-edit h3 {
@@ -71,11 +68,11 @@
 }
 
 .image-box {
-  
+
 }
 
 .form-item {
-  width: 50%;
+  width: 60%;
   background-color: rgb(247, 177, 48);
   color: white;
   border: dashed 2px #fd2c2c;
@@ -119,7 +116,14 @@ label {
 //プレビューの中の削除編集ボタン
 .change-box-edit-delete {
   cursor: pointer;
-  
+}
+
+.change-box {
+  font-weight: 700;
+}
+
+.change-box:hover {
+  color: red;
 }
 
 
@@ -145,15 +149,10 @@ label {
   margin-bottom: 5px;
 }
 
-.form-edit-icon {
-  
-}
-
 .form-edit-btn {
   margin-left: 33px;
   border-radius: 5%;
 }
-
 
 //編集submitボタン
 .form-submit {

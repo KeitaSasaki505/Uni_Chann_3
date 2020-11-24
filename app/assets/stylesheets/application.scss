@@ -281,10 +281,31 @@ main {
   }
 
   .form-main {
-    top: 90px;
-    margin: 27px 0px 81px;
-    padding: 9px 0px 72px;
+    width: 100vw;
+    padding-bottom: 100px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .form-edit {
+    width: 90%;
+    padding-bottom: 50px;
+  }
+
+  .form-1 {
     
+  }
+
+  .form-text {
+    width: 90%;
+  }
+
+  .form-submit {
+    width: 88%;
+  }
+
+  .form-edit-btn {
+    padding-top: 20px;
   }
 
  }
@@ -469,7 +490,7 @@ main {
   .event-p {
     padding-top: 78px;
     padding-bottom: 54px;
-    top: 270px;
+    top: 150px;
   }
 
   .event-list {
@@ -497,15 +518,27 @@ main {
   }
 
   .event-btn {
-    width: 100px;
+    width: 70px;
+    height: 70px;
     text-align: center;
     border-radius: 50%;
-    bottom: 90px;
+    bottom: 20%;
     opacity: 0.7;
-    right: 20px;
+    right: 10px;
     position: fixed;
     padding: 15px;
   }
+
+  .event-btn-text {
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+  .event-btn-icon {
+  width: 60%;
+  height: 60%;
+}
 
   //searchbar
   .search-bar {
@@ -703,6 +736,7 @@ main {
   }
 
   //各種ボタン
+
   .edit-btn {
     width: 55px;
     height: 55px;
@@ -769,19 +803,27 @@ main {
   }
 
   .event-destroy-text {
-    font-size: 10px;
+    font-size: 10px!important;
+    text-align: center!important;
     font-weight: 500;
+    margin-top: 5px;
+  }
+
+  .event-destroy-icon {
+    margin-left: 7px!important;
+    width: 60%;
+    height: 60%;  
   }
 
 
   .join-btn {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     text-align: center;
     border-radius: 50%;
-    bottom: 40%;
+    bottom: 20%;
     opacity: 0.7;
-    right: 40px;
+    right: 10px;
     position: fixed;
     padding: 15px;
     z-index: 30;
@@ -795,7 +837,7 @@ main {
   .join-btn-text {
     color: #000000;
     display: block;
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 700;
     text-decoration: none;
     margin-bottom: 5px;
@@ -868,7 +910,13 @@ main {
   }
 
   //入力画面
+  .form-main {
+    margin-top: 120px;
+    margin-bottom: 250px;
+  }
+
   .form-edit {
+    padding-bottom: 50px;
     width: 100vw;
   }
 
@@ -897,8 +945,21 @@ main {
   }
 
   //新規登録、ユーザー編集
+  .user-imageupload {
+    width: 90vw;
+    font-size: 15px;
+    background-color: rgb(247, 177, 48);
+    color: white;
+    border: dashed 2px #fd2c2c;
+    border-radius: 4%/50%;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: .4s;
+  }
+
   .new-user-submit {
-    width: 50vw;
+    width: 85vw;
     height: 31px;
     background-color: #dd5404;
     border: 0;
@@ -907,13 +968,14 @@ main {
   }
 
   .user-edit-btn {
+    width: 85vw;
     height: 31px;
     border-radius: 2%/50%;
     margin-left: 11px;
   }
 
   .new-session-btn {
-    width: 70vw;
+    width: 85vw;
     height: 31px;
     background-color: #dd5404;
     border: 0;
@@ -921,9 +983,13 @@ main {
     margin-left: 11px;
   }
 
+  .form-1 {
+    margin: 25px;
+  }
+
   .form-2 {
     width:70vw;
-    margin: 31px 31px 18px;
+    margin: 31px 25px 18px;
   }
 
   .user-image img{
@@ -936,10 +1002,32 @@ main {
     padding-bottom: 60px;
   }
 
-  .form-main {
-    top: 90px;
-    margin: 27px 0px 81px;
-    padding: 9px 0px 72px;
+  
+
+  .user-delete {
+    width: 85vw;
+    margin: 30px;
+    padding: 20px ;
+    background-color: rgb(247, 230, 186);
+    border-radius: 5%/8%;
+  }
+  
+  .user-delete h4 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  
+  .user-delete p {
+    font-size: 12px;
+    margin-left: 10px;
+    
+  }
+  
+  .user-delete-btn {
+    font-size: 12px;
+    border: solid 1px;
+    padding: 10px;
+    margin: 0px 0px 30px 10px;
     
   }
  }
