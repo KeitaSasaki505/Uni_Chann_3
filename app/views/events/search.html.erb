@@ -1,8 +1,9 @@
 <%= render 'shared/header' %>
+<%= render 'shared/searchbar'%>
 
   <div class="event-p">
     <div class="event-list">
-      <% @events.each do |event| %>
+      <% @results.each do |event| %>
         <li class='list'>
           <%= link_to event_path(event.id) do %>
             <div class="event-img-join">
@@ -25,6 +26,16 @@
               <div class='event-date'>
                 <span>開催予定日：<%= event.date %></span>
               </div>
+              <div class="event-index-like-box">
+              <div class="event-index-set">
+                <%= image_tag 'ハートのアイコン素材 1.png', class: "event-index-like-image" %>
+                <%= event.likes.count%>
+              </div>
+              <div class="event-index-set">
+                <%= image_tag '双眼鏡アイコン4.png', class: "event-index-like-image" %>
+                <%=  event.impressionist_count %>
+              </div>
+            </div>
             </div>
           <% end %>
         </li>
@@ -38,5 +49,3 @@
         <%= image_tag '万年筆の無料アイコン素材.png' , size: '185x50' ,class: "event-btn-icon" %>
       </a>
     </div>
-
-<%= render 'shared/footer' %>

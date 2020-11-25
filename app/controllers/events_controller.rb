@@ -1,18 +1,12 @@
 class EventsController < ApplicationController
+  impressionist :actions=> [:show, :index], :unique => [:impressionable_id, :ip_address]
   before_action :authenticate_user!, only: [:new, :create, :edit, :destroy, :update]
   before_action :set_event, only: [:edit, :show, :update]
+  before_action :search_event, only: [:index, :search]
 
   def index
-    @events = Event.all
-  end
-
-  def new_guest
-    user = User.find_or_create_by!(email: 'test@test.com') do |user|
-      user.password = SecureRandom.urlsafe_base64
-      # user.confirmed_at = Time.now  # Confirmable を使用している場合は必要
-    end
-    sign_in user
-    redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
+    @events = Event.all.page(params[:page]).per(15).order('updated_at DESC')
+    set_event_column 
   end
 
   def new
@@ -22,7 +16,7 @@ class EventsController < ApplicationController
   def create
     @event = Event.create(event_params)
     if @event.save
-      redirect_to root_path
+      redirect_to root_path, notice: "新しいイベントが投稿されました" 
     else
       render :new
     end
@@ -31,7 +25,7 @@ class EventsController < ApplicationController
   def destroy
     event = Event.find(params[:id])
     if event.destroy
-      redirect_to root_path
+      redirect_to root_path, alert: "イベントは削除されました"
     end
   end
 
@@ -42,18 +36,21 @@ class EventsController < ApplicationController
   end
 
   def search
-    @events = Event.search(params[:keyword])
+    @results = @p.result
   end
 
   def show
     @comment = Comment.new
     @comments = Comment.where(event_id: @event)
+    @like = Like.new
+    # impressionist(@event, nil, unique: [:session_hash])
+    @views = @event.impressionist_count
   end
 
   def update
     @event.update(event_params)
     if @event.save
-      redirect_to root_path
+      redirect_to root_path, notice: "イベント情報が更新されました" 
     else
       render :edit
     end
@@ -67,6 +64,14 @@ class EventsController < ApplicationController
 
   def set_event
     @event = Event.find(params[:id])
+  end
+
+  def search_event
+    @p = Event.ransack(params[:q])
+  end
+
+  def set_event_column
+    @event_name = Event.select("name").distinct  # 重複なくnameカラムのデータを取り出す
   end
 
 end

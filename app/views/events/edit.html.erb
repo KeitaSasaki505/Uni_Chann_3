@@ -1,62 +1,62 @@
 <%= render 'shared/header' %>
-
+<%= render 'shared/back'%>
 <%# <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <%= form_with model: @event, class: 'registration-main', local: true do |f| %>
-  
   <div class="form-main">
     <div class="form-edit">
-      <h3 class='form-header-text'>
+      <h3>
       イベントを編集する
       </h3>
-
-      <div class="form-1">
-        <%= f.label :イベントイメージ画像, class: 'form-item' %><br />
-        <%= f.file_field :images, name: 'event[images][]', id: 'event-images', direct_upload: true, multiple: true, class:'form-file-field' %>
-        <div id="pre-images"></div>
-        <p>※クリックしてファイルをアップロード(3枚まで可)</p>
-        <p><%= f.check_box :remove_images %>画像を削除する</p>
+      
+      <%= render 'shared/error_messages', model: f.object %>
+      <div class="form-2">
+        <label for="event-image" class="form-item", id="file-field">
+        <span>イベントイメージ画像をアップロード(3枚まで)</span>
+        <%= f.file_field :images, name: 'event[images][]', id: "event-image", direct_upload: true, multiple: true, data: {index:0}, class:'form-file-field' %>
+        </label>
       </div>
+      
+      <div id="pre-images" class="pre-imagesbox"></div>
 
       <div class="form-1">
-        <%= f.label :イベントの種類, class: 'form-item' %><br />
+        <%= f.label :イベントの種類%><br />
         <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
       </div>
 
       <div class="form-1">
-        <%= f.label :イベント名, class: 'form-item' %><br />
+        <%= f.label :イベント名%><br />
         <%= f.text_area :project, class: "form-text" %>
       </div>
 
       <div class="form-1">
-        <%= f.label :イベント概要, class: 'form-item' %><br />
+        <%= f.label :イベント概要%><br />
         <%= f.text_area :overview, class: "form-text" %>
       </div>
 
       <div class="form-1">
-        <%= f.label :開催予定日時, class: 'form-item' %><br />
+        <%= f.label :開催予定日時%><br />
         <%= f.date_field :date, class: "form-text" %>
       </div>
 
       <div class="form-1">
-        <%= f.label :メールアドレス（連絡先）, class: 'form-item' %><br />
+        <%= f.label :メールアドレス（連絡先） %><br />
         <%= f.text_area :email, placeholder:"参加者との連絡が可能なアドレス", class: "form-text" %>
       </div>
 
       <div class="form-1">
-        <%= f.label :電話番号, class: 'form-item' %><br />
-        <%= f.telephone_field :phone, placeholder:"例）090-1111-1111", class: "form-text" %>
+        <%= f.label :電話番号 %><br />
+        <%= f.telephone_field :phone, placeholder:"例）09011111111", class: "form-text" %>
       </div>
 
       <div class="form-1">
-        <%= f.label :開催場所（住所）, class: 'form-item' %><br />
+        <%= f.label :開催場所（住所） %><br />
         <%= f.text_area :address, placeholder:"例)東京都港区六本木1-1-1", class: "form-text" %>
       </div>
     
       <div class ="form-edit-btn">
         <%= f.submit "イベントを更新", class:"form-submit" %>
       </div>
+      
     </div>
   </div>
 <% end %>
-
-<%= render 'shared/footer' %>

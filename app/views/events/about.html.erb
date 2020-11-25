@@ -1,24 +1,11 @@
 <div class="about">
   <div class="about-in">
     <div class="title-origin">
-      <h2 class="back-image">Uni＊Channとは</h2>
+      <h2 >Uni＊Channとは</h2>
     </div>
 
   <div class="title-main">
     <div>
-      <div class="title-ex-box">
-        <div class="title-ex">
-          <h3>タイトルの由来</h3>
-        </div>
-        <div class="title-ex-content">
-          <p>まず「Uni」は海の幸であるウニです。わたしの地元の名産です。</p>
-          <p>次に英語で「Unite」という単語があります。もうお気づきでしょう。日本語で「団結する」「一緒にする」ということです。</p>
-          <p>その２つを掛け合わせたチャンネルの誕生です。</p>
-          <p>育った街への敬意と誇り、そしてその街の真の団結力や絆をテーマにしたいという思いから命名致しました。</p>
-          <p>ウニチャンをシンボルに絆を深めていきましょう。</p>
-        </div>
-      </div>
-    
       <div class="title-ex-box">
         <div class="title-ex">
           <h3>Link to you</h3>
@@ -29,6 +16,19 @@
           <p>好きなこと、大事なこと、なんでも良い。自信を持って発信しましょう。</p>
           <p>あなたとあなたの住む街と人をつなぐことができ、その活動を世界中に見てもらいましょう。わたしたちの力で。</p>
           <p>きっと、あなたはこの街と人がもっと好きになります。</p>
+        </div>
+      </div>
+
+      <div class="title-ex-box">
+        <div class="title-ex">
+          <h3>タイトルの由来</h3>
+        </div>
+        <div class="title-ex-content">
+          <p>まず「Uni」は海の幸であるウニです。わたしの地元の名産です。</p>
+          <p>次に英語で「Unite」という単語があります。もうお気づきでしょう。日本語で「団結する」「一緒にする」ということです。</p>
+          <p>その２つを掛け合わせたチャンネルの誕生です。</p>
+          <p>育った街への敬意と誇り、そしてその街の真の団結力や絆をテーマにしたいという思いから命名致しました。</p>
+          <p>ウニチャンをシンボルに絆を深めていきましょう。</p>
         </div>
       </div>
 
@@ -46,8 +46,9 @@
             </div>
             <div class="howto-content">
               <p>お好みのイベントを見つけたらイベントをクリック。
-              気に入ったら「Join!」から参加登録しましょう！
+              気に入ったら<b>「Join!」</b>から参加登録しましょう！
               イベントについて不明点があればコメント機能を活用して質問してみるのも良いでしょう。
+              参加済みのイベントにはアイコン(<%= image_tag 'humangray.png', class: "event-join-mark-mini"%>)が表示されますのでひと目で確認できます！
               </p>
             </div>
           </div>
@@ -61,9 +62,10 @@
             </div>
             <div class="howto-content">
               <p>
-              イベントを投稿してみましょう。「New!」からあなたがホストの新しいイベントの作成が可能です。
+              イベントを投稿してみましょう。<b>「New!」</b>からあなたがホストの新しいイベントの作成が可能です。
               ホストは参加者一覧を表示することができます。
-              必要であればcsvファイルにも出力できるのでリスト管理が楽々です。
+              必要であればcsvファイルにも出力(PC版ブラウザ)できるのでリスト管理が楽々です。
+              あなたがホストの場合はイベントにアイコン(<%= image_tag '丸枠の中に王冠を配置したアイコン素材.png', class: 'event-owners-mark-mini'%>)が表示されます！
               </p>
             </div>
           </div>
@@ -78,21 +80,21 @@
             <div class="howto-content">
               <p>
               登録したイベントを存分に楽しみましょう。
-              体験後はイベントページに感想をコメントして盛り上げていきましょう。
+              イベントのコメント欄に感想をつぶやいても良いかもしれません。
+              「いいね！」(<%= image_tag 'ハートのアイコン素材 1.png', class: "event-index-like-image3-mini"%>)をつけたり、お使いのSNSサービスにどんどん共有してイベントを盛り上げあなたの地域の活動を世界中に見てもらいましょう！
               </p>
             </div>
-          </div>
-
-          <div class='about-to-main-btn'>
-            <span class='about-to-main-text'>Home!</span>
-            <a href="/">
-              <%= image_tag '家の線画イラスト.png' , size: '185x50' ,class: "about-to-main-icon" %>
-            </a>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <div class='about-to-main-btn'>
+            <span class='about-to-main-text'>Home!</span>
+            <a href="/">
+              <%= image_tag '家の線画イラスト.png' , size: '185x50' ,class: "about-to-main-icon" %>
+            </a>
+          </div>
 </div>
 
 <%= render 'shared/footer' %>

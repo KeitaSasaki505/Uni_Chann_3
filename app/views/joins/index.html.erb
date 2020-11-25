@@ -1,44 +1,52 @@
 <%= render 'shared/header' %>
+<%= render 'shared/back'%>
 
 <div class="joins-main">
   <%# <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= form_with model: @event, class: 'registration-main', local: true do |f| %>
-    
+  
     <div class="form-main">
       <div class="form-edit">
-        <h3 class='form-header-text'>
+        <div class="joins-title" >
         イベント参加者一覧
-        </h3>
+        </div>
 
-        <p>"Output!"ボタンよりCSV形式で参加者一覧をダウンロードできます。</p>
 
-        <table class="detail-table" border="1">
-          <tr>
-            <th class="detail-item">名前</th>
-            <th class="detail-item">カナ</th>
-            <th class="detail-item">メールアドレス</th>
-            <th class="detail-item">電話番号</th>
-            <th class="detail-item">コメント</th>
-          </tr>
-          <% @joins.each do |participants|%>
-            <tbody>
-              <tr>
-                <td width="90", class="detail-value"><%= participants.name_kanji %></td>
-                <td width="140", class="detail-value"><%= participants.name_kana %></td>
-                <td class="detail-value"><%= participants.email %></td>
-                <td class="detail-value"><%= participants.phone %></td>
-              　<td width="200", class="detail-value"><%= participants.message %></td>
-              </tr>
-            </tbody>
-          <% end %>
-        </table>
+        <div class="joins-table">
+          <p><b>"Output!</b>"ボタンよりCSV形式で参加者一覧をダウンロードできます。</p>
+            <div class="joins-table-s">
+              <div>
+              <table class="detail-table" border="1">
+                <tr class="thead ">
+                  <th class="detail-item">名前</th>
+                  <th class="detail-item">カナ</th>
+                  <th class="detail-item">メールアドレス</th>
+                  <th class="detail-item">電話番号</th>
+                  <th class="detail-item">コメント</th>
+                </tr>
+                <% @joins.each do |participants|%>
+                  <tbody>
+                    <tr>
+                      <td data-label="名前", width="90", class="detail-value"><%= participants.name_kanji %></td>
+                      <td data-label="カナ", width="140", class="detail-value"><%= participants.name_kana %></td>
+                      <td data-label="メールアドレス", class="detail-value"><%= participants.email %></td>
+                      <td data-label="電話番号", class="detail-value"><%= participants.phone %></td>
+                    　<td data-label="コメント", width="200", class="detail-value"><%= participants.message %></td>
+                    </tr>
+                  </tbody>
+                  </div>
+                <% end %>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   <% end %>
 
   <div class="joins-csv-btn">
           <span class="joins-csv-text">Output!</span>
-          <%= link_to image_tag('プリンターの無料アイコン4.png', size: '70x70'), event_joins_path(format: :csv), class: "joins-csv-icon" %>
+          <%= link_to image_tag('プリンターの無料アイコン4.png', size: '60x60'), event_joins_path(format: :csv), class: "joins-csv-icon" %>
   </div>
 </div>
 

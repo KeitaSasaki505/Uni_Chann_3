@@ -1,0 +1,21 @@
+<div class="search-bar">
+  <div class="search-p">
+    <%= search_form_for @p, url: search_events_path do |f| %>
+      <div class="search-box">
+        <%# <h4>イベントを探す</h4> %>
+        <div class="search-box-1">
+          <div class="search-text">カテゴリ</div>
+          <div>
+            <%= f.collection_select :genre_id_eq, Genre.where.not(id: 0), :id, :name, include_blank: '指定なし', class: "search-category-field" %>
+          </div>
+          <div class="search-box-2">
+            <%= f.text_field :project_or_overview_or_address_cont, placeholder: "ワードで検索(カテゴリ指定のみでも検索可能)", class: "search-input" %>
+          </div>
+          <div class ="search-box-3">
+            <%= f.submit '検索', class: "search-btn"%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

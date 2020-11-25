@@ -1,18 +1,21 @@
-.form-header-text {
-  
-}
+
 
 .form-main {
+  width: 100vw;
+  height: 100vh;
   display: flex;
   justify-content: center;
-  position: relative;
-  top: 100px;
-  margin-bottom: 90px;
-  
+  margin-top: 120px;
+  margin-bottom: 250px;
 }
 
 .form-edit {
-  width: 65vw;
+  padding-bottom: 50px;
+}
+
+.form-edit h3 {
+  font-size: 25px;
+  font-weight: 700;
 }
 
 .select-box {
@@ -23,7 +26,7 @@
 }
 
 .form-1 {
-  margin: 15px;
+  margin: 25px;
 }
 
 .form-1 p {
@@ -31,21 +34,57 @@
   margin-left: 10px;
 }
 
-.form-item {
-  
-}
 
 .form-file-field {
-  margin-top: 7px;
-  margin-left: 10px;
+  display: none;
 }
+
+.user-file-field {
+  display: none;
+}
+
+.user-imageupload {
+  width: 50%;
+  background-color: rgb(247, 177, 48);
+  color: white;
+  border: dashed 2px #fd2c2c;
+  border-radius: 4%/50%;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.user-imageupload:hover {
+  opacity: 0.7;
+}
+
 
 // 画像投稿のプレビュー-----------------
-.pre-images-box {
-  // display: flex;
+.form-2 {
+  display: block;
+  justify-content: center;
+  margin: 30px;
 }
-.pre-images-view {
 
+.image-box {
+
+}
+
+.form-item {
+  width: 60%;
+  background-color: rgb(247, 177, 48);
+  color: white;
+  border: dashed 2px #fd2c2c;
+  border-radius: 4%/50%;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: .4s;
+}
+
+.form-item:hover {
+  opacity: 0.7;
 }
 
 .img-preview {
@@ -53,7 +92,40 @@
   width:180px;
   height:180px;
   object-fit: cover;
+  border-radius: 10%;
 }
+
+.pre-imagesbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+//画像アップロードボタン
+.upload-btn {
+  display: none;
+
+}
+
+label {
+  
+}
+
+//プレビューの中の削除編集ボタン
+.change-box-edit-delete {
+  cursor: pointer;
+}
+
+.change-box {
+  font-weight: 700;
+}
+
+.change-box:hover {
+  color: red;
+}
+
 
 .form-text {
   background-color: white;
@@ -77,34 +149,37 @@
   margin-bottom: 5px;
 }
 
-.form-edit-icon {
-  
-}
-
 .form-edit-btn {
-  margin-left: 25px;
+  margin-left: 33px;
   border-radius: 5%;
 }
 
-
 //編集submitボタン
 .form-submit {
-  color: rgb(75, 72, 72);
+  color: rgb(245, 245, 245);
+  font-weight: 700;
   display: block;
   width: 50vw;
   height: 35px;
-  background: linear-gradient(#dd5404, #f19d7763);
+  background-color: #dd5404;
   border: 0;
-  
+  border-radius: 2%/50%;
+  transition: .4s;
+}
+
+.form-submit:hover {
+  opacity: 0.7;
 }
 
 //新規submitボタン
 .form-new-submit {
   margin-left: 25px;
-  color: rgb(75, 72, 72);
+  color: rgb(245, 245, 245);
+  font-weight: 700;
   display: block;
   width: 50vw;
   height: 35px;
-  background: linear-gradient(#dd5404, #f19d7763);
+  background-color: #dd5404;
   border: 0;
+  border-radius: 2%/50%;
 }
