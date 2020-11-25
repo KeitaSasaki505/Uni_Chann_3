@@ -200,6 +200,17 @@ $shadowColour: rgba(0, 0, 0, .6);
   background-color: #fdfdfd;
   border-radius: 50%;
   border: dashed 2px #ff9100;
+
+  transition-duration: $defaultDuration;
+  transition-property: transform;
+  
+  @include hideTapHighlightColor();
+  @include hardwareAccel();
+  @include improveAntiAlias();
+  
+  &:hover {
+  transform: rotate(4deg);
+  }
 }
 
 .howto-title-index  {
