@@ -4,8 +4,8 @@ FactoryBot.define do
     association :event
     email { Faker::Internet.free_email}
     phone { Faker::Number.number(digits: 11) }
-    name_kanji { Gimei.kanji }
-    name_kana { Gimei.katakana }
+    name_kanji { Gimei.first.kanji }
+    name_kana { Gimei.first.katakana }
     message { Faker::Lorem.characters }
   end
 end

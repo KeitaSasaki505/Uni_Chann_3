@@ -2,6 +2,7 @@ require 'rails_helper'
 describe User do
   before do
     @user = FactoryBot.build(:user)
+    @user.image = fixture_file_upload( '/files/test-image3.png' )
   end
 
   describe 'ユーザー新規登録' do
@@ -27,7 +28,7 @@ describe User do
         expect(@user).to be_valid
       end
 
-      it 'emailがに@が含まれれば登録できる' do
+      it 'emailに@が含まれれば登録できる' do
         @user.email = 'test@example.com'
         expect(@user).to be_valid
       end

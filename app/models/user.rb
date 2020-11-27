@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :liked_events, through: :likes, source: :event
 
   with_options presence: true do
+    # validates :image
     validates :nickname
     validates :name_kanji, format: { with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/, message: 'を全角で入力してください' }
     validates :name_kana, format: { with: /\A[\p{katakana}　ー－&&[^ -~｡-ﾟ]]+\z/, message: 'を全角カタカナで入力してください' }

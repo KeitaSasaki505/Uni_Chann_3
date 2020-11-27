@@ -2,12 +2,12 @@ require 'rails_helper'
 describe Event do
   before do
     @event = FactoryBot.build(:event)
-    @event.images = fixture_file_upload('/files/test_image.png')
+    @event.images = fixture_file_upload( '/files/test-image3.png' )
   end
 
   describe 'イベント投稿' do
     context 'イベント投稿可能' do
-      it 'images, overview, project, address, email, date, phone, genre_idが存在すればイベント投稿できる' do
+      it 'フォームの内容が存在すればイベント投稿できる' do
         expect(@event).to be_valid
       end
     end
