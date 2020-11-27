@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: Uni_Chann_3_production
-  username: Uni_Chann_3
-  password: <%= ENV['UNI_CHANN_3_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
