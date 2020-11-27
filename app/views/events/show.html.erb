@@ -33,7 +33,7 @@
                 <% if current_user.already_liked?(@event) %>
                   <%= link_to image_tag('ハートのアイコン素材 1.png', class: "event-index-like-image3"), event_like_path(@event), method: :delete, title: 'いいね！キャンセル'%>
                 <% else %>
-                  <%= link_to image_tag('ハートのアイコン素材 1.png', class: "event-index-like-image3"), event_likes_path(@event), method: :post, class: "event-index-like-image2", title: 'いいね！を押す' %>
+                  <%= link_to image_tag('ハートのアイコン素材 1.png', class: "event-index-like-image3"), event_likes_path(@event), method: :post, title: 'いいね！を押す' %>
                 <% end %>
               </div>
             <% else %>
@@ -135,8 +135,8 @@
         </script>
 
         <style type="text/css">
-          #map { height: 320px;
-                width: 480px;}
+          #map { height: 400px;
+                width: 640px;}
         </style>
 
         <%# #mapの表示 %>
