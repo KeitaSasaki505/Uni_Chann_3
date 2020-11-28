@@ -76,14 +76,14 @@
   }
   
   [hidden],
-  template {
+  /* template {
     display: none; Add the correct display in IE
-  }
+  } */
   
   /* abbr[title] {
     border-bottom: 1px dotted; /* Add a bordered underline effect in all browsers */
     /* text-decoration: none; Remove text decoration in Firefox 40+ */
-  }
+  /* } */
   
   /* a {
     background-color: transparent; Remove the gray background on active links in IE 10 */
@@ -235,9 +235,9 @@
     -webkit-appearance: none; /* Chrome 41+ */
   }
   
-  select::-ms-expand {
+  /* select::-ms-expand {
     display: none; Internet Explorer 11+
-  }
+  } */
   
   select::-ms-value {
     color: currentColor; /* Internet Explorer 11+ */
