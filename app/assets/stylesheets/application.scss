@@ -74,7 +74,7 @@ main {
   }
 }
 
-/*ページネーション自体のデザイン*/
+//ページネーション自体のデザイン
 .paginate-box {
   display: flex;
   justify-content: center;
@@ -86,17 +86,17 @@ main {
   color: #696969;   /*文字の色を変える*/
 }
 
-/* 表示しているページ番号のデザイン */
+//表示しているページ番号のデザイン
 .pagination>.active>a {     
   
-  border-radius: 50px;     /*角を丸くする*/
+  border-radius: 50px;     //角を丸くする
 
 }
 
-/*ホバー時のデザイン*/
+//ホバー時のデザイン
 .pagination>li>a:hover {
   background-color: #fcfcfc;
-  border-radius: 50px;    /*角を丸くする*/
+  border-radius: 50px;    //角を丸くする
 }
 
 .page-item>.active>a {
@@ -104,7 +104,7 @@ main {
 }
 
 //レスポンシブ対応
- /* タブレット表示時 */
+ //タブレット表示時
 
  $defaultDuration: .3s;
  $primaryColour: #ececec;
@@ -407,10 +407,6 @@ main {
     padding-bottom: 50px;
   }
 
-  .form-1 {
-    
-  }
-
   .form-text {
     width: 90%;
   }
@@ -423,7 +419,7 @@ main {
     padding-top: 20px;
   }
 
- }
+}
 
   /* スマホ表示時 */
 @media (max-width: 599px) {
