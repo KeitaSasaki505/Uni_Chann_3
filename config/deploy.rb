@@ -2,7 +2,7 @@
 lock "3.14.1"
 
 set :application, "Uni_Chann_3"
-set :repo_url, "git@example.com:me/my_repo.git"
+
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:KeitaSasaki505/Uni_Chann_3.git'
 
