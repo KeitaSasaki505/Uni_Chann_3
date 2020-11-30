@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  impressionist :actions=> [:show, :index], :unique => [:impressionable_id, :ip_address]
+  # impressionist :actions=> [:show, :index], :unique => [:impressionable_id, :ip_address]
   before_action :authenticate_user!, only: [:new, :create, :edit, :destroy, :update]
   before_action :set_event, only: [:edit, :show, :update]
   before_action :search_event, only: [:index, :search]
@@ -43,7 +43,7 @@ class EventsController < ApplicationController
     @comment = Comment.new
     @comments = Comment.where(event_id: @event)
     @like = Like.new
-    # impressionist(@event, nil, unique: [:session_hash])
+    impressionist(@event, nil, unique: [:impressionable_id, :ip_address])
     @views = @event.impressionist_count
   end
 
