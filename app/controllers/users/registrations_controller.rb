@@ -60,12 +60,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
 
-  before_action :check_guest, only: [:destroy, :update]
+  # before_action :check_guest, only: [:destroy, :update]
 
-  def check_guest
-    if resource.email == 'test@test.com'
-      redirect_to root_path, alert: 'ゲストユーザーは変更、削除できません。'
-    end
-  end
+  # def check_guest
+  #   if resource.email == 'test@test.com'
+  #     redirect_to root_path, alert: 'ゲストユーザーは変更、削除できません。'
+  #   end
+  # end
 
 end
