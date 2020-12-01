@@ -15,7 +15,8 @@
       <div class="form-2">
         <label for="event-image" class="form-item" id="file-field">
         <span>イベントイメージ画像をアップロード(3枚まで)</span>
-        <%= f.file_field :images, name: 'event[images][]', id: "event-image", direct_upload: true, multiple: true, data: {index:0}, class:'form-file-field' %>
+        <%= f.file_field :images, name: 'event[images][]', id: "event-image", multiple: true, data: {index:0}, class:'form-file-field' %>
+        <%# エラーになる可能性の箇所のため退避 direct_upload: true, %>
         </label>
       </div>
       
