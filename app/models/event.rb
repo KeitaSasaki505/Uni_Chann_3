@@ -15,7 +15,7 @@ class Event < ApplicationRecord
   after_validation :geocode, if: :address_changed?
 
   with_options presence: true do
-    # validates :images
+    validates :images
     validates :overview, length: { in: 1..400, message: 'は400文字以内です' }
     validates :project, length: { in: 1..50, message: 'は50文字以内です' }
     validates :address
