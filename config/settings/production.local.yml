@@ -1,3 +1,0 @@
-google:
-  map_key: ENV['GOOGLE_MAP_API_KEY1']
-  geocoder_key: ENV['GOOGLE_MAP_API_KEY2']
