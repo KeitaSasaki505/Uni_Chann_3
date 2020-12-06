@@ -14,8 +14,8 @@ class User < ApplicationRecord
   with_options presence: true do
     # validates :image
     validates :nickname
-    validates :name_kanji, format: { with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々])+\z/, message: 'を全角で入力してください' }
-    validates :name_kana, format: { with: /\A[\p{katakana}　ー－&&[^ -~｡-ﾟ]]+\z/, message: 'を全角カタカナで入力してください' }
+    validates :name_kanji, format: { with: /\A(?:\p{Hiragana}|\p{Katakana}|[ー－]|[一-龠々]|[\s　])+\z/, message: 'を全角で入力してください' }
+    validates :name_kana, format: { with: /\A[\p{katakana}　ー－&&[^ -~｡-ﾟ]|[\s　]]+\z/, message: 'を全角カタカナで入力してください' }
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     validates :email, {uniqueness: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }}
     PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
