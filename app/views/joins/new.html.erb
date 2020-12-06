@@ -11,13 +11,13 @@
       </h3>
       <%= render 'shared/error_messages', model: f.object %>
       <div class="form-1">
-        <%= f.label :氏名 %><br />
-        <%= f.text_field :name_kanji, placeholder:"名前(漢字フルネーム)", class: "form-text" %>
+        <%= f.label :氏名(全角) %><br />
+        <%= f.text_field :name_kanji, placeholder:"例）種市太郎", class: "form-text" %>
       </div>
 
       <div class="form-1">
-        <%= f.label :カナ入力 %><br />
-        <%= f.text_field :name_kana, placeholder:"名前(フリガナ)", class: "form-text" %>
+        <%= f.label :氏名(カナ) %><br />
+        <%= f.text_field :name_kana, placeholder:"例）タネイチタロウ", class: "form-text" %>
       </div>
 
       <div class="form-1">
