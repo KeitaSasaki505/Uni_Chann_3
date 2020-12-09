@@ -44,6 +44,7 @@ class EventsController < ApplicationController
     @comments = Comment.where(event_id: @event)
     @like = Like.new
     impressionist(@event, nil, unique: [:impressionable_id, :ip_address])
+    
     @views = @event.impressionist_count
   end
 
