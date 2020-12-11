@@ -25,17 +25,17 @@
 
       <div class="form-1">
         <%= f.label :氏名（全角）%><br />
-        <%= f.text_field :name_kanji, placeholder:"例) 種市太郎", class: "form-text" %>
+        <%= f.text_field :name_kanji, placeholder:"例) 種市太郎", class: "form-text", id: "user_name" %>
       </div>
 
       <div class="form-1">
         <%= f.label :氏名（カナ） %><br />
-        <%= f.text_field :name_kana, placeholder:"例) タネイチタロウ", class: "form-text" %>
+        <%= f.text_field :name_kana, placeholder:"例) タネイチタロウ", class: "form-text", id: "user_name_kana" %>
       </div>
 
       <div class="form-1">
         <%= f.label :メールアドレス %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"PC・携帯どちらでも可", class: "form-text" %>
+        <%= f.email_field :email, pattern: '[a-z0-9]+', autofocus: true, autocomplete: "email", placeholder:"PC・携帯どちらでも可", class: "form-text" %>
       </div>
 
       <div class="form-1">
@@ -57,3 +57,12 @@
 <% end %>
 
 <%= render 'shared/footer' %>
+
+<script type="text/javascript">
+    $(document).ready(
+        function() {               
+            $.fn.autoKana('#user_name', '#user_name_kana', {
+                katakana : true  //true：カタカナ、false：ひらがな（デフォルト）
+        });
+    });
+</script>

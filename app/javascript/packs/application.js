@@ -9,6 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require('./images')
 require('./preview')
+require('./jquery.autoKana')
 //= require jquery
 //= require bootstrap
 
