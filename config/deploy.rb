@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "3.14.1"
 
-set :application, "Uni_Chann_3"
+set :application, 'Uni_Chann_3'
 
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url, 'git@github.com:KeitaSasaki505/Uni_Chann_3.git'
