@@ -14,11 +14,7 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
-<<<<<<< HEAD
   password: 
-=======
-  password:
->>>>>>> parent of e5f921c... 一時保存
   socket: /tmp/mysql.sock
 
 development:
