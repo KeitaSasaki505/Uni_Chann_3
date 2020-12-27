@@ -61,7 +61,7 @@ https://www.unichann.com/
 
 ## 技術一覧
 **フロントエンド**
-* JavaScript,jQuery
+* JavaScript
 * SCSS
 
 **バックエンド**
@@ -69,7 +69,8 @@ https://www.unichann.com/
 * Rails 6.0.3.4
 
 **開発環境/データベース**
-* Docker/Dcoker-compose
+* Visual Studio Code
+* Docker/docker-compose
 * MySQL 5.6
 
 **本番環境**
