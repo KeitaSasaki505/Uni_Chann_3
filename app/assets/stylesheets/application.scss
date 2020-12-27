@@ -1009,7 +1009,7 @@ main {
   }
   .detail-table  td {
     display: block;
-    text-align: right;
+    text-align: center;
     width: 100%;
   }
   .detail-table  td:first-child {
@@ -1024,6 +1024,13 @@ main {
     font-weight: bold;
     margin-right: 10px;
   }
+
+  .detail-value {
+    padding: 5px 15px;
+    width: 120px;
+  }
+
+
 
   //入力画面
   .form-main {
