@@ -54,10 +54,39 @@ https://www.unichann.com/
 <table>
   <tr>
     <td><img src="https://user-images.githubusercontent.com/69673353/103164524-cd5d6b80-484f-11eb-8440-f9d84cdd2e33.png" height="300px" ></td>
-    <td><img src="https://user-images.githubusercontent.com/69673353/103164557-6ee4bd00-4850-11eb-902c-b1863f02aaa3.png" height="300px" ></td>
+    <td><img src="https://user-images.githubusercontent.com/69673353/103165454-8d03ea80-485b-11eb-8d9d-cb2aa2f56b32.png" height="300px" ##></td>
     <td><img src="https://user-images.githubusercontent.com/69673353/103164556-668c8200-4850-11eb-8160-b14313d03b6c.png" height="300px" ></td>
   </tr>
 </table>
+
+## 技術一覧
+**フロントエンド**
+* JavaScript,jQuery
+* SCSS
+
+**バックエンド**
+* Ruby 2.6.5
+* Rails 6.0.3.4
+
+**開発環境/データベース**
+* Docker/Dcoker-compose
+* MySQL 5.6
+
+**本番環境**
+* AWS(EC2,S3,Route53,ELB,ACM)
+* Nginx
+* unicorn
+* MySQL(MariaDB)
+* Capistrano(デプロイ)
+
+## インフラ構成図
+
+
+
+## ER図
+
+
+## 自己紹介
 
 
 
