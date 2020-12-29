@@ -1,0 +1,66 @@
+.about_me_all {
+  width: 100vw;
+  display: flex;
+
+}
+
+.left_contents {
+  width: 60vw;
+  background-color: gray;
+  
+}
+
+.me_title {
+  height: 15vh;
+  background-color: rgb(160, 158, 158);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.me_overview {
+  background-color: rgb(185, 184, 184);
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+}
+
+.me_overview_main {
+  background-color: rgb(252, 252, 220);
+  width: 50vw;
+  
+}
+
+.me_link {
+  background-color: rgb(214, 214, 214);
+  height: 35vh;
+  display: flex;
+  justify-content: center;
+}
+
+.me_link_main {
+  background-color: aqua;
+  width: 50vw;
+}
+
+.me_link_child {
+  background-color: aquamarine;
+  width: 50vw;
+  height: 10vh;
+}
+
+.me_signature {
+  height: 15vh;
+}
+
+
+.right_contents {
+  width: 40vw;
+  height: 100vh;
+  object-fit: cover;
+  background-color: black;
+  background-size: cover;
+  background-image: image-url('DSC00089.jpg');
+}
