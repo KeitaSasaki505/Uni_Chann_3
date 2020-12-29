@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     collection do
       get 'search'
       get 'about'
+      get 'about_me'
     end
     resources :comments
     resources :likes, only: [:create, :destroy]
