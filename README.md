@@ -90,6 +90,8 @@ https://www.unichann.com/
 
 ## 自己紹介
 
+簡単な自己紹介ページ
+https://www.unichann.com/events/about_me
 
 
 
