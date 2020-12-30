@@ -519,7 +519,7 @@ main {
 }
 
 .me_link_main {
-  width: 25vw;
+  width: 45vw;
 }
 
 .me_link_child {
@@ -530,14 +530,6 @@ main {
   display: flex;
   justify-content: flex-start;
   align-items: center
-}
-
-.me_link_middle {
-
-}
-
-.link_list {
-  list-style: none;
 }
 
 .link_image {
@@ -555,10 +547,6 @@ main {
   justify-content: center;
   align-items: center;
   padding: 2% 5%;
-}
-
-.me_signature_place {
-  
 }
 
 .me_signature_size {
@@ -712,10 +700,6 @@ main {
     width: 90vw;
     color: rgb(233, 233, 233);
   }
-
-  .me_link_middle {
-
-  }
   
   .me_link_child {
     width: 90vw;
@@ -723,10 +707,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center
-  }
-  
-  .me_link_middle {
-  
   }
   
   .link_list {
