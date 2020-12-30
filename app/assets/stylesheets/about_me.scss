@@ -36,6 +36,10 @@
   padding: 35px 50px;
 }
 
+.me_overview_list {
+  list-style: none;
+}
+
 .me_link {
   // background-color: rgb(214, 214, 214);
   height: 30vh;
@@ -85,8 +89,8 @@
 }
 
 .me_signature_size {
-  width: 18vw;
-  height: 7vh;
+  width: 220px;
+  height: 60px;
 }
 
 
@@ -95,4 +99,5 @@
   height: 100vh;
   background-size: cover;
   background-image: image-url('DSC00089.jpg');
+  background-position: 50% 50%;
 }

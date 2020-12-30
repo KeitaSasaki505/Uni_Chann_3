@@ -175,6 +175,60 @@ main {
     font-size: 13px;
   }
 
+  //about_me
+  .left_contents {
+    width: 50vw;
+  }
+
+  .me_overview {
+    // background-color: rgb(185, 184, 184);
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 0.2em;
+    font-size: 11px;
+    font-family: monospace;
+    line-height: 1.7em;
+  }
+
+  .me_overview_main {
+    background-color: rgb(233, 233, 233);
+    border-radius: 10px;
+    width: 45vw;
+    padding: 30px 45px;
+  }
+
+  .me_link {
+    // background-color: rgb(214, 214, 214);
+    height: 20vh;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .me_link_child {
+    width: 50vw;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
+
+  .me_signature {
+    height: 16vh;
+    display: flex;
+    justify-content: flex-end;
+    padding: 2% 5%;
+  }
+
+  .right_contents {
+    width: 50vw;
+    height: 100vh;
+    background-size: cover;
+    background-image: image-url('DSC00089.jpg');
+    background-position: 50% 50%;
+  }
+
   //index
     .header {
     width: 95vw;
@@ -422,7 +476,7 @@ main {
 
 }
 
-  /* スマホ表示時 */
+  /* -----スマホ表示時--------------------------- */
 @media (max-width: 599px) {
   //about
   .title-main {
@@ -495,6 +549,105 @@ main {
     text-decoration: none;
     margin-bottom: 5px;
   }
+
+  //about_me
+  .about_me_all {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-image: image-url('DSC00089.jpg');
+    background-color: rgba(255, 255, 255, 0.185);
+    background-blend-mode: lighten;
+  }
+
+  .left_contents {
+    width: 100vw;
+  }
+
+  .me_title {
+    height: 12vh;
+    color: rgb(238, 238, 238);
+    // background-color: rgb(160, 158, 158);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .me_font h1 {
+    font: rgb(238, 238, 238);
+  }
+
+  .me_overview {
+    // background-color: rgb(185, 184, 184);
+    height: 50vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 0.2em;
+    font-size: 12px;
+    font-family: monospace;
+    line-height: 1.7em;
+    opacity: 0.8;
+  }
+
+  .me_overview_main {
+    background-color: rgb(233, 233, 233);
+    border-radius: 10px;
+    width: 90vw;
+    padding: 20px;
+  }
+
+  .me_link {
+    // background-color: rgb(214, 214, 214);
+    height: 18vh;
+    margin-top: 30px;
+    display: flex;
+    // justify-content: center;
+  }
+  
+  .me_link_main {
+    width: 90vw;
+    color: rgb(233, 233, 233);
+  }
+
+  .me_link_middle {
+
+  }
+  
+  .me_link_child {
+    width: 90vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center
+  }
+  
+  .me_link_middle {
+  
+  }
+  
+  .link_list {
+    list-style: none;
+  }
+  
+  .link_image {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .link_url {
+    margin-left: 10px;
+  }
+
+  .me_signature {
+    display: none;
+  }
+
+  .right_contents {
+    display: none;
+  }
+
 
   //index
     .notifications {
@@ -1033,8 +1186,6 @@ main {
 
 
   //入力画面
-  .form-main {
-  }
 
   .form-edit {
     width: 100vw;
