@@ -33,7 +33,9 @@
   background-color: rgb(233, 233, 233);
   border-radius: 10px;
   width: 50vw;
+  height: 35vh;
   padding: 35px 50px;
+  overflow: scroll;
 }
 
 .me_overview_list {
@@ -46,22 +48,23 @@
   margin-top: 30px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .me_link_main {
-  width: 50vw;
+  width: 25vw;
 }
 
 .me_link_child {
-  width: 50vw;
+  width: 20vw;
   height: 8vh;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center
 }
 
 .me_link_middle {
-
+  
 }
 
 .link_list {
@@ -75,12 +78,16 @@
 
 .link_url {
   margin-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .me_signature {
   height: 15vh;
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   padding: 2% 5%;
 }
 

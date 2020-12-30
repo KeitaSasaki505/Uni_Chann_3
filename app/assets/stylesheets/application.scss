@@ -476,6 +476,106 @@ main {
 
 }
 
+@media (max-width: 820px) {
+// -----スマホ横表示---------------------------------
+//about_me
+.left_contents {
+  width: 60vw;
+}
+
+.me_title {
+  margin: 10px;
+  height: 12vh;
+}
+
+.me_overview {
+  // background-color: rgb(185, 184, 184);
+  height: 41vh;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 0.2em;
+  font-size: 12px;
+  font-family: monospace;
+  line-height: 1.7em;
+}
+
+.me_overview_main {
+  background-color: rgb(233, 233, 233);
+  border-radius: 10px;
+  width: 45vw;
+  height: 39vh;
+  padding: 10px 15px;
+  overflow: scroll;
+}
+
+.me_link {
+  // background-color: rgb(214, 214, 214);
+  height: 10vh;
+  margin: 20px 0px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.me_link_main {
+  width: 25vw;
+}
+
+.me_link_child {
+  width: 50vw;
+  height: 3vh;
+  margin-bottom: 10px;
+  // height: 10vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center
+}
+
+.me_link_middle {
+
+}
+
+.link_list {
+  list-style: none;
+}
+
+.link_image {
+  width: 15px;
+  height: 15px;
+}
+
+.link_url {
+  margin-left: 5px;
+}
+
+.me_signature {
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2% 5%;
+}
+
+.me_signature_place {
+  
+}
+
+.me_signature_size {
+  width: 200px;
+  height: 55px;
+}
+
+.right_contents {
+  width: 50vw;
+  height: 100vh;
+  background-size: cover;
+  background-image: image-url('DSC00089.jpg');
+  background-position: 60% 40%;
+}
+
+}
+
   /* -----スマホ表示時--------------------------- */
 @media (max-width: 599px) {
   //about
@@ -596,12 +696,13 @@ main {
     background-color: rgb(233, 233, 233);
     border-radius: 10px;
     width: 90vw;
+    height: 47vh;
     padding: 10px;
   }
 
   .me_link {
     // background-color: rgb(214, 214, 214);
-    height: 18vh;
+    height: 15vh;
     margin-top: 30px;
     display: flex;
     // justify-content: center;
@@ -618,7 +719,7 @@ main {
   
   .me_link_child {
     width: 90vw;
-    height: 5vh;
+    // height: 5vh;
     display: flex;
     justify-content: center;
     align-items: center
