@@ -80,6 +80,10 @@ https://www.unichann.com/
 * MySQL(MariaDB)
 * Capistrano(デプロイ)
 
+**テスト**
+* RSpec
+* FactoryBot
+
 ## インフラ構成図
 
 
