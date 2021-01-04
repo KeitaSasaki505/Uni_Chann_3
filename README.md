@@ -91,7 +91,7 @@ https://www.unichann.com/
 
 ## インフラ構成図
 
-<img width="max" alt="インフラ構成図" src="https://user-images.githubusercontent.com/69673353/103504147-e393a900-4e99-11eb-9d99-c64c29a4e994.png">
+<img width="max" alt="インフラ構成図" src="https://user-images.githubusercontent.com/69673353/103515927-f2d32080-4eb2-11eb-8831-1aeb8d2ce2d5.png">
 
 ## ER図
 
