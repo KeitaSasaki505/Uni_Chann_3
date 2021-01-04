@@ -1,10 +1,15 @@
-<img src="https://user-images.githubusercontent.com/69673353/103163919-bca8f780-4847-11eb-9bc0-cf64037d3b17.png" width="349">
+## トップページ
 <img width="max" alt="topイベント表示" src=https://user-images.githubusercontent.com/69673353/103164333-41e2db00-484d-11eb-93db-26dfa80f0942.png>
+
+## タイトルロゴ
+<img src="https://user-images.githubusercontent.com/69673353/103163919-bca8f780-4847-11eb-9bc0-cf64037d3b17.png" width="349">
 
 ## 概要
 
 ご近所様、小さな地域単位で使える「頼れる街の掲示板」です。
 物理的に人と人の距離が離れる田舎町でも活発なワークショップを提案したり参加できるマッチング掲示板です。
+
+詳細：https://www.unichann.com/events/about
 
 ## URL
 
