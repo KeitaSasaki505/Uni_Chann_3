@@ -1,3 +1,4 @@
+# Docker学習中につきローカル環境の構築にイメージ利用
 version: '3'
 services:
   db:
