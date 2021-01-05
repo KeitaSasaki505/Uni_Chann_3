@@ -75,7 +75,7 @@ https://www.unichann.com/
 
 **開発環境/データベース**
 * Visual Studio Code
-* Docker/docker-compose
+* Docker/docker-compose(ローカル)
 * MySQL 5.6
 
 **本番環境**
