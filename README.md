@@ -77,6 +77,7 @@ https://www.unichann.com/
 * Visual Studio Code
 * Docker/docker-compose(ローカル)
 * MySQL 5.6
+* Git,GitHub
 
 **本番環境**
 * AWS(EC2,S3,Route53,ELB,ACM)
