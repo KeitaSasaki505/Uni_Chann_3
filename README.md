@@ -1,5 +1,5 @@
 ## トップページ
-<img width="max" alt="topイベント表示" src=https://user-images.githubusercontent.com/69673353/103164333-41e2db00-484d-11eb-93db-26dfa80f0942.png>
+<img width="max" alt="topイベント表示" src=https://user-images.githubusercontent.com/69673353/103956801-9d399500-518c-11eb-8277-a0d31b465d43.png>
 
 ## タイトルロゴ
 <img src="https://user-images.githubusercontent.com/69673353/103163919-bca8f780-4847-11eb-9bc0-cf64037d3b17.png" width="349">
