@@ -17,6 +17,7 @@ services:
     volumes:
         - .:/new_app
         # - gem_data:/usr/local/bundle
+        # コンテナとローカルの保存先の共有
     ports:
         - 3000:3000
     depends_on:
