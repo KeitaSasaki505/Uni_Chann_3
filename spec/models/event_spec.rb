@@ -3,6 +3,7 @@ describe Event do
   before do
     @event = FactoryBot.build(:event)
     @event.images = fixture_file_upload( '/files/test-image3.png' )
+    # 画像アップロードのテスト結果を確認する
   end
 
   describe 'イベント投稿' do
