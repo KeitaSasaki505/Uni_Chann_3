@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    # コメント削除機能保留
     # @comment = Comment.find(params[:id])
     # if @comment.destroy
     #   redirect_to event_path(@event)
