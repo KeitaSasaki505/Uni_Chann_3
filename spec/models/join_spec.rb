@@ -4,6 +4,7 @@ describe Join do
     @user = FactoryBot.create(:user)
     @event = FactoryBot.build(:event)
     @event.images = fixture_file_upload('/files/test_image.png')
+    # ※イベントイメージの投稿テストについて調査
     @join = FactoryBot.build(:join, user_id: @user.id, event_id: @event.id)
   end
 

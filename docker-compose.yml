@@ -10,6 +10,7 @@ services:
       - '3306:3306'
     command: --default-authentication-plugin=mysql_native_password
     volumes:
+      # データベースの保存を永続化
       - mysql-data:/var/lib/mysql
   web:
     build: .
@@ -19,6 +20,7 @@ services:
         # - gem_data:/usr/local/bundle
         # コンテナとローカルの保存先の共有
     ports:
+        # ローカルとコンテナのポート
         - 3000:3000
     depends_on:
         - db 
