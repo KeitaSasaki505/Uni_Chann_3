@@ -35,6 +35,7 @@ class Users::SessionsController < Devise::SessionsController
 
   protected
 
+  # ユーザー退会機能によって退会したユーザー情報に対する挙動
   def reject_user
     @user = User.find_by(email: params[:user][:email].downcase)
     if @user
