@@ -62,6 +62,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   before_action :check_guest, only: [:destroy, :update]
 
+  # ゲストユーザーは退会できない
   def check_guest
     if resource.email == 'test@test.com'
       redirect_to root_path, alert: 'ゲストユーザーは変更、削除できません。'
