@@ -61,6 +61,7 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:genre_id, :project, :overview, :date, :email, :phone, :address, images: []).merge(user_id: current_user.id)
+    # active storage画像複数枚投稿
   end
 
   def set_event
