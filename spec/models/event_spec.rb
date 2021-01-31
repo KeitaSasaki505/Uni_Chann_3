@@ -5,6 +5,7 @@ describe Event do
     @event.images = fixture_file_upload( '/files/test-image3.png' )
     # 画像アップロードのテスト結果を確認する
     # 画像に関連する項目の調整
+    # image can't be blank → 正常系
   end
 
   describe 'イベント投稿' do

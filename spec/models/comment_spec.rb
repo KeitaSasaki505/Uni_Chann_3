@@ -3,7 +3,6 @@ describe Comment do
   before do
     @user = FactoryBot.create(:user)
     @event = FactoryBot.build(:event)
-    binding.pry
     @event.images = fixture_file_upload('/files/test_image.png')
     @comment = FactoryBot.build(:comment, user_id: @user.id, event_id: @event.id)
   end
