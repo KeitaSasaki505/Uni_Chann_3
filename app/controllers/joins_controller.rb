@@ -46,6 +46,7 @@ class JoinsController < ApplicationController
     @event = Event.find(params[:event_id])
   end
 
+  # CSVファイル出力
   def send_posts_csv(joins)
     csv_data = CSV.generate do |csv|
       column_names = %w(投稿日 名前 カナ メール 電話番号 コメント)
