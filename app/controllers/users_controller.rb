@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+# ゲストユーザー削除防止
   def withdrawal
     @user = User.find(params[:id])
     if current_user.email == 'test@test.com'
