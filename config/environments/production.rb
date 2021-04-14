@@ -86,6 +86,9 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  # ログローテート設定(追加)
+  config.logger = Logger.new("log/production.log", 'weekly')
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
